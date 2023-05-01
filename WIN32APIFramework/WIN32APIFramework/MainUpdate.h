@@ -1,28 +1,17 @@
 #pragma once
 #include "Include.h"
-
-#define SPEED 0.1F
-
-struct Vector2
-{
-	float x, y;
-};
+#include "ObjectManager.h"
+#include "InputManager.h"
+#include "Character.h"
 
 class MainUpdate
 {
 private:
-	HDC m_hdc;
-
-	float startX, startY;
-	float endX, endY;
-	float sizeX, sizeY;
-
+	Character* _character;
 public:
 	void Start();
 	void Update();
-	void Render();
-	void Destroy();
 	 
  	 MainUpdate() {}
-	~MainUpdate() {}
+	 ~MainUpdate() {}
 };

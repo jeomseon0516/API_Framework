@@ -3,7 +3,6 @@
 
 #include "framework.h"
 #include "WIN32APIFramework.h"
-#include "Include.h"
 #include "MainUpdate.h"
 
 #define MAX_LOADSTRING 100
@@ -60,7 +59,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         else
         {
             main.Update();
-            main.Render();
         }
     }
 

@@ -16,14 +16,32 @@
     <Filter Include="헤더 파일\headers">
       <UniqueIdentifier>{1be715e6-dbd5-439e-94a6-cde713e81c3a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\include">
-      <UniqueIdentifier>{335d78a6-680e-4ac7-ac3d-f3ed27e6ac3f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\MainUpdate">
       <UniqueIdentifier>{dba6e335-f941-471e-93f2-6067a4a61564}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\headers\Include">
+    <Filter Include="소스 파일\RectTransform">
+      <UniqueIdentifier>{2ac3185b-540b-4467-8530-8cb3e901cc1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Vector2">
+      <UniqueIdentifier>{a8b98616-8c24-4046-b60a-ba3838ce4415}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Include">
       <UniqueIdentifier>{329539b2-2698-4df5-822c-a57768f44338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager">
+      <UniqueIdentifier>{8cf2023e-8a41-4a25-acfe-b588ad06e3d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object">
+      <UniqueIdentifier>{d2017e33-0122-4440-bbc4-aab8d2cf26ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\Singleton">
+      <UniqueIdentifier>{a8329606-e539-4c1d-90a7-dfe7b21b0d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Character">
+      <UniqueIdentifier>{30cc2e16-ffb8-4128-abc3-27eaf05c0621}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Bullet">
+      <UniqueIdentifier>{0a103e20-f095-4225-b92a-da5d955ea63e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -43,10 +61,37 @@
       <Filter>소스 파일\MainUpdate</Filter>
     </ClInclude>
     <ClInclude Include="Include.h">
-      <Filter>헤더 파일\headers\Include</Filter>
+      <Filter>헤더 파일\Include</Filter>
     </ClInclude>
     <ClInclude Include="Define.h">
-      <Filter>헤더 파일\headers\Include</Filter>
+      <Filter>헤더 파일\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>소스 파일\Vector2</Filter>
+    </ClInclude>
+    <ClInclude Include="RectTransform.h">
+      <Filter>소스 파일\RectTransform</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>소스 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>소스 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>소스 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>소스 파일\Manager\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>소스 파일\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>소스 파일\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Mathf.h">
+      <Filter>헤더 파일\Include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +100,30 @@
     </ClCompile>
     <ClCompile Include="MainUpdate.cpp">
       <Filter>소스 파일\MainUpdate</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>소스 파일\Vector2</Filter>
+    </ClCompile>
+    <ClCompile Include="RectTransform.cpp">
+      <Filter>소스 파일\RectTransform</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>소스 파일\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>소스 파일\Manager\Singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>소스 파일\Bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

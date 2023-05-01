@@ -6,5 +6,4 @@
 #include <string>
 #include <Windows.h>
 
-
 #include "Define.h"

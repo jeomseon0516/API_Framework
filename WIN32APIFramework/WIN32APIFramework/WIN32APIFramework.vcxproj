@@ -139,16 +139,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Character.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Include.h" />
+    <ClInclude Include="InputManager.h" />
     <ClInclude Include="MainUpdate.h" />
+    <ClInclude Include="Mathf.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="ObjectManager.h" />
+    <ClInclude Include="RectTransform.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Singleton.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Vector2.h" />
     <ClInclude Include="WIN32APIFramework.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="MainUpdate.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="RectTransform.cpp" />
+    <ClCompile Include="Singleton.cpp" />
+    <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="WIN32APIFramework.cpp" />
   </ItemGroup>
   <ItemGroup>
