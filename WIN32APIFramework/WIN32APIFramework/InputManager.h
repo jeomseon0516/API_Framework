@@ -4,19 +4,25 @@
 #include "Vector2.h"
 
 #define INPUTMANAGER InputManager::GetInstance()
+#define AXIS_SPEED 0.05F
 
 class InputManager : public Singleton<InputManager>
 {
 private:
 	friend class Singleton<InputManager>;
 
-public:
-	
-	Vector2 _axisHorizontal, _axisVertical;
-	Vector2 _axisRawHorizontal, _axisRawVertical;
+	float _axisHorizontal, _axisVertical;
+	float _axisRawHorizontal, _axisRawVertical;
 
+	float UpdateAxis(float axisValue, float plusValue, float maxValue, float correctionValue = 1.0f);
+	float Converge(float value);
+
+public:
 	virtual void Update();
 
+	float GetAxisHorizontal()	{ return _axisHorizontal; }
+	float GetAxisVertical()     { return _axisVertical; }
+
 private:
-	InputManager() {}
+	InputManager() { _axisHorizontal = _axisVertical = 0.0f; }
 };

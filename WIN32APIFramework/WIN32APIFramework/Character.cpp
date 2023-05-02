@@ -5,17 +5,7 @@ void Character::Update()
 {
 	_coolTime += 0.1f;
 
-	if (CheckKeyDown(VK_UP))
-		_transform.SetPosition(Vector2(_transform.GetPosition().x, _transform.GetPosition().y - SPEED));
-
-	if (CheckKeyDown(VK_DOWN))
-		_transform.SetPosition(Vector2(_transform.GetPosition().x, _transform.GetPosition().y + SPEED));
-
-	if (CheckKeyDown(VK_LEFT))
-		_transform.SetPosition(Vector2(_transform.GetPosition().x - SPEED, _transform.GetPosition().y));
-
-	if (CheckKeyDown(VK_RIGHT))
-		_transform.SetPosition(Vector2(_transform.GetPosition().x + SPEED, _transform.GetPosition().y));
+	_transform.SetPosition(_transform.GetPosition() + Vector2(INPUTMANAGER->GetAxisHorizontal(), INPUTMANAGER->GetAxisVertical()) * SPEED);
 
 	if (GetAsyncKeyState(VK_SPACE))
 		FireBullet();

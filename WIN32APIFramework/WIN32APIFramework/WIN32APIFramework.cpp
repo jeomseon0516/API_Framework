@@ -54,11 +54,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     // 기본 메시지 루프입니다:
     while (msg.message != WM_QUIT)
     {
-        if (msg.message == WM_PAINT)
-        {
-            DRAWMANAGER->Update();
-        }
-
         if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
         {
             TranslateMessage(&msg);
@@ -168,7 +163,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         {
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
-            // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
+            // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...v
             EndPaint(hWnd, &ps);
         }
         break;

@@ -1,5 +1,6 @@
 #pragma once
 #include "Bullet.h"
+#include "InputManager.h"
 
 #define SPEED 10.0F
 #define COOLTIME 10.0F
