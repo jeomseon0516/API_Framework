@@ -4,6 +4,7 @@
 #include "framework.h"
 #include "WIN32APIFramework.h"
 #include "MainUpdate.h"
+#include "DrawManager.h"
 
 #define MAX_LOADSTRING 100
 
@@ -48,9 +49,16 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     MainUpdate main;
     main.Start();
 
+    ULONGLONG time = GetTickCount64();
+
     // 기본 메시지 루프입니다:
     while (msg.message != WM_QUIT)
     {
+        if (msg.message == WM_PAINT)
+        {
+            DRAWMANAGER->Update();
+        }
+
         if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
         {
             TranslateMessage(&msg);
@@ -58,7 +66,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
         else
         {
-            main.Update();
+            if (time < GetTickCount64())
+            {
+                time = GetTickCount64();
+                main.Update();
+            }
         }
     }
 

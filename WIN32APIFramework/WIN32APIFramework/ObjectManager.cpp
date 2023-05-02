@@ -17,7 +17,14 @@
  {
 	 for (int i = 0; i < _objectList.size(); ++i)
 	 {
-		 _objectList[i]->Update();
+		 _objectList[i]->ObjUpdate();
+
+		 if (_objectList[i]->GetIsDie())
+		 {
+			 delete _objectList[i];
+			 RemoveFromIndexToObject(i);
+			 --i;
+		 }
 	 }
 	 for (int i = 0; i < _objectList.size(); ++i)
 	 {
@@ -25,10 +32,7 @@
 	 }
  }
 
- void ObjectManager::ObjectsInit()
+ void ObjectManager::PushBackObject(Object* object)
  {
-	 for (int i = 0; i < _objectList.size(); ++i)
-	 {
-		 _objectList[i]->Start();
-	 }
+	 _objectList.push_back(object);
  }

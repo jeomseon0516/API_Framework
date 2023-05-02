@@ -3,7 +3,6 @@
 void MainUpdate::Start()
 {
 	_character = new Character();
-	OBJECTMANAGER->ObjectsInit();
 }
 
 void MainUpdate::Update()

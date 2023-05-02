@@ -6,7 +6,9 @@
 class Bullet : public Object
 {
 private:
+
 	Vector2 _direction;
+
 	float _lifeTime;
 	float _speed;
 
@@ -15,7 +17,7 @@ private:
 public:
 
 	virtual void Start();
-	virtual void ObjUpdate();
+	virtual void Update();
 
 	void SetDirection(Vector2 direction) { _direction = direction; }
 

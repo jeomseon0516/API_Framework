@@ -1,21 +1,27 @@
 #pragma once
 
-class Vector2
+class tagVector2
 {
 public:
 	float x, y;
 
-	Vector2 operator+(Vector2 value) { return Vector2(x + value.x, y + value.y); }
-	Vector2 operator-(Vector2 value) { return Vector2(x - value.x, y - value.y); }
-	Vector2 operator*(Vector2 value) { return Vector2(x * value.x, y * value.y); }
-	Vector2 operator*(float value)   { return Vector2(x * value, x * value); }
+	tagVector2 operator+(tagVector2 value) { return tagVector2(x + value.x, y + value.y); }
+	tagVector2 operator-(tagVector2 value) { return tagVector2(x - value.x, y - value.y); }
+	tagVector2 operator*(tagVector2 value) { return tagVector2(x * value.x, y * value.y); }
+	tagVector2 operator*(float value)	   { return tagVector2(x * value, y * value); }
 
-	Vector2 operator/(Vector2 value) { return Vector2(x / value.x, y / value.y); }
-	Vector2 operator/(float value)   { return Vector2(x / value, y / value); }
+	tagVector2 operator/(tagVector2 value) { return tagVector2(x / value.x, y / value.y); }
+	tagVector2 operator/(float value)	   { return tagVector2(x / value, y / value); }
 
-	static Vector2 Zero() { return Vector2(0, 0); }
+	// ..Anchor..
+	static tagVector2 Zero()			   { return tagVector2(0, 0); }
+	static tagVector2 Left()			   { return tagVector2(-1, 0); }
+	static tagVector2 Right()			   { return tagVector2(1, 0); }
+	static tagVector2 Top()				   { return tagVector2(0, -1); }
+	static tagVector2 Bottom()			   { return tagVector2(0, 1); }
+	static tagVector2 Center()			   { return tagVector2(0.5f, 0.5f); }
 
-	Vector2() { *this = Vector2::Zero(); }
-	 Vector2(float x, float y);
-	~Vector2() {}
-};
+	 tagVector2() { *this = tagVector2::Zero(); }
+	 tagVector2(float x, float y);
+	~tagVector2() {}
+}typedef Vector2;

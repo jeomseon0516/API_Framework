@@ -10,7 +10,11 @@ void RectTransform::DrawRect(HDC hdc)
 	float topOffset    = _size.y * _anchor.y;
 	float bottomOffset = _size.y * (1 - _anchor.y);
 
-	Rectangle(hdc, _position.x - leftOffset, _position.y - topOffset, _position.x + rightOffset, _position.y + bottomOffset);
+	Rectangle(hdc, 
+		(int)(_position.x - leftOffset), 
+		(int)(_position.y - topOffset), 
+		(int)(_position.x + rightOffset), 
+		(int)(_position.y + bottomOffset));
 }
 
 void RectTransform::AnchorCorrection(float& value)

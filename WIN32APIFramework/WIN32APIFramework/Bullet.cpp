@@ -2,24 +2,21 @@
 
 void Bullet::Start()
 {
-	Object::Start();
-
+	_transform.SetSize(Vector2(20, 20));
 	_lifeTime = 0;
-	_speed = 0.1f;
-	_transform.SetSize(Vector2(10, 10));
+	_speed = 20.0f;
 }
 
-void Bullet::ObjUpdate()
+void Bullet::Update()
 {
-	_lifeTime += 0.1f;
+	_lifeTime += 0.01f;
 	Move();
 
 	if (_lifeTime >= LIFETIME)
-		delete this;
+		_isDie = true;
 }
 
 void Bullet::Move()
 {
 	_transform.SetPosition(_transform.GetPosition() + _direction * _speed);
-	_lifeTime = 0;
 }

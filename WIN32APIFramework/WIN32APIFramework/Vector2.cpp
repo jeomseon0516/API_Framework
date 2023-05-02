@@ -1,6 +1,6 @@
 #include "Vector2.h"
 
-Vector2::Vector2(float x, float y)
+tagVector2::tagVector2(float x, float y)
 {
 	this->x = x;
 	this->y = y;

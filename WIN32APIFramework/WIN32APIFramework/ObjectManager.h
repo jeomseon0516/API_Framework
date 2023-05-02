@@ -17,12 +17,11 @@ private:
 public:
 	Object* GetFromIndexToObject(int& index);
 
-	void ObjectsInit();
 	virtual void Update();
 
 	int ObjectListSize() { return (int)_objectList.size(); }
 
-	void PushBackObject(Object* object) { _objectList.push_back(object); }
+	void PushBackObject(Object* object);
 	void RemoveFromIndexToObject(int index) { _objectList.erase(_objectList.begin() + index); }
 private:
 	ObjectManager() {}
