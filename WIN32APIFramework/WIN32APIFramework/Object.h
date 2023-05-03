@@ -7,24 +7,25 @@
 class Object
 {
 protected:
-	RectTransform _transform;
 	bool _isDie;
 
 	virtual void Update() {}
 	virtual void Start() {}
 	void ObjStart();
 public:
+	RectTransform transform;
+
 	void(Object::*UpdateFunction)();
 
 	void ObjUpdate() { (this->*UpdateFunction)(); }
-	void Render() { _transform.DrawRect(DRAWMANAGER->GetHdc()); }
+	void Render() { transform.DrawRect(DRAWMANAGER->GetHdc()); }
 
-	RectTransform& GetTransform() { return _transform; }
+	RectTransform& GetTransform() { return transform; }
 	bool GetIsDie() { return _isDie; }
 
 	virtual void Destroy() {}
 	void ObjDestroy() { Destroy(); }
 
 	Object();
-	 ~Object() {}
+	virtual ~Object() {}
 };

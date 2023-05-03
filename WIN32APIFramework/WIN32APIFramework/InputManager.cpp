@@ -12,12 +12,12 @@ void InputManager::Update()
 		_axisVertical = UpdateAxis(_axisVertical, AXIS_SPEED, 1.0f);
 
 	if (!GetAsyncKeyState(VK_LEFT) && !GetAsyncKeyState(VK_RIGHT))
-		_axisHorizontal = Converge(_axisHorizontal);
+		_axisHorizontal = Converge(_axisHorizontal, 80);
 	if (!GetAsyncKeyState(VK_UP) && !GetAsyncKeyState(VK_DOWN))
-		_axisVertical = Converge(_axisVertical);
+		_axisVertical = Converge(_axisVertical, 80);
 }
 
-float InputManager::UpdateAxis(float axisValue, float plusValue, float maxValue /* ¾ç¼ö */, float correctionValue)
+float InputManager::UpdateAxis(float axisValue, float plusValue, float maxValue, float correctionValue)
 {
 	axisValue += plusValue;
 
@@ -27,4 +27,4 @@ float InputManager::UpdateAxis(float axisValue, float plusValue, float maxValue 
 	return axisValue;
 }
 
-float InputManager::Converge(float value) { return 80.0f * 0.01f * value; }
+float InputManager::Converge(float value, int percent) { return percent * 0.01f * value; }

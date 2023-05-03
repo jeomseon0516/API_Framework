@@ -1,20 +1,18 @@
-#include <Windows.h>
-#include "Define.h"
 #include "RectTransform.h"
 
 void RectTransform::DrawRect(HDC hdc)
 {
-	float leftOffset  = _size.x * _anchor.x;
-	float rightOffset = _size.x * (1 - _anchor.x);
+	float leftOffset = size.x * anchor.x;
+	float rightOffset = size.x * (1 - anchor.x);
 
-	float topOffset    = _size.y * _anchor.y;
-	float bottomOffset = _size.y * (1 - _anchor.y);
+	float topOffset = size.y * anchor.y;
+	float bottomOffset = size.y * (1 - anchor.y);
 
-	Rectangle(hdc, 
-		(int)(_position.x - leftOffset), 
-		(int)(_position.y - topOffset), 
-		(int)(_position.x + rightOffset), 
-		(int)(_position.y + bottomOffset));
+	Rectangle(hdc,
+		(int)(position.x - leftOffset),
+		(int)(position.y - topOffset),
+		(int)(position.x + rightOffset),
+		(int)(position.y + bottomOffset));
 }
 
 void RectTransform::AnchorCorrection(float& value)
@@ -27,11 +25,11 @@ void RectTransform::AnchorCorrection(float& value)
 
 RectTransform::RectTransform(Vector2 position, Vector2 size, Vector2 anchor)
 {
-	_position = position;
-	_size = size;
+	this->position = position;
+	this->size = size;
 
 	AnchorCorrection(anchor.x);
 	AnchorCorrection(anchor.y);
 
-	_anchor = anchor;
+	this->anchor = anchor;
 }

@@ -1,6 +1,5 @@
 #pragma once
 #include "Singleton.h"
-#include "RectTransform.h"
 
 #define DRAWMANAGER DrawManager::GetInstance()
 

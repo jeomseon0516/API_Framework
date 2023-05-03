@@ -10,8 +10,7 @@ void DrawManager::Update()
 	GetClientRect(g_hWnd, &bufferRT);
 	//InvalidateRect(g_hWnd, &bufferRT, true);
 
-	_hdc = _nextHdc;
-	_nextHdc = GetDC(g_hWnd);
+	Rectangle(_hdc, 0, 0, 1280, 720);
 }
 
 DrawManager::DrawManager()

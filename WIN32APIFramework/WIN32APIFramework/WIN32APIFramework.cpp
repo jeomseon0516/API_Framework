@@ -3,8 +3,6 @@
 
 #include "framework.h"
 #include "WIN32APIFramework.h"
-#include "MainUpdate.h"
-#include "DrawManager.h"
 
 #define MAX_LOADSTRING 100
 

@@ -2,8 +2,8 @@
 #include "Include.h"
 #include "ObjectManager.h"
 #include "InputManager.h"
-#include "DrawManager.h"
 #include "Character.h"
+#include "Enemy.h"
 
 class MainUpdate
 {

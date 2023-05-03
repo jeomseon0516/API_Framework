@@ -3,7 +3,7 @@
 #include "InputManager.h"
 
 #define SPEED 10.0F
-#define COOLTIME 10.0F
+#define COOLTIME 5.0F
 
 class Character : public Object
 {
@@ -12,14 +12,13 @@ private:
 	float _coolTime;
 	int _keyCode;
 
-	virtual void Update();
-	virtual void Start();
+	void Update() override;
+	void Start()  override;
 
 	void FireBullet();
 	bool CheckKeyDown(int keyCode);
 
 public:
-	Character() {}
-	~Character() {}
+	~Character()override {}
 };
 

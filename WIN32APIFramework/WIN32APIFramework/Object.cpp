@@ -1,10 +1,9 @@
+#pragma once
 #include "Object.h"
 #include "ObjectManager.h"
 
 void Object::ObjStart()
 {
-	_isDie = false;
-
 	UpdateFunction = &Object::Update;
 
 	Start();
@@ -12,8 +11,9 @@ void Object::ObjStart()
 
 Object::Object()
 {
+	_isDie = false;
 	UpdateFunction = &Object::ObjStart;
 
 	OBJECTMANAGER->PushBackObject(this);
-	_transform = RectTransform(Vector2(), Vector2());
+	transform = RectTransform(Vector2(), Vector2());
 }

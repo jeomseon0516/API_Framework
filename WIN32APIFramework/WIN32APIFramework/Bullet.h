@@ -16,12 +16,11 @@ private:
 
 public:
 
-	virtual void Start();
-	virtual void Update();
+	void Start() override;
+	void Update() override;
 
 	void SetDirection(Vector2 direction) { _direction = direction; }
 
-	Bullet() {}
-	~Bullet() {}
+	~Bullet()override {}
 };
 
