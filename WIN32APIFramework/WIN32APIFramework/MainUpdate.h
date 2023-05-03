@@ -2,6 +2,7 @@
 #include "Include.h"
 #include "ObjectManager.h"
 #include "InputManager.h"
+#include "CollisionManager.h"
 #include "Character.h"
 #include "Enemy.h"
 

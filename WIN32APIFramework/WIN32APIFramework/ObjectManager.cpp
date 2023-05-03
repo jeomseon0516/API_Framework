@@ -17,14 +17,15 @@
  {
 	 for (int i = 0; i < _objectList.size(); ++i)
 	 {
-		 _objectList[i]->ObjUpdate();
-
 		 if (_objectList[i]->GetIsDie())
 		 {
 			 delete _objectList[i];
-			 RemoveFromIndexToObject(i);
+ 			 RemoveFromIndexToObject(i);
 			 --i;
 		 }
+
+		 _objectList[i]->ObjUpdate();
+
 	 }
 	 for (int i = 0; i < _objectList.size(); ++i)
 	 {

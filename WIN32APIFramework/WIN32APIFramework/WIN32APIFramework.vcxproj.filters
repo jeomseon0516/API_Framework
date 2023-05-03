@@ -19,9 +19,6 @@
     <Filter Include="소스 파일\MainUpdate">
       <UniqueIdentifier>{dba6e335-f941-471e-93f2-6067a4a61564}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\RectTransform">
-      <UniqueIdentifier>{2ac3185b-540b-4467-8530-8cb3e901cc1f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Vector2">
       <UniqueIdentifier>{a8b98616-8c24-4046-b60a-ba3838ce4415}</UniqueIdentifier>
     </Filter>
@@ -45,6 +42,9 @@
     </Filter>
     <Filter Include="소스 파일\Object\Enemy">
       <UniqueIdentifier>{0afead2c-0ac9-4826-bb4e-5ee9561a086f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Transform">
+      <UniqueIdentifier>{2ac3185b-540b-4467-8530-8cb3e901cc1f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -72,8 +72,8 @@
     <ClInclude Include="Vector2.h">
       <Filter>소스 파일\Vector2</Filter>
     </ClInclude>
-    <ClInclude Include="RectTransform.h">
-      <Filter>소스 파일\RectTransform</Filter>
+    <ClInclude Include="Transform.h">
+      <Filter>소스 파일\Transform</Filter>
     </ClInclude>
     <ClInclude Include="InputManager.h">
       <Filter>소스 파일\Manager</Filter>
@@ -102,6 +102,9 @@
     <ClInclude Include="Enemy.h">
       <Filter>소스 파일\Object\Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>소스 파일\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WIN32APIFramework.cpp">
@@ -113,8 +116,8 @@
     <ClCompile Include="Vector2.cpp">
       <Filter>소스 파일\Vector2</Filter>
     </ClCompile>
-    <ClCompile Include="RectTransform.cpp">
-      <Filter>소스 파일\RectTransform</Filter>
+    <ClCompile Include="Transform.cpp">
+      <Filter>소스 파일\Transform</Filter>
     </ClCompile>
     <ClCompile Include="InputManager.cpp">
       <Filter>소스 파일\Manager</Filter>
@@ -136,6 +139,9 @@
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>소스 파일\Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>소스 파일\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -15,5 +15,5 @@ Object::Object()
 	UpdateFunction = &Object::ObjStart;
 
 	OBJECTMANAGER->PushBackObject(this);
-	transform = RectTransform(Vector2(), Vector2());
+	transform = Transform(Vector2(), Vector2());
 }

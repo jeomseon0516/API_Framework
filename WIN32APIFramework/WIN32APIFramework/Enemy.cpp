@@ -2,11 +2,12 @@
 
 void Enemy::Start()
 {
-	transform = RectTransform(Vector2(500, 200), Vector2(300, 300));
+	transform = Transform(Vector2(500, 200), Vector2(300, 300));
 	_coolTime = 0.0f;
 	_speed = 3.0f;
 	_state = MOVE;
 	_movePoint = Vector2(300, 400);
+	COLLISIONMANAGER->PushEnemyList(this);
 }
 
 void Enemy::Update()
@@ -20,6 +21,11 @@ void Enemy::Update()
 		Move();
 		break;
 	}
+}
+
+void Enemy::Render()
+{
+	transform.DrawEllipse(DRAWMANAGER->GetHdc());
 }
 
 void Enemy::Idle()

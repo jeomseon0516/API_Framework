@@ -8,6 +8,8 @@ void MainUpdate::Start()
 
 void MainUpdate::Update()
 {
+	DRAWMANAGER->Update();
+	COLLISIONMANAGER->Update();
 	INPUTMANAGER->Update();
 	OBJECTMANAGER->Update();
 }
