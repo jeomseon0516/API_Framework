@@ -1,4 +1,6 @@
 #pragma once
+#ifndef __MATHF_H__
+#define __MATHF_H__
 
 #include "Vector2.h"
 #include <math.h>
@@ -26,3 +28,4 @@ public:
 		return Vector2(cosf(radian), sinf(radian));
 	}
 };
+#endif

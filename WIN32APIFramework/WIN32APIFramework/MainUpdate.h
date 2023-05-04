@@ -1,4 +1,7 @@
 #pragma once
+#ifndef __MAIN_UPDATE_H__
+#define __MAIN_UPDATE_H__
+
 #include "Include.h"
 #include "ObjectManager.h"
 #include "InputManager.h"
@@ -8,8 +11,6 @@
 
 class MainUpdate
 {
-private:
-	Character* _character;
 public:
 	void Start();
 	void Update();
@@ -17,3 +18,5 @@ public:
  	 MainUpdate() {}
 	 ~MainUpdate() {}
 };
+
+#endif

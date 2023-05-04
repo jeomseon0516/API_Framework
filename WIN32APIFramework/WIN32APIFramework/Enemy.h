@@ -1,4 +1,7 @@
 #pragma once
+#ifndef __ENEMY_H__
+#define __ENEMY_H__
+
 #include "Object.h"
 #include "CollisionManager.h"
 
@@ -15,8 +18,8 @@ private:
 	int _coolTime;
 	float _speed;
 
-	Object* _target;
 	Vector2 _movePoint;
+	Object* _target;
 	STATE _state;
 
 	void Idle();
@@ -29,9 +32,9 @@ public:
 
 	void OnCollision(Object* obj) { _isDie = true; }
 
-	void Render() override;
+	void Render() override { transform.DrawEllipse(DRAWMANAGER->GetHdc()); }
 	void SetTarget(Object* obj) { _target = obj; }
 
 	~Enemy() override {}
 };
-
+#endif

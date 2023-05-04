@@ -1,4 +1,7 @@
 #pragma once
+#ifndef __TRANSFORM_H__
+#define __TRANSFORM_H__
+
 #include "Include.h"
 #include "Vector2.h"
 
@@ -26,4 +29,5 @@ public:
 	 Transform() {}
 	~Transform() {}
 };
+#endif
 

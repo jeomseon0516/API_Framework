@@ -46,6 +46,24 @@
     <Filter Include="소스 파일\Transform">
       <UniqueIdentifier>{2ac3185b-540b-4467-8530-8cb3e901cc1f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Manager\CollisionManager">
+      <UniqueIdentifier>{676195e2-cf4b-4f80-b5c4-c241b7e69f3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\DrawManager">
+      <UniqueIdentifier>{0b496203-435f-4a97-ae80-7f86c4be4174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\InputManager">
+      <UniqueIdentifier>{e2ee35b5-a547-4fdb-b3ca-8009175795aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\ObjectManager">
+      <UniqueIdentifier>{3121ec7c-d353-4f37-9a0e-c9123cd812f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\PlayerManager">
+      <UniqueIdentifier>{4c1c044f-e96a-4127-96c3-d308a41eddbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\GameManager">
+      <UniqueIdentifier>{4b2c71cc-ed59-42a1-8966-6f1954352d85}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WIN32APIFramework.h">
@@ -75,14 +93,8 @@
     <ClInclude Include="Transform.h">
       <Filter>소스 파일\Transform</Filter>
     </ClInclude>
-    <ClInclude Include="InputManager.h">
-      <Filter>소스 파일\Manager</Filter>
-    </ClInclude>
     <ClInclude Include="Object.h">
       <Filter>소스 파일\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjectManager.h">
-      <Filter>소스 파일\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">
       <Filter>소스 파일\Manager\Singleton</Filter>
@@ -96,14 +108,26 @@
     <ClInclude Include="Mathf.h">
       <Filter>헤더 파일\Include</Filter>
     </ClInclude>
-    <ClInclude Include="DrawManager.h">
-      <Filter>소스 파일\Manager</Filter>
-    </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>소스 파일\Object\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="CollisionManager.h">
-      <Filter>소스 파일\Manager</Filter>
+      <Filter>소스 파일\Manager\CollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawManager.h">
+      <Filter>소스 파일\Manager\DrawManager</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>소스 파일\Manager\InputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>소스 파일\Manager\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerManager.h">
+      <Filter>소스 파일\Manager\PlayerManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>소스 파일\Manager\GameManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -119,14 +143,8 @@
     <ClCompile Include="Transform.cpp">
       <Filter>소스 파일\Transform</Filter>
     </ClCompile>
-    <ClCompile Include="InputManager.cpp">
-      <Filter>소스 파일\Manager</Filter>
-    </ClCompile>
     <ClCompile Include="Object.cpp">
       <Filter>소스 파일\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjectManager.cpp">
-      <Filter>소스 파일\Manager</Filter>
     </ClCompile>
     <ClCompile Include="Character.cpp">
       <Filter>소스 파일\Object\Character</Filter>
@@ -134,14 +152,29 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>소스 파일\Object\Bullet</Filter>
     </ClCompile>
-    <ClCompile Include="DrawManager.cpp">
-      <Filter>소스 파일\Manager</Filter>
-    </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>소스 파일\Object\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
-      <Filter>소스 파일\Manager</Filter>
+      <Filter>소스 파일\Manager\CollisionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawManager.cpp">
+      <Filter>소스 파일\Manager\DrawManager</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>소스 파일\Manager\InputManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>소스 파일\Manager\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerManager.cpp">
+      <Filter>소스 파일\Manager\PlayerManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>소스 파일\Manager\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>소스 파일\Manager\Singleton</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -156,5 +189,8 @@
     <Image Include="WIN32APIFramework.ico">
       <Filter>리소스 파일</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

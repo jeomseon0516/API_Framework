@@ -2,8 +2,12 @@
 
 void MainUpdate::Start()
 {
-	_character = new Character();
-	(new Enemy())->SetTarget(_character);
+	// ..초기화
+	DRAWMANAGER;
+	COLLISIONMANAGER;
+	INPUTMANAGER;
+	OBJECTMANAGER;
+	// (new Enemy())->SetTarget(_character);
 }
 
 void MainUpdate::Update()

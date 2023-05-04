@@ -1,6 +1,9 @@
 #include "CollisionManager.h"
 
-// 수정할것
+SINGLETON_INIT(CollisionManager)
+
+CollisionManager::CollisionManager() {}
+
 void CollisionManager::Update()
 {
 	for (int i = 0; i < _bulletList.size(); ++i)

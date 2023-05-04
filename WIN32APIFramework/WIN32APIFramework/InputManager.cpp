@@ -1,5 +1,12 @@
 #include "InputManager.h"
 
+SINGLETON_INIT(InputManager)
+
+InputManager::InputManager()
+{
+	_axisRawHorizontal = _axisRawVertical = _axisHorizontal = _axisVertical = 0.0f;
+}
+
 void InputManager::Update()
 {
 	if (GetAsyncKeyState(VK_LEFT))
@@ -26,5 +33,3 @@ float InputManager::UpdateAxis(float axisValue, float plusValue, float maxValue,
 
 	return axisValue;
 }
-
-float InputManager::Converge(float value, int percent) { return percent * 0.01f * value; }

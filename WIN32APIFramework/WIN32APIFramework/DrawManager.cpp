@@ -1,9 +1,6 @@
 #include "DrawManager.h"
 
-void DrawManager::Update()
-{
-	Rectangle(_hdc, 0, 0, 1500, 720);
-}
+SINGLETON_INIT(DrawManager)
 
 DrawManager::DrawManager()
 {

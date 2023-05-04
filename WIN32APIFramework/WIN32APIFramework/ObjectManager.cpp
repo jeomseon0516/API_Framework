@@ -1,4 +1,9 @@
 #include "ObjectManager.h"
+#include "Object.h"
+
+SINGLETON_INIT(ObjectManager)
+
+ObjectManager::ObjectManager() {}
 
  Object* ObjectManager::GetFromIndexToObject(int& index)
  { 
@@ -31,9 +36,4 @@
 	 {
 		 _objectList[i]->Render();
 	 }
- }
-
- void ObjectManager::PushBackObject(Object* object)
- {
-	 _objectList.push_back(object);
  }

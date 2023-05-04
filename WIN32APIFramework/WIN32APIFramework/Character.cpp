@@ -5,6 +5,9 @@ void Character::Start()
 	_keyCode = 0;
 	_coolTime = COOLTIME;
 
+	_direction = Vector2::Zero();
+	_lookAt = Vector2::Zero();
+
 	transform.position = Vector2(100, 100);
 	transform.SetSize(Vector2(100, 100));
 }
@@ -15,7 +18,12 @@ void Character::Update()
 
 	_beforePosition = transform.position;
 
-	transform.position = transform.position + Vector2(INPUTMANAGER->GetAxisHorizontal(), INPUTMANAGER->GetAxisVertical()) * SPEED;
+	_direction = Vector2(INPUTMANAGER->GetAxisHorizontal(), INPUTMANAGER->GetAxisVertical());
+
+	if (abs(_direction.x) > 0 && abs(_direction.y) > 0)
+		_lookAt = _direction;
+
+	transform.position = transform.position + _direction * SPEED;
 
 	if (GetAsyncKeyState(VK_SPACE))
 		FireBullet();
@@ -30,7 +38,7 @@ void Character::FireBullet()
 
 	Bullet* bullet = new Bullet();
 	bullet->transform.position = transform.position;
-	bullet->SetDirection(Mathf::GetFromPositionToDirection(transform.position, _beforePosition));
+	bullet->SetDirection(_lookAt);
 }
 
 bool Character::CheckKeyDown(int keyCode)

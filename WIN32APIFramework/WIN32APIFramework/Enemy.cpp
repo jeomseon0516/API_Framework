@@ -23,11 +23,6 @@ void Enemy::Update()
 	}
 }
 
-void Enemy::Render()
-{
-	transform.DrawEllipse(DRAWMANAGER->GetHdc());
-}
-
 void Enemy::Idle()
 {
 	
@@ -37,7 +32,5 @@ void Enemy::Idle()
 void Enemy::Move()
 {
 	float distance = Mathf::GetDistance(_target->transform.position, transform.position);
-
-	Vector2 direction = Mathf::GetFromPositionToDirection(_target->transform.position, transform.position);
-	transform.position = transform.position + direction * _speed;
+	transform.position = transform.position + Mathf::GetFromPositionToDirection(_target->transform.position, transform.position) * _speed;
 }

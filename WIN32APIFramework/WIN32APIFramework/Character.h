@@ -1,4 +1,7 @@
 #pragma once
+#ifndef __CHARACTER_H__
+#define __CHARACTER_H__
+
 #include "Bullet.h"
 #include "InputManager.h"
 
@@ -9,6 +12,9 @@ class Character : public Object
 {
 private:
 	Vector2 _beforePosition;
+	Vector2 _direction;
+	Vector2 _lookAt;
+
 	float _coolTime;
 	int _keyCode;
 
@@ -19,6 +25,7 @@ private:
 	bool CheckKeyDown(int keyCode);
 
 public:
-	~Character()override {}
+	~Character() override {}
 };
+#endif
 

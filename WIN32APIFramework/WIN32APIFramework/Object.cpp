@@ -1,10 +1,12 @@
 #pragma once
 #include "Object.h"
-#include "ObjectManager.h"
 
 void Object::ObjStart()
 {
 	UpdateFunction = &Object::Update;
+
+	_direction = Vector2::Zero();
+	_lookAt    = Vector2::Zero();
 
 	Start();
 }
