@@ -2,45 +2,47 @@
 #ifndef __OBJECT_H__
 #define __OBJECT_H__
 
-#include "Include.h"
 #include "Transform.h"
 #include "DrawManager.h"
 #include "ObjectManager.h"
+#include "Include.h"
 
 // Update..Start..Render..
 class Object
 {
+private:
+    void ObjStart();
+    void(Object::*UpdateFunction)();
 protected:
 
-	bool _isDie;
-	string _name;
+    bool _isDie;
+    string _name;
+    string _layerName;
 
-	Vector2 _direction;
-	Vector2 _lookAt;
+    Vector2 _direction;
+    Vector2 _lookAt;
 
-	virtual void Update() {}
-	virtual void Start() {}
-
-	void ObjStart();
+    virtual void Update() {}
+    virtual void Start() {}
 
 public:
-	Transform transform;
+    Transform transform;
+    void ObjUpdate() { (this->*UpdateFunction)(); }
 
-	void(Object::*UpdateFunction)();
-	void ObjUpdate() { (this->*UpdateFunction)(); }
+    virtual void Render() { transform.DrawRect(DRAW_MANAGER->GetHdc()); }
+    virtual void OnCollision(Object* object) {}
 
-	virtual void Render() { transform.DrawRect(DRAWMANAGER->GetHdc()); }
-	virtual void OnCollision(Object* object) {}
+    string GetLayerName() { return _layerName; }
 
-	void SetDirection(Vector2 direction) { _direction = direction; }
+    void SetDirection(Vector2 direction) { _direction = direction; }
 
-	Transform& GetTransform() { return transform; }
-	bool GetIsDie() { return _isDie; }
+    Transform& GetTransform() { return transform; }
+    bool GetIsDie() { return _isDie; }
 
-	virtual void Destroy() {}
-	void ObjDestroy() { Destroy(); }
+    virtual void Destroy() {}
+    void ObjDestroy() { Destroy(); }
 
-	Object();
-	virtual ~Object() {}
+    Object();
+    virtual ~Object() {}
 };
 #endif

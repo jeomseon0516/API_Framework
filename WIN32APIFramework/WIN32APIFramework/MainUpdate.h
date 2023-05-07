@@ -3,20 +3,23 @@
 #define __MAIN_UPDATE_H__
 
 #include "Include.h"
-#include "ObjectManager.h"
-#include "InputManager.h"
-#include "CollisionManager.h"
-#include "Character.h"
-#include "Enemy.h"
+#include "GameManager.h"
+#include "SceneManager.h"
+#include "DrawManager.h"
+#include "Menu.h"
 
 class MainUpdate
 {
 public:
 	void Start();
-	void Update();
+
+	void Update() 
+    { 
+        DRAW_MANAGER->Update();
+        GAME_MANAGER->Update(); 
+    }
 	 
- 	 MainUpdate() {}
+    MainUpdate() { SCENE_MANAGER->SetScene(new Menu()); }
 	 ~MainUpdate() {}
 };
-
 #endif

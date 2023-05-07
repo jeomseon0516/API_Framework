@@ -5,9 +5,9 @@
 #include "Singleton.h"
 #include "Include.h"
 
-#define DRAWMANAGER DrawManager::GetInstance()
+#define DRAW_MANAGER DrawManager::GetInstance()
 
-class DrawManager : public Singleton
+class DrawManager
 {
 	SINGLETON(DrawManager)
 
@@ -16,8 +16,7 @@ class DrawManager : public Singleton
 
 public:
 
-	void Update() {	Rectangle(_hdc, 0, 0, WIN_SIZE_X, WIN_SIZE_Y); }
+	void Update() { Rectangle(_hdc, 0, 0, WIN_SIZE_X, WIN_SIZE_Y); }
 	HDC GetHdc() { return _hdc; }
 };
-
 #endif

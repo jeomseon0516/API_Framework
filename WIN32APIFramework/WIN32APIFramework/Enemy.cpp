@@ -2,12 +2,13 @@
 
 void Enemy::Start()
 {
-	transform = Transform(Vector2(500, 200), Vector2(300, 300));
+	transform = Transform(Vector2(500, 200), Vector2(30, 30));
 	_coolTime = 0.0f;
 	_speed = 3.0f;
 	_state = MOVE;
 	_movePoint = Vector2(300, 400);
-	COLLISIONMANAGER->PushEnemyList(this);
+    _layerName = "Enemy";
+	COLLISION_MANAGER->PushPhysicsMap(_layerName, this);
 }
 
 void Enemy::Update()
@@ -25,12 +26,11 @@ void Enemy::Update()
 
 void Enemy::Idle()
 {
-	
 	// ?
 }
 
 void Enemy::Move()
 {
-	float distance = Mathf::GetDistance(_target->transform.position, transform.position);
-	transform.position = transform.position + Mathf::GetFromPositionToDirection(_target->transform.position, transform.position) * _speed;
+    if (_target == nullptr) return;
+	transform.position = transform.position + GET_FROM_POSITION_TO_DIRECTION(_target->transform.position, transform.position) * _speed;
 }

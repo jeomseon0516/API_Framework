@@ -49,9 +49,6 @@
     <Filter Include="소스 파일\Manager\CollisionManager">
       <UniqueIdentifier>{676195e2-cf4b-4f80-b5c4-c241b7e69f3d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Manager\DrawManager">
-      <UniqueIdentifier>{0b496203-435f-4a97-ae80-7f86c4be4174}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Manager\InputManager">
       <UniqueIdentifier>{e2ee35b5-a547-4fdb-b3ca-8009175795aa}</UniqueIdentifier>
     </Filter>
@@ -61,8 +58,26 @@
     <Filter Include="소스 파일\Manager\PlayerManager">
       <UniqueIdentifier>{4c1c044f-e96a-4127-96c3-d308a41eddbb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Manager\GameManager">
+    <Filter Include="소스 파일\Manager\SceneManager">
+      <UniqueIdentifier>{0975e5bf-a336-4331-8366-b37f3934e155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene">
+      <UniqueIdentifier>{4c8e2fb7-61be-43f6-9175-bc02d0d2ecf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\02. DrawManager">
+      <UniqueIdentifier>{0b496203-435f-4a97-ae80-7f86c4be4174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\01. GameManager">
       <UniqueIdentifier>{4b2c71cc-ed59-42a1-8966-6f1954352d85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\Menu">
+      <UniqueIdentifier>{901ee896-1d54-467d-9c53-990d47beba31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\Logo">
+      <UniqueIdentifier>{b6ef2cdb-6fec-4c03-abe4-210ec1c54a5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene\Main">
+      <UniqueIdentifier>{80f07cbb-0ea2-41d8-a7e5-29f3e534fd97}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -115,7 +130,7 @@
       <Filter>소스 파일\Manager\CollisionManager</Filter>
     </ClInclude>
     <ClInclude Include="DrawManager.h">
-      <Filter>소스 파일\Manager\DrawManager</Filter>
+      <Filter>소스 파일\Manager\02. DrawManager</Filter>
     </ClInclude>
     <ClInclude Include="InputManager.h">
       <Filter>소스 파일\Manager\InputManager</Filter>
@@ -127,7 +142,22 @@
       <Filter>소스 파일\Manager\PlayerManager</Filter>
     </ClInclude>
     <ClInclude Include="GameManager.h">
-      <Filter>소스 파일\Manager\GameManager</Filter>
+      <Filter>소스 파일\Manager\01. GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>소스 파일\Manager\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>소스 파일\Scene\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Logo.h">
+      <Filter>소스 파일\Scene\Logo</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>소스 파일\Scene\Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -159,7 +189,7 @@
       <Filter>소스 파일\Manager\CollisionManager</Filter>
     </ClCompile>
     <ClCompile Include="DrawManager.cpp">
-      <Filter>소스 파일\Manager\DrawManager</Filter>
+      <Filter>소스 파일\Manager\02. DrawManager</Filter>
     </ClCompile>
     <ClCompile Include="InputManager.cpp">
       <Filter>소스 파일\Manager\InputManager</Filter>
@@ -171,10 +201,25 @@
       <Filter>소스 파일\Manager\PlayerManager</Filter>
     </ClCompile>
     <ClCompile Include="GameManager.cpp">
-      <Filter>소스 파일\Manager\GameManager</Filter>
+      <Filter>소스 파일\Manager\01. GameManager</Filter>
     </ClCompile>
     <ClCompile Include="Singleton.cpp">
       <Filter>소스 파일\Manager\Singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>소스 파일\Manager\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>소스 파일\Scene\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Logo.cpp">
+      <Filter>소스 파일\Scene\Logo</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>소스 파일\Scene\Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

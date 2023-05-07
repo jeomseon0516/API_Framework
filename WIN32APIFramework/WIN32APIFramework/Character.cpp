@@ -18,7 +18,7 @@ void Character::Update()
 
 	_beforePosition = transform.position;
 
-	_direction = Vector2(INPUTMANAGER->GetAxisHorizontal(), INPUTMANAGER->GetAxisVertical());
+	_direction = Vector2(INPUT_MANAGER->GetAxisHorizontal(), INPUT_MANAGER->GetAxisVertical());
 
 	if (abs(_direction.x) > 0 && abs(_direction.y) > 0)
 		_lookAt = _direction;
@@ -28,7 +28,6 @@ void Character::Update()
 	if (GetAsyncKeyState(VK_SPACE))
 		FireBullet();
 }
-
 
 void Character::FireBullet()
 {

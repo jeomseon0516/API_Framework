@@ -6,7 +6,8 @@ void Bullet::Start()
 	_lifeTime = 0;
 	_speed = 20.0f;
 	_name = "Bullet";
-	COLLISIONMANAGER->PushBulletList(this);
+    _layerName = "CharacterBullet";
+    COLLISION_MANAGER->PushPhysicsMap(_layerName, this);
 }
 
 void Bullet::Update()
@@ -20,7 +21,7 @@ void Bullet::Update()
 
 void Bullet::Render()
 {
-	transform.DrawEllipse(DRAWMANAGER->GetHdc());
+	transform.DrawEllipse(DRAW_MANAGER->GetHdc());
 }
 
 void Bullet::Move()

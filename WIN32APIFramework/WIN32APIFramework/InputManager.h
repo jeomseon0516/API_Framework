@@ -6,10 +6,10 @@
 #include "Singleton.h"
 #include "Vector2.h"
 
-#define INPUTMANAGER InputManager::GetInstance()
+#define INPUT_MANAGER InputManager::GetInstance()
 #define AXIS_SPEED 0.1F
 
-class InputManager : Singleton
+class InputManager : public Singleton
 {
 	SINGLETON(InputManager)
 	float _axisHorizontal, _axisVertical;
@@ -19,6 +19,7 @@ class InputManager : Singleton
 	float Converge(float value, int percent) { return percent * 0.01f * value; }
 
 public:
+	void Update() override;
 
 	float GetAxisHorizontal()	{ return _axisHorizontal; }
 	float GetAxisVertical()     { return _axisVertical; }

@@ -2,7 +2,4 @@
 
 SINGLETON_INIT(GameManager)
 
-void GameManager::Update()
-{
-
-}
+GameManager::GameManager() {}

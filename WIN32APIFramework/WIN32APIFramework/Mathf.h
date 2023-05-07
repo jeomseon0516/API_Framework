@@ -9,23 +9,24 @@
 #define DEG2RAD 0.0174532924F
 #define RAD2DEG 57.29578F
 
-class Mathf
-{
-public:
-	static float GetFromPositionToRadian(Vector2 p1, Vector2 p2) { return atan2(p1.y - p2.y,  p1.x - p2.x); }
-	static float ConvertFromRadianToAngle(float radian) { return radian * RAD2DEG; }
-	static float ConvertFromAngleToRadian(float angle) { return angle * DEG2RAD; }
-	static float GetDistance(Vector2 p1, Vector2 p2)
-	{
-		float x = p1.x - p2.x;
-		float y = p1.y - p2.y;
+#define GET_FROM_POSITION_TO_RADIAN(P1, P2) atan2(P1.y - P2.y, P1.x - P2.x)
+#define CONVERT_FROM_RADIAN_TO_ANGLE(RADIAN) (RADIAN * RAD2DEG)
+#define CONVERT_FROM_ANGLE_TO_RADIAN(ANGLE) (RADIAN * DEG2RAD)
 
-		return sqrtf(x * x + y * y);
-	}
-	static Vector2 GetFromPositionToDirection(Vector2 p1, Vector2 p2)
-	{
-		float radian = GetFromPositionToRadian(p1, p2);
-		return Vector2(cosf(radian), sinf(radian));
-	}
-};
+// 결과 값을 계산한 리턴 값이 필요하기 때문에 람다식을 매크로로 만든다.
+#define GET_DISTANCE(P1, P2)\
+[](Vector2 p1, Vector2 p2)\
+{\
+	float x = p1.x - p2.x;\
+	float y = p1.y - p2.y;\
+	return sqrtf(x * x + y * y);\
+}(P1, P2)
+
+#define GET_FROM_POSITION_TO_DIRECTION(P1, P2)\
+[](Vector2 p1, Vector2 p2)\
+{\
+	float radian = GET_FROM_POSITION_TO_RADIAN(p1, p2);\
+	return Vector2(cosf(radian), sinf(radian));\
+}(P1, P2)
+
 #endif

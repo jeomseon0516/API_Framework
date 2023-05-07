@@ -6,7 +6,7 @@
 #include "InputManager.h"
 
 #define SPEED 10.0F
-#define COOLTIME 5.0F
+#define COOLTIME 0.2F
 
 class Character : public Object
 {

@@ -19,7 +19,7 @@ private:
 	float _speed;
 
 	Vector2 _movePoint;
-	Object* _target;
+	Object* _target = nullptr;
 	STATE _state;
 
 	void Idle();
@@ -30,9 +30,9 @@ private:
 
 public:
 
-	void OnCollision(Object* obj) { _isDie = true; }
+	void OnCollision(Object* obj) override { _isDie = true; }
 
-	void Render() override { transform.DrawEllipse(DRAWMANAGER->GetHdc()); }
+	void Render() override { transform.DrawEllipse(DRAW_MANAGER->GetHdc()); }
 	void SetTarget(Object* obj) { _target = obj; }
 
 	~Enemy() override {}
