@@ -25,7 +25,7 @@ public:
 	void SetAnchor(Vector2 anchor) { this->anchor = anchor; }
 	void SetSize(Vector2 size) { this->size = size; }
 
-	 Transform(Vector2 position, Vector2 size, Vector2 anchor = Vector2(0.5f, 0.5f));
+	 Transform(Vector2 position, Vector2 size, Vector2 anchor = Vector2::Center());
 	 Transform() {}
 	~Transform() {}
 };

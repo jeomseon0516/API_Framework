@@ -16,6 +16,7 @@ private:
 protected:
 
     bool _isDie;
+
     string _name;
     string _layerName;
 

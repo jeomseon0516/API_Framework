@@ -23,10 +23,7 @@ void Character::Update()
 	if (abs(_direction.x) > 0 && abs(_direction.y) > 0)
 		_lookAt = _direction;
 
-	transform.position = transform.position + _direction * SPEED;
-
-	if (GetAsyncKeyState(VK_SPACE))
-		FireBullet();
+	transform.position += _direction * SPEED;
 }
 
 void Character::FireBullet()

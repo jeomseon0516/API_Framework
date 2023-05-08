@@ -11,7 +11,7 @@
 // 사용자 상태 관리 클래스 게임플레이씬이면 캐릭터를 조작한다.
 class PlayerManager : public Singleton
 {
-	SINGLETON(PlayerManager)
+    SINGLETON(PlayerManager);
 	Character* _character = nullptr;
 public:
     Character* GetCharacter() { return _character; }
@@ -21,7 +21,10 @@ public:
 	{
 		if (_character == nullptr) return;
 		_character->SetDirection(Vector2(INPUT_MANAGER->GetAxisHorizontal(), INPUT_MANAGER->GetAxisVertical()));
+
+        if (GetAsyncKeyState(VK_SPACE))
+            _character->FireBullet();
 	}
-	~PlayerManager() { delete _character; }
+    ~PlayerManager();
 };
 #endif

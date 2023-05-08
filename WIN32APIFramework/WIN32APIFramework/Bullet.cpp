@@ -26,5 +26,5 @@ void Bullet::Render()
 
 void Bullet::Move()
 {
-	transform.position = transform.position + _direction * _speed;
+	transform.position += _direction * _speed;
 }

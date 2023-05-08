@@ -8,11 +8,7 @@ class Main : public Scene
 public:
     void Update() override {}
 
-     Main() 
-     { 
-         PLAYER_MANAGER->SetCharacter(new Character); 
-         (new Enemy())->SetTarget(PLAYER_MANAGER->GetCharacter());
-     }
-    ~Main() {}
+     Main();
+     ~Main();
 };
 

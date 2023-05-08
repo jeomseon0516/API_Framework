@@ -14,7 +14,7 @@ void CollisionManager::Update()
     {
         if (!_physicsList[i].isActive) continue;
 
-        vector<Object*>* firstList = _physicsList[i].firstList;
+        vector<Object*>* firstList  = _physicsList[i].firstList;
         vector<Object*>* secondList = _physicsList[i].secondList;
 
         for (int j = 0; j < firstList->size(); ++j)

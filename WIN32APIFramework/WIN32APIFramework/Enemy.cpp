@@ -3,7 +3,7 @@
 void Enemy::Start()
 {
 	transform = Transform(Vector2(500, 200), Vector2(30, 30));
-	_coolTime = 0.0f;
+	_coolTime = 0;
 	_speed = 3.0f;
 	_state = MOVE;
 	_movePoint = Vector2(300, 400);
@@ -32,5 +32,5 @@ void Enemy::Idle()
 void Enemy::Move()
 {
     if (_target == nullptr) return;
-	transform.position = transform.position + GET_FROM_POSITION_TO_DIRECTION(_target->transform.position, transform.position) * _speed;
+	transform.position += GET_FROM_POSITION_TO_DIRECTION(_target->transform.position, transform.position) * _speed;
 }

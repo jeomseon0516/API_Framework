@@ -28,6 +28,11 @@ void ObjectManager::Update()
         _objectList[i]->Render();
 }
 
+void ObjectManager::PushBackObject(Object* object)
+{
+    _objectList.push_back(object);
+}
+
 void ObjectManager::AllClear()
 {
     CLEAR_VECTOR(Object, _destroyList);

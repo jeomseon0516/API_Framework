@@ -43,7 +43,7 @@ public:
     */
     void SingletonUpdate() { (this->*UpdateFunction)(); }
     virtual ~Singleton() {}
-    
+
 protected:
 
     virtual void Update() = 0;

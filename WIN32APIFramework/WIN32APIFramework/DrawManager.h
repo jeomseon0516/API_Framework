@@ -9,7 +9,7 @@
 
 class DrawManager
 {
-	SINGLETON(DrawManager)
+    SINGLETON(DrawManager);
 
 	HDC _hdc;
 	HDC _nextHdc;

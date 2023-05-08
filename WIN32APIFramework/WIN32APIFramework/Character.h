@@ -21,10 +21,10 @@ private:
 	void Update() override;
 	void Start()  override;
 
-	void FireBullet();
 	bool CheckKeyDown(int keyCode);
 
 public:
+	void FireBullet();
 	~Character() override {}
 };
 #endif
