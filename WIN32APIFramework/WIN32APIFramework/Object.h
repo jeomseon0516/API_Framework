@@ -31,7 +31,7 @@ public:
     void ObjUpdate() { (this->*UpdateFunction)(); }
 
     virtual void Render() { transform.DrawRect(DRAW_MANAGER->GetHdc()); }
-    virtual void OnCollision(Object* object) {}
+    virtual void OnCollision(Object* object);
 
     string GetLayerName() { return _layerName; }
 
@@ -40,10 +40,10 @@ public:
     Transform& GetTransform() { return transform; }
     bool GetIsDie() { return _isDie; }
 
-    virtual void Destroy() {}
-    void ObjDestroy() { Destroy(); }
+    virtual void Destroy();
+    void ObjDestroy();
 
     Object();
-    virtual ~Object() {}
+    virtual ~Object();
 };
 #endif

@@ -4,6 +4,7 @@
 SINGLETON_INIT(ObjectManager)
 
 ObjectManager::ObjectManager() {}
+ObjectManager::~ObjectManager() {}
 
 Object* ObjectManager::GetFromIndexToObject(int& index)
 {

@@ -185,7 +185,6 @@
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="Transform.cpp" />
-    <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="WIN32APIFramework.cpp" />
   </ItemGroup>
   <ItemGroup>

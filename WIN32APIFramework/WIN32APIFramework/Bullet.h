@@ -17,17 +17,24 @@ private:
 	float _speed;
 
 	void Start() override;
-	void Update() override;
+    void Update() override
+    {
+        _lifeTime += 0.1f;
+        Move();
 
-	void Move();
+        if (_lifeTime >= LIFETIME)
+            _isDie = true;
+    }
+
+    void Move() { transform.position += _direction * _speed; }
 
 public:
 
-	void Render() override;
-
+    void Render() override { transform.DrawEllipse(DRAW_MANAGER->GetHdc()); }
 	void SetDirection(Vector2 direction) { _direction = direction; }
 
-	~Bullet() override {}
+    Bullet();
+    ~Bullet() override;
 };
 #endif
 

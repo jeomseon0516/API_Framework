@@ -6,6 +6,4 @@ Main::Main()
     (new Enemy())->SetTarget(PLAYER_MANAGER->GetCharacter());
 }
 
-Main::~Main()
-{
-}
+Main::~Main() {}

@@ -1,5 +1,8 @@
 #include "Character.h"
 
+Character::Character() {}
+Character::~Character() {}
+
 void Character::Start()
 {
 	_keyCode = 0;
@@ -12,20 +15,6 @@ void Character::Start()
 	transform.SetSize(Vector2(100, 100));
 }
 
-void Character::Update()
-{
-	_coolTime += 0.1f;
-
-	_beforePosition = transform.position;
-
-	_direction = Vector2(INPUT_MANAGER->GetAxisHorizontal(), INPUT_MANAGER->GetAxisVertical());
-
-	if (abs(_direction.x) > 0 && abs(_direction.y) > 0)
-		_lookAt = _direction;
-
-	transform.position += _direction * SPEED;
-}
-
 void Character::FireBullet()
 {
 	if (_coolTime < COOLTIME) return;
@@ -35,14 +24,4 @@ void Character::FireBullet()
 	Bullet* bullet = new Bullet();
 	bullet->transform.position = transform.position;
 	bullet->SetDirection(_lookAt);
-}
-
-bool Character::CheckKeyDown(int keyCode)
-{
-	if (!GetAsyncKeyState(keyCode)) return false;
-
-	_beforePosition = transform.position;
-	_keyCode = keyCode;
-
-	return true;
 }

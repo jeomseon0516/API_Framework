@@ -3,6 +3,7 @@
 SINGLETON_INIT(GameManager)
 
 GameManager::GameManager() {}
+GameManager::~GameManager() {}
 
 void GameManager::PushManagerList(Singleton* manager)
 {

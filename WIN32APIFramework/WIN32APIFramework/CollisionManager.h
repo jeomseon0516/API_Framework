@@ -19,8 +19,8 @@ struct PhysicsCellData
     PhysicsCellData(vector<Object*>* firstList, vector<Object*>* secondList, string key, bool isActive = true)
     {
         this->key = key;
-        this->isActive   = isActive;
-        this->firstList  = firstList;
+        this->isActive = isActive;
+        this->firstList = firstList;
         this->secondList = secondList;
     }
 };
@@ -28,6 +28,7 @@ struct PhysicsCellData
 class CollisionManager
 {
     SINGLETON(CollisionManager);
+private:
     // 벡터는 포인터를 사용합니다. 
     // 같은 벡터를 PhysicsList와 PhysicsMap 두 곳에서 사용하기 때문에 포인터를 이용해서 요소의 추가/제거에 효율적으로 코드를 작성할 수 있습니다.
     // 충돌을 하는 오브젝트들은 레이어 별로 확인을 합니다. MakePair가 된 레이어들끼리만 충돌 검사를 합니다.

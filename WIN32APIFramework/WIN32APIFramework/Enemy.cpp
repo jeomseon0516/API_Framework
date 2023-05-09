@@ -1,5 +1,10 @@
 #include "Enemy.h"
 
+void Enemy::OnCollision(Object* obj) { _isDie = true; }
+
+Enemy::Enemy() {}
+Enemy::~Enemy() {}
+
 void Enemy::Start()
 {
 	transform = Transform(Vector2(500, 200), Vector2(30, 30));
@@ -9,28 +14,4 @@ void Enemy::Start()
 	_movePoint = Vector2(300, 400);
     _layerName = "Enemy";
 	COLLISION_MANAGER->PushPhysicsMap(_layerName, this);
-}
-
-void Enemy::Update()
-{
-	switch (_state)
-	{
-	case IDLE:
-		Idle();
-		break;
-	case MOVE:
-		Move();
-		break;
-	}
-}
-
-void Enemy::Idle()
-{
-	// ?
-}
-
-void Enemy::Move()
-{
-    if (_target == nullptr) return;
-	transform.position += GET_FROM_POSITION_TO_DIRECTION(_target->transform.position, transform.position) * _speed;
 }

@@ -5,3 +5,5 @@ Scene::Scene()
     COLLISION_MANAGER->AllClear();
     OBJECT_MANAGER->AllClear();
 }
+
+Scene::~Scene() {}

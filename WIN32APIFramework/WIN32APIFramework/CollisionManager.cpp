@@ -8,13 +8,15 @@ CollisionManager::CollisionManager()
     MakePairCollisionList("Enemy", "CharacterBullet");
 }
 
+CollisionManager::~CollisionManager() {}
+
 void CollisionManager::Update()
 {
     for (int i = 0; i < _physicsList.size(); ++i)
     {
         if (!_physicsList[i].isActive) continue;
 
-        vector<Object*>* firstList  = _physicsList[i].firstList;
+        vector<Object*>* firstList = _physicsList[i].firstList;
         vector<Object*>* secondList = _physicsList[i].secondList;
 
         for (int j = 0; j < firstList->size(); ++j)

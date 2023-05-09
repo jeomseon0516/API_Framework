@@ -3,8 +3,9 @@
 #define __MAIN_UPDATE_H__
 
 #include "Include.h"
-#include "GameManager.h"
+#include "PlayerManager.h"
 #include "SceneManager.h"
+#include "GameManager.h"
 #include "DrawManager.h"
 #include "Menu.h"
 
@@ -19,7 +20,7 @@ public:
         GAME_MANAGER->Update(); 
     }
 	 
-    MainUpdate() { SCENE_MANAGER->SetScene(new Menu()); }
-	 ~MainUpdate() {}
+    MainUpdate();
+    ~MainUpdate();
 };
 #endif

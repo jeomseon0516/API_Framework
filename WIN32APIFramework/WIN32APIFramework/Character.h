@@ -18,14 +18,26 @@ private:
 	float _coolTime;
 	int _keyCode;
 
-	void Update() override;
 	void Start()  override;
+    void Update() override
+    {
+        _coolTime += 0.1f;
 
-	bool CheckKeyDown(int keyCode);
+        _beforePosition = transform.position;
+
+        _direction = Vector2(INPUT_MANAGER->GetAxisHorizontal(), INPUT_MANAGER->GetAxisVertical());
+
+        if (abs(_direction.x) > 0 && abs(_direction.y) > 0)
+            _lookAt = _direction;
+
+        transform.position += _direction * SPEED;
+    }
 
 public:
 	void FireBullet();
-	~Character() override {}
+
+    Character();
+    ~Character() override;
 };
 #endif
 

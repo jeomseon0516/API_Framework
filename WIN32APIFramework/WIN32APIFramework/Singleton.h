@@ -42,12 +42,12 @@ public:
         Start, Update함수는 더 이상 외부에서 호출할 필요가 없기때문에 protected 또는 private으로 외부에서 호출되지 않게 합니다.
     */
     void SingletonUpdate() { (this->*UpdateFunction)(); }
-    virtual ~Singleton() {}
+    virtual ~Singleton();
 
 protected:
 
     virtual void Update() = 0;
-    virtual void Start() {};
+    virtual void Start();
 
     Singleton();
 } typedef UpdatingSingleton;

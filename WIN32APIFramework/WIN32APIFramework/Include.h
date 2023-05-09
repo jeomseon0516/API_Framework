@@ -48,10 +48,10 @@ for (int i = 0; i < VECTOR.size(); ++i)\
 }(CONDITION, INDEX, VECTOR)
 
 //  TODO : .. 메모리 누수 위험
-/* 
-    .. 삭제시킨 벡터의 요소를 또 다른 벡터 에다가 다시 넣어줍니다.Destroy를 위한 함수입니다. 
+/*
+    .. 삭제시킨 벡터의 요소를 또 다른 벡터 에다가 다시 넣어줍니다.Destroy를 위한 함수입니다.
     catchList에 들어간 벡터의 요소는 자유롭게 사용이 가능하지만 Destroy를 하기전에 필요한 동작들을 수행하고
-    마지막에 catchList에 있는 요소들을 메모리 해제 시키기 위해 만든 함수입니다. 
+    마지막에 catchList에 있는 요소들을 메모리 해제 시키기 위해 만든 함수입니다.
     catchList에 있는 요소들을 처리해주지 않으면 메모리 누수가 발생합니다.
 */
 #define CATCH_RELASE_ELEMENT(T, CONDITION, INDEX, REMOVE_VECTOR, CATCH_VECTOR)\

@@ -30,7 +30,7 @@ struct tagVector2
 	static tagVector2 Bottom()				        { return tagVector2(0, 1); }
 	static tagVector2 Center()				        { return tagVector2(0.5f, 0.5f); }
 
-	 tagVector2(float x = 0, float y = 0);
+    tagVector2(float _x = 0, float _y = 0) : x(_x), y(_y) {}
 	~tagVector2() {}
 }typedef Vector2;
 #endif

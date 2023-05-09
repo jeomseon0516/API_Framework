@@ -12,19 +12,22 @@
 class PlayerManager : public Singleton
 {
     SINGLETON(PlayerManager);
+private:
 	Character* _character = nullptr;
-public:
-    Character* GetCharacter() { return _character; }
-	void SetCharacter(Character* character) { _character = character; }
 
 	void Update() override
 	{
 		if (_character == nullptr) return;
 		_character->SetDirection(Vector2(INPUT_MANAGER->GetAxisHorizontal(), INPUT_MANAGER->GetAxisVertical()));
 
-        if (GetAsyncKeyState(VK_SPACE))
+        if (INPUT_MANAGER->GetKey() & SPACE)
             _character->FireBullet();
 	}
-    ~PlayerManager();
+
+public:
+    Character* GetCharacter() { return _character; }
+	void SetCharacter(Character* character) { _character = character; }
+
+    ~PlayerManager() override;
 };
 #endif

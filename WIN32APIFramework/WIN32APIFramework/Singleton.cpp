@@ -8,6 +8,10 @@ void Singleton::SingletonStart()
     Start();
 }
 
+Singleton::~Singleton() {}
+
+void Singleton::Start() {}
+
 Singleton::Singleton()
 {
     GAME_MANAGER->PushManagerList(this);

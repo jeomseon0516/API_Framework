@@ -20,19 +20,21 @@ class Object;
 class ObjectManager : public Singleton
 {
     SINGLETON(ObjectManager);
+private:
 
     vector<Object*> _objectList;
     vector<Object*> _destroyList;
 
-public:
-
     void Update() override;
 
+public:
     Object* GetFromIndexToObject(int& index);
 
     int ObjectListSize() { return (int)_objectList.size(); }
 
     void PushBackObject(Object* object);
     void AllClear();
+
+    ~ObjectManager() override;
 };
 #endif

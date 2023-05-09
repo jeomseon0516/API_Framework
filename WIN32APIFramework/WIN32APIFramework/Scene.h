@@ -4,11 +4,10 @@
 
 class Scene
 {
-protected:
 public:
 	virtual void Update() = 0;
 
     Scene();
-	virtual ~Scene() {}
+    virtual ~Scene();
 };
 

@@ -7,13 +7,14 @@
 class SceneManager : public Singleton
 {
     SINGLETON(SceneManager);
+private:
     Scene* _scene = nullptr;
 
+    void Update() override { _scene->Update(); }
 public:
 
-    void Update() override { _scene->Update(); }
     void SetScene(Scene* scene);
 
-    ~SceneManager();
+    ~SceneManager() override;
 };
 
