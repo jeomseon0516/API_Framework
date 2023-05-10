@@ -2,7 +2,7 @@
 #include "Include.h"
 #include "Scene.h"
 
-#define SCENE_MANAGER SceneManager::GetInstance()
+#define SCENE_MANAGER (*SceneManager::GetInstance())
 
 class SceneManager : public Singleton
 {

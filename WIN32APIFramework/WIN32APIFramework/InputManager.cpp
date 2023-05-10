@@ -1,7 +1,5 @@
 #include "InputManager.h"
 
-SINGLETON_INIT(InputManager)
-
 InputManager::InputManager() {}
 InputManager::~InputManager() {}
 

@@ -1,8 +1,6 @@
 #include "Object.h"
 #include "ObjectManager.h"
 
-SINGLETON_INIT(ObjectManager)
-
 ObjectManager::ObjectManager() {}
 ObjectManager::~ObjectManager() {}
 

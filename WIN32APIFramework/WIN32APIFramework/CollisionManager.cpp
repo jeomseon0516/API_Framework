@@ -1,8 +1,6 @@
 #include "CollisionManager.h"
 #include "Object.h"
 
-SINGLETON_INIT(CollisionManager)
-
 CollisionManager::CollisionManager()
 {
     MakePairCollisionList("Enemy", "CharacterBullet");

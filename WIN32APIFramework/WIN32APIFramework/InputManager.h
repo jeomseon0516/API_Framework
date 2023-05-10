@@ -6,7 +6,7 @@
 #include "Singleton.h"
 #include "Vector2.h"
 
-#define INPUT_MANAGER InputManager::GetInstance()
+#define INPUT_MANAGER (*InputManager::GetInstance())
 #define AXIS_SPEED 0.1F
 
 enum KEY_CODE : unsigned short

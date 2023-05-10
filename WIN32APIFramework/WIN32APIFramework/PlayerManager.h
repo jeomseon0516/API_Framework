@@ -6,7 +6,7 @@
 #include "Include.h"
 #include "Character.h"
 
-#define PLAYER_MANAGER PlayerManager::GetInstance()
+#define PLAYER_MANAGER (*PlayerManager::GetInstance())
 
 // 사용자 상태 관리 클래스 게임플레이씬이면 캐릭터를 조작한다.
 class PlayerManager : public Singleton

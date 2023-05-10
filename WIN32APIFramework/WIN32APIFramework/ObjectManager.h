@@ -15,7 +15,7 @@ class Object;
                        -> 매니저 들의 Update() 호출 .. 반복
 */
 
-#define OBJECT_MANAGER ObjectManager::GetInstance()
+#define OBJECT_MANAGER (*ObjectManager::GetInstance())
 
 class ObjectManager : public Singleton
 {

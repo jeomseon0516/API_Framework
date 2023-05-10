@@ -5,7 +5,7 @@
 #include "Singleton.h"
 #include "Include.h"
 
-#define DRAW_MANAGER DrawManager::GetInstance()
+#define DRAW_MANAGER (*DrawManager::GetInstance())
 
 class DrawManager
 {

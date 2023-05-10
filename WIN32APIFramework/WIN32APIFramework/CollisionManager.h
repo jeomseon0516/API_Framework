@@ -5,7 +5,7 @@
 #include "Include.h"
 #include "Singleton.h"
 
-#define COLLISION_MANAGER CollisionManager::GetInstance()
+#define COLLISION_MANAGER (*CollisionManager::GetInstance())
 
 class Object;
 
