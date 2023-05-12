@@ -46,9 +46,6 @@
     <Filter Include="소스 파일\Transform">
       <UniqueIdentifier>{2ac3185b-540b-4467-8530-8cb3e901cc1f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Manager\CollisionManager">
-      <UniqueIdentifier>{676195e2-cf4b-4f80-b5c4-c241b7e69f3d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Manager\InputManager">
       <UniqueIdentifier>{e2ee35b5-a547-4fdb-b3ca-8009175795aa}</UniqueIdentifier>
     </Filter>
@@ -126,9 +123,6 @@
     <ClInclude Include="Enemy.h">
       <Filter>소스 파일\Object\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionManager.h">
-      <Filter>소스 파일\Manager\CollisionManager</Filter>
-    </ClInclude>
     <ClInclude Include="DrawManager.h">
       <Filter>소스 파일\Manager\02. DrawManager</Filter>
     </ClInclude>
@@ -181,9 +175,6 @@
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>소스 파일\Object\Enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisionManager.cpp">
-      <Filter>소스 파일\Manager\CollisionManager</Filter>
     </ClCompile>
     <ClCompile Include="DrawManager.cpp">
       <Filter>소스 파일\Manager\02. DrawManager</Filter>

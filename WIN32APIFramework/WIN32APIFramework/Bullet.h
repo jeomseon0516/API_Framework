@@ -3,7 +3,6 @@
 #define __BULLET_H__
 
 #include "Object.h"
-#include "CollisionManager.h"
 
 #define LIFETIME 10.0f
 

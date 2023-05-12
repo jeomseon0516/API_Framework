@@ -1,5 +1,4 @@
 #pragma once
-#include "CollisionManager.h"
 #include "ObjectManager.h"
 
 class Scene

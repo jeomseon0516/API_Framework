@@ -3,7 +3,6 @@
 #define __ENEMY_H__
 
 #include "Object.h"
-#include "CollisionManager.h"
 
 enum STATE
 {

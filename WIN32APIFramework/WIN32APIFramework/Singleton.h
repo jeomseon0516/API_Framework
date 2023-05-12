@@ -25,10 +25,10 @@ public:\
 		instance = nullptr;\
 	}
 
-// .. 전역 변수, static, extern 글로번 변수로 선언된 심볼릭 상수들은 모두 0으로 초기화 되기 때문에 nullptr초기화를 하지 않아도 nullptr체크가 된다!!!
-// .. 싱글톤을 사용하는 클래스는 cpp파일에 해당 함수를 호출 해주어야 합니다.
+// .. 전역 변수, static, extern 글로번 변수로 선언된 심볼릭 상수들은 모두 0으로 초기화 되기 때문에 nullptr초기화를 하지 않아도 nullptr체크가 된다.
 #define GET_SINGLETON(T) (*T::GetInstance())
 
+// 업데이트가 필요한 매니저 클래스는 해당 클래스를 상속 받습니다.
 class Singleton
 {
 private:
@@ -46,7 +46,6 @@ public:
     virtual ~Singleton();
 
 protected:
-
     virtual void Update() = 0;
     virtual void Start();
 

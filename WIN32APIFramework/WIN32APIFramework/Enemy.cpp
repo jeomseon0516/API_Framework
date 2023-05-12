@@ -13,5 +13,4 @@ void Enemy::Start()
 	_state = MOVE;
 	_movePoint = Vector2(300, 400);
     _layerName = "Enemy";
-	COLLISION_MANAGER->PushPhysicsMap(_layerName, this);
 }
