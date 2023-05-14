@@ -7,7 +7,7 @@ ObjectManager::ObjectManager()
 }
 ObjectManager::~ObjectManager() {}
 
-
+//
 // 오브젝트의 라이프 사이클 관리
 void ObjectManager::Update()
 {

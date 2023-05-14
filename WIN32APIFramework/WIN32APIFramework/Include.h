@@ -14,6 +14,8 @@
 #undef PURE
 #define PURE = 0
 
+//
+
 #define WIN_SIZE_X 1500
 #define WIN_SIZE_Y 720
 

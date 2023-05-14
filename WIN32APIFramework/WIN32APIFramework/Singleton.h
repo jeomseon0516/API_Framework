@@ -7,7 +7,7 @@
 private:\
 	T(const T&);\
 	T& operator=(const T&);
-
+//
 // 싱글톤을 만들어주는 매크로 함수입니다.
 #define SINGLETON(T)\
 	DO_NOT_MAKE(T)\

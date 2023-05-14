@@ -4,7 +4,7 @@
 
 #include "Include.h"
 #include "Singleton.h"
-
+//
 using namespace std;
 
 #define OBJECT_MANAGER (*ObjectManager::GetInstance())
