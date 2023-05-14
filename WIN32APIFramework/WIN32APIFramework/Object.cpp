@@ -8,7 +8,7 @@ Object::Object()
     _layerName = "Default";
 
 	transform = Transform(Vector2(), Vector2());
-    OBJECT_MANAGER->InitObject(this);
+    OBJECT_MANAGER->InitList(this);
 }
 Object::~Object() {}
 

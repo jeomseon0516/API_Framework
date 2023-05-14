@@ -28,12 +28,12 @@ public:\
 // .. 전역 변수, static, extern 글로번 변수로 선언된 심볼릭 상수들은 모두 0으로 초기화 되기 때문에 nullptr초기화를 하지 않아도 nullptr체크가 된다.
 #define GET_SINGLETON(T) (*T::GetInstance())
 
-// 업데이트가 필요한 매니저 클래스는 해당 클래스를 상속 받습니다.
+// 업데이트가 필요한 매니저 클래스는 해당 클래스를 상속 받습니다. 추상 클래스 이므로 상속받지 않으면 사용할 수 없습니다.
 class Singleton
 {
 private:
     void SingletonStart();
-    void(Singleton::* UpdateFunction)();
+    void(Singleton::*UpdateFunction)();
 public:
     /*
         .. SingletonStart->Start->Update->함수를 순서로 호출됩니다. 가장 상위의 SingletonStart함수를 가장 먼저 호출 하는 이유는

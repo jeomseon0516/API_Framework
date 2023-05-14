@@ -1,13 +1,12 @@
 #include "Object.h"
 #include "ObjectManager.h"
 
-ObjectManager::ObjectManager() 
+ObjectManager::ObjectManager()
 {
     MakeCollisionData("Enemy", "CharacterBullet");
 }
 ObjectManager::~ObjectManager() {}
 
-//
 // 오브젝트의 라이프 사이클 관리
 void ObjectManager::Update()
 {
@@ -17,13 +16,7 @@ void ObjectManager::Update()
         ELEMENT_ERASE_TO_CONDITION(Object, true, i, _initList);
     }
 
-    for (int i = 0; i < _objectLists.size(); ++i)
-    {
-        vector<Object*>* objectList = _objectLists[i];
-
-        for (int j = 0; j < objectList->size(); ++j)
-            objectList->at(j)->ObjUpdate();
-    }
+    UpdateFromCustomFunction(&ObjectManager::ObjectUpdate);
 
     for (int i = 0; i < _collisionData.size(); ++i)
     {
@@ -56,38 +49,45 @@ void ObjectManager::Update()
     }
 
     // 렌더는 가장 마지막
-    for (int i = 0; i < _objectLists.size(); ++i)
+    UpdateFromCustomFunction(&ObjectManager::ObjectRender);
+}
+
+void ObjectManager::ObjectUpdate(vector<Object*>* objList, int& index)
+{
+    objList->at(index)->ObjUpdate();
+}
+
+void ObjectManager::ObjectRender(vector<Object*>* objList, int& index)
+{
+    Object* obj = objList->at(index);
+    obj->Render();
+    ELEMENT_ERASE_TO_CONDITION(Object, obj->GetIsDie(), index, (*objList));
+}
+
+void ObjectManager::UpdateFromCustomFunction(void(ObjectManager::*const function)(vector<Object*>*, int&))
+{
+    for (map<string, vector<Object*>*>::iterator iter = _objectMap.begin(); iter != _objectMap.end(); ++iter)
     {
-        vector<Object*>* objectList = _objectLists[i];
+        vector<Object*>* objectList = iter->second;
 
         for (int j = 0; j < objectList->size(); ++j)
-        {
-            Object* obj = objectList->at(j);
-            obj->Render();
-
-            ELEMENT_ERASE_TO_CONDITION(Object, obj->GetIsDie(), j, (*objectList));
-        }
+            (this->*function)(objectList, j);
     }
 }
 
-void ObjectManager::MakeFromKeyCollisionList(string key)
+void ObjectManager::MakeFromKeyCollisionList(const string& key)
 {
     if (_objectMap.find(key) != _objectMap.end()) return;
-
-    vector<Object*>* newObjectList = new vector<Object*>();
-
-    _objectMap.insert(make_pair(key, newObjectList));
-    _objectLists.push_back(newObjectList);
+    _objectMap.insert(make_pair(key, new vector<Object*>()));
 }
 
-void ObjectManager::PushBackObject(string key, Object* object)
+void ObjectManager::PushBackObject(const string& key, Object* object)
 {
     MakeFromKeyCollisionList(key);
-
     _objectMap[key]->push_back(object);
 }
 
-void ObjectManager::MakeCollisionData(string firstKey, string secondKey)
+void ObjectManager::MakeCollisionData(const string& firstKey, const string& secondKey)
 {
     MakeFromKeyCollisionList(firstKey);
     MakeFromKeyCollisionList(secondKey);
@@ -97,17 +97,16 @@ void ObjectManager::MakeCollisionData(string firstKey, string secondKey)
     for (int i = 0; i < _collisionData.size(); ++i)
         if (_collisionData[i].key == key) return;
 
-    CollisionData collisionData = CollisionData(_objectMap[firstKey], _objectMap[secondKey], key);
-    _collisionData.push_back(collisionData);
+    _collisionData.push_back(CollisionData(_objectMap[firstKey], _objectMap[secondKey], key));
 }
 
-void ObjectManager::InitObject(Object* object)
+void ObjectManager::InitList(Object* obj)
 {
-    _initList.push_back(object);
+    _initList.push_back(obj);
 }
 
 void ObjectManager::AllClear()
 {
-    for (int i = 0; i < _objectLists.size(); ++i)
-        CLEAR_VECTOR(Object, (*_objectLists[i]));
+    for (map<string, vector<Object*>*>::iterator iter = _objectMap.begin(); iter != _objectMap.end(); ++iter)
+        CLEAR_VECTOR(Object, (*iter->second));
 }

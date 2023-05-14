@@ -24,7 +24,7 @@ struct CollisionData
     vector<Object*>* firstList;
     vector<Object*>* secondList;
 
-    CollisionData(vector<Object*>* _firstList, vector<Object*>* _secondList, string _key, bool _isActive = true) : 
+    CollisionData(vector<Object*>* _firstList, vector<Object*>* _secondList, string _key, bool _isActive = true) :
         firstList(_firstList), secondList(_secondList), key(_key), isActive(_isActive) {}
 };
 
@@ -33,20 +33,22 @@ class ObjectManager : public Singleton
     SINGLETON(ObjectManager);
 private:
 
-    vector<CollisionData> _collisionData;
-    vector<Object*> _initList; // 이니셜 라이저 전용
+    vector<Object*> _initList; // 새로 생성된 오브젝트들은 해당 리스트에 push된 후 초기화후 erase된다.
 
-    vector<vector<Object*>*> _objectLists; // 맵에 담긴 오브젝트를 똑같이 가지고 있는다. iterator 순환은 너무 느리기 때문
+    vector<CollisionData> _collisionData;
     map<string, vector<Object*>*> _objectMap;
 
     void Update() override;
 
 public:
 
-    void MakeFromKeyCollisionList(string key);
-    void PushBackObject(string key, Object* object);
-    void MakeCollisionData(string firstKey, string secondKey);
-    void InitObject(Object* object);
+    void ObjectUpdate(vector<Object*>* objList, int& index);
+    void ObjectRender(vector<Object*>* objList, int& index);
+    void UpdateFromCustomFunction(void(ObjectManager::*const function)(vector<Object*>*, int&));
+    void MakeFromKeyCollisionList(const string& key);
+    void PushBackObject(const string& key, Object* object);
+    void MakeCollisionData(const string& firstKey, const string& secondKey);
+    void InitList(Object* obj);
     void AllClear();
 
     ~ObjectManager() override;
