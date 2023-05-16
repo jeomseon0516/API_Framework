@@ -6,7 +6,7 @@
 #include "InputManager.h"
 
 #define SPEED 10.0F
-#define COOLTIME 0.2F
+#define COOLTIME 0.01F
 
 class Character : public Object
 {
@@ -24,7 +24,6 @@ private:
         _coolTime += 0.1f;
 
         _beforePosition = transform.position;
-
         _direction = Vector2(INPUT_MANAGER->GetAxisHorizontal(), INPUT_MANAGER->GetAxisVertical());
 
         if (abs(_direction.x) > 0 && abs(_direction.y) > 0)

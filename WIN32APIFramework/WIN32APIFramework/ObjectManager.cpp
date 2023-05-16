@@ -10,39 +10,31 @@ ObjectManager::~ObjectManager() {}
 // 오브젝트의 라이프 사이클 관리
 inline void ObjectManager::Update()
 {
-    for (list<Object*>::iterator iter = _initList.begin();;)
+    list<Object*>::iterator iter = _initList.begin();
+
+    while (iter != _initList.end())
     {
-        if (iter == _initList.end())
-            break;
+        Object* obj = *iter;
+        obj->ObjUpdate();
 
-        (*iter)->ObjUpdate();
-        ELEMENT_ERASE_TO_CONDITION(Object, true, _initList, iter);
-
-        ++iter;
+        if (ELEMENT_ERASE_TO_CONDITION(Object, true, &_initList, iter))
+            ++iter;
     }
 
     UpdateFromCustomFunction(&ObjectManager::ObjectUpdate);
 
-    for (list<CollisionData*>::iterator iter = _collisionData.begin(); iter != _collisionData.end(); ++iter)
+    for (CollisionData* collisionData : _collisionData)
     {
-        CollisionData* collisionData = *iter;
-
-        if (!collisionData->isActive) 
-            continue;
+        if (!collisionData->isActive) continue;
 
         list<Object*>* firstList = collisionData->firstList;
         list<Object*>* secondList = collisionData->secondList;
 
-        for (list<Object*>::iterator firstIter = collisionData->firstList->begin(); firstIter != firstList->end(); ++firstIter)
+        for (Object* first : *firstList)
         {
-            Object* first = *firstIter;
-
-            for (list<Object*>::iterator secondIter = collisionData->secondList->begin(); secondIter != secondList->end(); ++secondIter)
+            for (Object* second : *secondList)
             {
-                Object* second = *secondIter;
-
-                if (first == second)
-                    continue; // 같은 레이어의 객체끼리 충돌 시켰을 때 가르키는 포인터가 같은 객체일 경우
+                if (first == second) continue; // 같은 레이어의 객체끼리 충돌 시켰을 때 가르키는 포인터가 같은 객체일 경우
 
                 float distance = GET_DISTANCE(first->transform.position, second->transform.position);
                 float collisionDistance = first->transform.GetSize().x * 0.5f + second->transform.GetSize().x * 0.5f;
@@ -60,33 +52,31 @@ inline void ObjectManager::Update()
     UpdateFromCustomFunction(&ObjectManager::ObjectRender);
 }
 
-inline void ObjectManager::ObjectUpdate(list<Object*>* anyList, list<Object*>::iterator iter)
+inline bool ObjectManager::ObjectUpdate(list<Object*>* objectList, list<Object*>::iterator& iter)
 {
     (*iter)->ObjUpdate();
+    return true;
 }
 
-inline void ObjectManager::ObjectRender(list<Object*>* anyList, list<Object*>::iterator iter)
+inline bool ObjectManager::ObjectRender(list<Object*>* objectList, list<Object*>::iterator& iter)
 {
-    Object* obj = *iter;
+    Object* obj = (*iter);
 
     obj->Render();
-    ELEMENT_ERASE_TO_CONDITION(Object, obj->GetIsDie(), (*anyList), iter);
+    return RELEASE_ELEMENT(Object, obj->GetIsDie(), objectList, iter);
 }
 
-inline void ObjectManager::UpdateFromCustomFunction(void(ObjectManager::* const function)(list<Object*>*, list<Object*>::iterator))
+inline void ObjectManager::UpdateFromCustomFunction(bool(ObjectManager::*const function)(list<Object*>*, list<Object*>::iterator&))
 {
     for (pair<const string, list<Object*>*> item : _objectMap)
     {
         list<Object*>* objectList = item.second;
 
-        for (list<Object*>::iterator iter = objectList->begin();;)
+        list<Object*>::iterator iter = objectList->begin();
+        while (iter != objectList->end())
         {
-            (this->*function)(objectList, iter);
-
-            if (iter == objectList->end())
-                break;
-
-            ++iter;
+            if ((this->*function)(objectList, iter))
+                ++iter;
         }
     }
 }

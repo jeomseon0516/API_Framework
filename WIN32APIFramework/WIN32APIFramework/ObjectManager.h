@@ -32,7 +32,6 @@ class ObjectManager : public Singleton
 {
     SINGLETON(ObjectManager);
 private:
-
     list<Object*> _initList; // 새로 생성된 오브젝트들은 해당 리스트에 push된 후 초기화후 erase된다.
 
     list<CollisionData*> _collisionData;
@@ -41,9 +40,9 @@ private:
     inline void Update() override;
 public:
 
-    inline void ObjectUpdate(list<Object*>* anyList, list<Object*>::iterator obj);
-    inline void ObjectRender(list<Object*>* anyList, list<Object*>::iterator obj);
-    inline void UpdateFromCustomFunction(void(ObjectManager::*const function)(list<Object*>*, list<Object*>::iterator));
+    inline bool ObjectUpdate(list<Object*>* obejctList, list<Object*>::iterator& iter);
+    inline bool ObjectRender(list<Object*>* obejctList, list<Object*>::iterator& iter);
+    inline void UpdateFromCustomFunction(bool(ObjectManager::*const function)(list<Object*>*, list<Object*>::iterator&));
     void MakeFromKeyCollisionList(const string& key);
     void PushBackObject(const string& key, Object* object);
     void MakeCollisionData(const string& firstKey, const string& secondKey);

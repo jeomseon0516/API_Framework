@@ -12,16 +12,17 @@
 // 이렇게 사용할게 아니라면 함수 호출 후 ++index를 시켜주어야 합니다.
 // .. 벡터의 요소를 가져와 벡터에서 제거 시킵니다..
 #define ELEMENT_ERASE(T, LIST, ITER)\
-ITER = LIST.erase(ITER);\
-if (ITER != LIST.end()) --ITER
+ITER = LIST.erase(ITER)
 
 // TODO : .. 메모리 누수 위험
-// .. 특정 조건을 만족시켰을때 벡터의 요소를 벡터에서 제거 시킵니다.. 함수 호출을 하기전에 요소를 다른 곳에다 저장해두어야 합니다.
+// .. 특정 조건을 만족시켰을때 리스트의 요소를 리스트에서 제거 시킵니다.. 함수 호출을 하기전에 요소를 다른 곳에다 저장해두어야 합니다.
 #define ELEMENT_ERASE_TO_CONDITION(T, CONDITION, LIST, ITER)\
-if (CONDITION)\
+[](bool condition, list<T*>* anyList, list<T*>::iterator& iter)\
 {\
-    ELEMENT_ERASE(T, LIST, ITER);\
-}
+    if (!condition) return true;\
+    ELEMENT_ERASE(T, (*anyList), iter);\
+    return false;\
+}(CONDITION, LIST, ITER)
 
 // .. 벡터의 요소들을 모두 메모리 해제 후 벡터에서 erase합니다. 메모리를 해제하니 주의해야 합니다.
 #define CLEAR_LIST(T, LIST)\
@@ -31,12 +32,12 @@ LIST.clear()
 
 // .. 해당 함수는 리스트의 요소가 특정 조건을 만족할때 벡터에서 제거하고 메모리를 해제시키는 역할을 합니다.
 #define RELEASE_ELEMENT(T, CONDITION, LIST, ITER)\
-[](bool condition, list<T*>* anyList, list<T*>::iterator iter)\
+[](bool condition, list<T*>* anyList, list<T*>::iterator& iter)\
 {\
-    if (!condition) return false;\
+    if (!condition) return true;\
     delete (*iter);\
-    ELEMENT_ERASE(T, (*objectList), iter);\
-    return true;\
+    ELEMENT_ERASE(T, (*anyList), iter);\
+    return false;\
 }(CONDITION, LIST, ITER)
 
 extern HWND g_hWnd;
