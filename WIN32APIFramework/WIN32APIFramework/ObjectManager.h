@@ -21,10 +21,10 @@ struct CollisionData
 {
     bool isActive;
     string key;
-    vector<Object*>* firstList;
-    vector<Object*>* secondList;
+    list<Object*>* firstList;
+    list<Object*>* secondList;
 
-    CollisionData(vector<Object*>* _firstList, vector<Object*>* _secondList, string _key, bool _isActive = true) :
+    CollisionData(list<Object*>* _firstList, list<Object*>* _secondList, string _key, bool _isActive = true) :
         firstList(_firstList), secondList(_secondList), key(_key), isActive(_isActive) {}
 };
 
@@ -33,18 +33,17 @@ class ObjectManager : public Singleton
     SINGLETON(ObjectManager);
 private:
 
-    vector<Object*> _initList; // 새로 생성된 오브젝트들은 해당 리스트에 push된 후 초기화후 erase된다.
+    list<Object*> _initList; // 새로 생성된 오브젝트들은 해당 리스트에 push된 후 초기화후 erase된다.
 
-    vector<CollisionData> _collisionData;
-    map<string, vector<Object*>*> _objectMap;
+    list<CollisionData*> _collisionData;
+    map<string, list<Object*>*> _objectMap;
 
-    void Update() override;
-
+    inline void Update() override;
 public:
 
-    void ObjectUpdate(vector<Object*>* objList, int& index);
-    void ObjectRender(vector<Object*>* objList, int& index);
-    void UpdateFromCustomFunction(void(ObjectManager::*const function)(vector<Object*>*, int&));
+    inline void ObjectUpdate(list<Object*>* anyList, list<Object*>::iterator obj);
+    inline void ObjectRender(list<Object*>* anyList, list<Object*>::iterator obj);
+    inline void UpdateFromCustomFunction(void(ObjectManager::*const function)(list<Object*>*, list<Object*>::iterator));
     void MakeFromKeyCollisionList(const string& key);
     void PushBackObject(const string& key, Object* object);
     void MakeCollisionData(const string& firstKey, const string& secondKey);

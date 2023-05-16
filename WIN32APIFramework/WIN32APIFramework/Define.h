@@ -11,49 +11,33 @@
 // 벡터를 관리하는 매크로 함수 입니다. 기본적으로 요소의 위치를 알고 있다는 전제하에 만들어진 함수 입니다. 또한 index는 참조값으로 --index를 동작 시킵니다.
 // 이렇게 사용할게 아니라면 함수 호출 후 ++index를 시켜주어야 합니다.
 // .. 벡터의 요소를 가져와 벡터에서 제거 시킵니다..
-#define ELEMENT_ERASE(T, INDEX, VECTOR)\
-VECTOR.erase(VECTOR.begin() + INDEX);\
---INDEX
+#define ELEMENT_ERASE(T, LIST, ITER)\
+ITER = LIST.erase(ITER);\
+if (ITER != LIST.end()) --ITER
 
 // TODO : .. 메모리 누수 위험
 // .. 특정 조건을 만족시켰을때 벡터의 요소를 벡터에서 제거 시킵니다.. 함수 호출을 하기전에 요소를 다른 곳에다 저장해두어야 합니다.
-#define ELEMENT_ERASE_TO_CONDITION(T, CONDITION, INDEX, VECTOR)\
+#define ELEMENT_ERASE_TO_CONDITION(T, CONDITION, LIST, ITER)\
 if (CONDITION)\
 {\
-    ELEMENT_ERASE(T, INDEX, VECTOR);\
+    ELEMENT_ERASE(T, LIST, ITER);\
 }
 
 // .. 벡터의 요소들을 모두 메모리 해제 후 벡터에서 erase합니다. 메모리를 해제하니 주의해야 합니다.
-#define CLEAR_VECTOR(T, VECTOR)\
-for (int i = 0; i < VECTOR.size(); ++i)\
-    RELEASE_ELEMENT(T, true, i, &VECTOR)
+#define CLEAR_LIST(T, LIST)\
+for (list<T>::iterator iter = LIST.begin(); iter != LIST.end(); ++iter)\
+    delete (*iter);\
+LIST.clear()
 
-// .. 해당 함수는 벡터의 요소가 특정 조건을 만족할때 벡터에서 제거하고 메모리를 해제시키는 역할을 합니다.
-#define RELEASE_ELEMENT(T, CONDITION, INDEX, VECTOR)\
-[](bool condition, int& index, vector<T*>* objectList)\
+// .. 해당 함수는 리스트의 요소가 특정 조건을 만족할때 벡터에서 제거하고 메모리를 해제시키는 역할을 합니다.
+#define RELEASE_ELEMENT(T, CONDITION, LIST, ITER)\
+[](bool condition, list<T*>* anyList, list<T*>::iterator iter)\
 {\
     if (!condition) return false;\
-    delete objectList->at(index);\
-    ELEMENT_ERASE(T, index, (*objectList));\
+    delete (*iter);\
+    ELEMENT_ERASE(T, (*objectList), iter);\
     return true;\
-}(CONDITION, INDEX, VECTOR)
-
-//  TODO : .. 메모리 누수 위험
-/*
-    .. 삭제시킨 벡터의 요소를 또 다른 벡터 에다가 다시 넣어줍니다.Destroy를 위한 함수입니다.
-    catchList에 들어간 벡터의 요소는 자유롭게 사용이 가능하지만 Destroy를 하기전에 필요한 동작들을 수행하고
-    마지막에 catchList에 있는 요소들을 메모리 해제 시키기 위해 만든 함수입니다.
-    catchList에 있는 요소들을 처리해주지 않으면 메모리 누수가 발생합니다.
-*/
-// .. 해당 함수는 사용되지 않습니다.
-#define CATCH_RELASE_ELEMENT(T, CONDITION, INDEX, REMOVE_VECTOR, CATCH_VECTOR)\
-[](bool condition, int& index, vector<T*>* removeList, vector<T*>* catchList)\
-{\
-    if (!condition) return false;\
-    catchList->push_back(removeList->at(index)); \
-    ELEMENT_ERASE(T, index, (*removeList));\
-    return true;\
-}(CONDITION, INDEX, REMOVE_VECTOR, CATCH_VECTOR)
+}(CONDITION, LIST, ITER)
 
 extern HWND g_hWnd;
 
