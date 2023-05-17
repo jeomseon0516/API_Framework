@@ -27,7 +27,7 @@ inline void ObjectManager::Update()
     {
         if (!collisionData->isActive) continue;
 
-        list<Object*>* firstList = collisionData->firstList;
+        list<Object*>* firstList  = collisionData->firstList;
         list<Object*>* secondList = collisionData->secondList;
 
         for (Object* first : *firstList)
@@ -73,6 +73,7 @@ inline void ObjectManager::UpdateFromCustomFunction(bool(ObjectManager::*const f
         list<Object*>* objectList = item.second;
 
         list<Object*>::iterator iter = objectList->begin();
+
         while (iter != objectList->end())
         {
             if ((this->*function)(objectList, iter))
@@ -100,8 +101,8 @@ void ObjectManager::MakeCollisionData(const string& firstKey, const string& seco
 
     string key = firstKey + secondKey;
 
-    for (list<CollisionData*>::iterator iter = _collisionData.begin(); iter != _collisionData.end(); ++iter)
-        if ((*iter)->key == key) return;
+    for (CollisionData* collisionData : _collisionData)
+        if (collisionData->key == key) return; // 해당 키 값이 이미 존재한다면?
 
     _collisionData.push_back(new CollisionData(_objectMap[firstKey], _objectMap[secondKey], key));
 }
@@ -113,9 +114,9 @@ void ObjectManager::InitList(Object* obj)
 
 void ObjectManager::AllClear()
 {
-    for (map<string, list<Object*>*>::iterator iter = _objectMap.begin(); iter != _objectMap.end(); ++iter)
+    for (pair<const string, list<Object*>*> item : _objectMap)
     {
-        list<Object*>* objList = iter->second;
-        CLEAR_LIST(Object*, (*objList));
+        list<Object*>* objList = item.second;
+        CLEAR_LIST(Object, (*objList));
     }
 }

@@ -26,8 +26,8 @@ ITER = LIST.erase(ITER)
 
 // .. 벡터의 요소들을 모두 메모리 해제 후 벡터에서 erase합니다. 메모리를 해제하니 주의해야 합니다.
 #define CLEAR_LIST(T, LIST)\
-for (list<T>::iterator iter = LIST.begin(); iter != LIST.end(); ++iter)\
-    delete (*iter);\
+for (T* item : LIST)\
+    delete item;\
 LIST.clear()
 
 // .. 해당 함수는 리스트의 요소가 특정 조건을 만족할때 벡터에서 제거하고 메모리를 해제시키는 역할을 합니다.
