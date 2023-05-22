@@ -3,7 +3,7 @@
 Transform::Transform() {}
 Transform::~Transform() {}
 
-void Transform::AnchorCorrection(float& value)
+void Transform::AnchorCorrection(float value)
 {
 	if (value < 0)
 		value = 0;
@@ -11,7 +11,7 @@ void Transform::AnchorCorrection(float& value)
 		value = 1;
 }
 
-Transform::Transform(Vector2 position, Vector2 size, Vector2 anchor)
+Transform::Transform(const Vector2& position, const Vector2& size, const Vector2& anchor)
 {
 	this->position = position;
 	this->size = size;

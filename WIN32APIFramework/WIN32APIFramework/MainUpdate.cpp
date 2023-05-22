@@ -10,5 +10,5 @@ void MainUpdate::Start()
 	GAME_MANAGER;
     INPUT_MANAGER;
     PLAYER_MANAGER;
-    SCENE_MANAGER->SetScene(new Menu());
+    SCENE_MANAGER->SetScene(new Main());
 }

@@ -4,15 +4,15 @@
 
 #include "Bullet.h"
 #include "InputManager.h"
+#include "Prototype.h"
 
 #define SPEED 10.0F
-#define COOLTIME 0.01F
+#define COOL_TIME 0.01F
 
 class Character : public Object
 {
 private:
 	Vector2 _beforePosition;
-	Vector2 _direction;
 	Vector2 _lookAt;
 
 	float _coolTime;
@@ -33,8 +33,12 @@ private:
     }
 
 public:
+
 	void FireBullet();
 
+    Character* Clone()const override { return new Character(*this); }
+
+    Character(const Transform& _transform);
     Character();
     ~Character() override;
 };

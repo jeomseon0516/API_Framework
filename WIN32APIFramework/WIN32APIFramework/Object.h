@@ -10,9 +10,6 @@
 // Update..Start..Render..
 class Object
 {
-private:
-    void ObjStart();
-    void(Object::*UpdateFunction)();
 protected:
 
     bool _isDie;
@@ -22,27 +19,38 @@ protected:
 
     Vector2 _direction;
     Vector2 _lookAt;
+    void Init();
 
-    virtual void Update() {}
     virtual void Start() {}
 
 public:
+
+    Object* ObjStart();
+    virtual void Update() {}
+
     Transform transform;
-    void ObjUpdate() { (this->*UpdateFunction)(); }
 
     virtual void Render() { transform.DrawRect(DRAW_MANAGER->GetHdc()); }
     virtual void OnCollision(Object* object);
 
-    string GetLayerName() { return _layerName; }
+    string GetLayerName()const { return _layerName; }
+    Object* SetName(const string& name) 
+    { 
+        _name = name; 
+        return this;
+    }
 
-    void SetDirection(Vector2 direction) { _direction = direction; }
+    void SetDirection(const Vector2& direction) { _direction = direction; }
 
     Transform& GetTransform() { return transform; }
-    bool GetIsDie() { return _isDie; }
+    bool GetIsDie()const { return _isDie; }
 
     virtual void Destroy();
     void ObjDestroy();
 
+    virtual Object* Clone()const { return new Object(*this); }
+
+    Object(const Transform& _transform);
     Object();
     virtual ~Object();
 };

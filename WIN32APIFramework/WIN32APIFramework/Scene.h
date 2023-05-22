@@ -1,5 +1,6 @@
 #pragma once
 #include "ObjectManager.h"
+#include "Prototype.h"
 
 class Scene
 {

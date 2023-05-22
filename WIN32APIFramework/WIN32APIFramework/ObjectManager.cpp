@@ -10,17 +10,6 @@ ObjectManager::~ObjectManager() {}
 // 오브젝트의 라이프 사이클 관리
 inline void ObjectManager::Update()
 {
-    list<Object*>::iterator iter = _initList.begin();
-
-    while (iter != _initList.end())
-    {
-        Object* obj = *iter;
-        obj->ObjUpdate();
-
-        if (ELEMENT_ERASE_TO_CONDITION(Object, true, &_initList, iter))
-            ++iter;
-    }
-
     UpdateFromCustomFunction(&ObjectManager::ObjectUpdate);
 
     for (CollisionData* collisionData : _collisionData)
@@ -54,7 +43,7 @@ inline void ObjectManager::Update()
 
 inline bool ObjectManager::ObjectUpdate(list<Object*>* objectList, list<Object*>::iterator& iter)
 {
-    (*iter)->ObjUpdate();
+    (*iter)->Update();
     return true;
 }
 
@@ -66,9 +55,9 @@ inline bool ObjectManager::ObjectRender(list<Object*>* objectList, list<Object*>
     return RELEASE_ELEMENT(Object, obj->GetIsDie(), objectList, iter);
 }
 
-inline void ObjectManager::UpdateFromCustomFunction(bool(ObjectManager::*const function)(list<Object*>*, list<Object*>::iterator&))
+inline void ObjectManager::UpdateFromCustomFunction(bool(ObjectManager::* const function)(list<Object*>*, list<Object*>::iterator&))
 {
-    for (pair<const string, list<Object*>*> item : _objectMap)
+    for (const pair<const string, list<Object*>*>& item : _objectMap)
     {
         list<Object*>* objectList = item.second;
 
@@ -105,11 +94,6 @@ void ObjectManager::MakeCollisionData(const string& firstKey, const string& seco
         if (collisionData->key == key) return; // 해당 키 값이 이미 존재한다면?
 
     _collisionData.push_back(new CollisionData(_objectMap[firstKey], _objectMap[secondKey], key));
-}
-
-void ObjectManager::InitList(Object* obj)
-{
-    _initList.push_back(obj);
 }
 
 void ObjectManager::AllClear()

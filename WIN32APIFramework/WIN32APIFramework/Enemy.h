@@ -50,8 +50,11 @@ public:
 
 	void Render() override { transform.DrawEllipse(DRAW_MANAGER->GetHdc()); }
 	void SetTarget(Object* obj) { _target = obj; }
+     
+    Enemy* Clone()const override { return new Enemy(*this); }
 
-    Enemy();
+     Enemy(const Transform& _transform);
+     Enemy();
     ~Enemy() override;
 };
 #endif

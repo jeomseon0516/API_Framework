@@ -4,7 +4,7 @@
 
 #include "Include.h"
 #include "Singleton.h"
-//
+
 using namespace std;
 
 #define OBJECT_MANAGER (*ObjectManager::GetInstance())
@@ -32,8 +32,6 @@ class ObjectManager : public Singleton
 {
     SINGLETON(ObjectManager);
 private:
-    list<Object*> _initList; // 새로 생성된 오브젝트들은 해당 리스트에 push된 후 초기화후 erase된다.
-
     list<CollisionData*> _collisionData;
     map<string, list<Object*>*> _objectMap;
 
@@ -46,7 +44,6 @@ public:
     void MakeFromKeyCollisionList(const string& key);
     void PushBackObject(const string& key, Object* object);
     void MakeCollisionData(const string& firstKey, const string& secondKey);
-    void InitList(Object* obj);
     void AllClear();
 
     ~ObjectManager() override;

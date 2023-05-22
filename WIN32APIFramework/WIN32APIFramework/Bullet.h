@@ -10,8 +10,6 @@ class Bullet : public Object
 {
 private:
 
-	Vector2 _direction;
-
 	float _lifeTime;
 	float _speed;
 
@@ -30,9 +28,12 @@ private:
 public:
 
     void Render() override { transform.DrawEllipse(DRAW_MANAGER->GetHdc()); }
-	void SetDirection(Vector2 direction) { _direction = direction; }
+	void SetDirection(const Vector2& direction) { _direction = direction; }
 
-    Bullet();
+    Bullet* Clone()const override { return new Bullet(*this); }
+     
+     Bullet(const Transform& _transform);
+     Bullet();
     ~Bullet() override;
 };
 #endif

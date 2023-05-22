@@ -76,6 +76,9 @@
     <Filter Include="소스 파일\Scene\Main">
       <UniqueIdentifier>{80f07cbb-0ea2-41d8-a7e5-29f3e534fd97}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Manager\Prototype">
+      <UniqueIdentifier>{a5d12983-fb95-49b7-a950-ef13e7bb8c66}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WIN32APIFramework.h">
@@ -153,6 +156,9 @@
     <ClInclude Include="Main.h">
       <Filter>소스 파일\Scene\Main</Filter>
     </ClInclude>
+    <ClInclude Include="Prototype.h">
+      <Filter>소스 파일\Manager\Prototype</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WIN32APIFramework.cpp">
@@ -208,6 +214,9 @@
     </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>소스 파일\Scene\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype.cpp">
+      <Filter>소스 파일\Manager\Prototype</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

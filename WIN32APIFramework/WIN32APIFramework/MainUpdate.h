@@ -7,7 +7,7 @@
 #include "SceneManager.h"
 #include "GameManager.h"
 #include "DrawManager.h"
-#include "Menu.h"
+#include "Main.h"
 
 class MainUpdate
 {

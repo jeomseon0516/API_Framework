@@ -13,7 +13,7 @@ private:
 public:
 	Vector2 position;
 
-    void DrawRect(HDC hdc)
+    void DrawRect(const HDC& hdc)
     {
         float leftOffset = size.x * anchor.x;
         float rightOffset = size.x * (1 - anchor.x);
@@ -27,7 +27,7 @@ public:
             int(position.x + rightOffset),
             int(position.y + bottomOffset));
     }
-    void DrawEllipse(HDC hdc)
+    void DrawEllipse(const HDC& hdc)
     {
         Ellipse(hdc,
             int(position.x - size.x * 0.5f),
@@ -36,19 +36,19 @@ public:
             int(position.y + size.y * 0.5f));
     }
 
-	void AnchorCorrection(float& value);
+	void AnchorCorrection(float value);
 
 	Vector2 GetPosition() { return position; }
-	void SetPosition(Vector2 position) { this->position = position; }
+	void SetPosition(const Vector2& position) { this->position = position; }
 
 	Vector2 GetSize() { return size; }
 
-	void SetAnchor(Vector2 anchor) { this->anchor = anchor; }
-	void SetSize(Vector2 size) { this->size = size; }
+	void SetAnchor(const Vector2& anchor) { this->anchor = anchor; }
+	void SetSize(const Vector2& size) { this->size = size; }
 
-	  Transform(Vector2 position, Vector2 size, Vector2 anchor = Vector2::Center());
-      Transform();
-     ~Transform();
+	 Transform(const Vector2& position, const Vector2& size, const Vector2& anchor = Vector2::Center());
+     Transform();
+    ~Transform();
 };
 #endif
 
