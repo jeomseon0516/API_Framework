@@ -4,7 +4,10 @@
 ObjectPoolManager::ObjectPoolManager()  {}
 ObjectPoolManager::~ObjectPoolManager() {}
 
-void ObjectPoolManager::ReturnObject(Object* obj)
+void ObjectPoolManager::ReturnObject(const string& key, Object* obj)
 {
-    poolList.push_back(obj);
+    if (poolList.find(key) == poolList.end())
+        poolList.insert(make_pair(key, list<Object*>()));
+
+    poolList[key].push_back(obj);
 }

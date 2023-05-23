@@ -8,11 +8,11 @@ class ObjectPoolManager
 {
     SINGLETON(ObjectPoolManager);
 private:
-    list<Object*> poolList;
+    map<string, list<Object*>> poolList;
 
 public:
-    list<Object*>* GetObjectList() { return &poolList; }
-    void ReturnObject(Object* obj);
+    list<Object*>* GetObjectList(string key) { return &poolList[key]; }
+    void ReturnObject(const string& key, Object* obj);
 public:
     ~ObjectPoolManager();
 };
