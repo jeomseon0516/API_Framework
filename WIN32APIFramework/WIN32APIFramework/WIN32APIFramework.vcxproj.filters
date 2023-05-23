@@ -233,9 +233,6 @@
     <ClCompile Include="MainUpdate.cpp">
       <Filter>소스 파일\MainUpdate</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectFactory.cpp">
-      <Filter>소스 파일\Pattern\Factory</Filter>
-    </ClCompile>
     <ClCompile Include="ObjectPoolManager.cpp">
       <Filter>소스 파일\Pattern\ObjectPool</Filter>
     </ClCompile>

@@ -2,7 +2,6 @@
 #include "Object.h"
 
 #define OBJECT_FACTORY(T) ObjectFactory<T>
-
 #define CREATE_OBJECT(T) (new T())->ObjStart();
 
 #define CREATE_OBJECT(T, X, Y)\

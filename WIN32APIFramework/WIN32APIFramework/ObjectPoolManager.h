@@ -11,7 +11,7 @@ private:
     map<string, list<Object*>> poolList;
 
 public:
-    list<Object*>* GetObjectList(string key) { return &poolList[key]; }
+    list<Object*>* GetObjectList(const string& key) { return &poolList[key]; }
     void ReturnObject(const string& key, Object* obj);
 public:
     ~ObjectPoolManager();
