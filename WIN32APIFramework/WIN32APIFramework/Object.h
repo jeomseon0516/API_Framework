@@ -5,6 +5,7 @@
 #include "Transform.h"
 #include "DrawManager.h"
 #include "ObjectManager.h"
+#include "ObjectPoolManager.h"
 #include "Include.h"
 
 // Update..Start..Render..
@@ -32,6 +33,7 @@ public:
 
     virtual void Render() { transform.DrawRect(DRAW_MANAGER->GetHdc()); }
     virtual void OnCollision(Object* object);
+    virtual void Destroy();
 
     string GetLayerName()const { return _layerName; }
     Object* SetName(const string& name) 
@@ -44,9 +46,6 @@ public:
 
     Transform& GetTransform() { return transform; }
     bool GetIsDie()const { return _isDie; }
-
-    virtual void Destroy();
-    void ObjDestroy();
 
     virtual Object* Clone()const { return new Object(*this); }
 

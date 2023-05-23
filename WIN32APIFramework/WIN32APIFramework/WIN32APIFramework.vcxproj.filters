@@ -49,12 +49,6 @@
     <Filter Include="소스 파일\Manager\InputManager">
       <UniqueIdentifier>{e2ee35b5-a547-4fdb-b3ca-8009175795aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Manager\ObjectManager">
-      <UniqueIdentifier>{3121ec7c-d353-4f37-9a0e-c9123cd812f3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Manager\PlayerManager">
-      <UniqueIdentifier>{4c1c044f-e96a-4127-96c3-d308a41eddbb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Manager\SceneManager">
       <UniqueIdentifier>{0975e5bf-a336-4331-8366-b37f3934e155}</UniqueIdentifier>
     </Filter>
@@ -76,7 +70,22 @@
     <Filter Include="소스 파일\Scene\Main">
       <UniqueIdentifier>{80f07cbb-0ea2-41d8-a7e5-29f3e534fd97}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Manager\Prototype">
+    <Filter Include="소스 파일\Manager\ObjectManager">
+      <UniqueIdentifier>{3121ec7c-d353-4f37-9a0e-c9123cd812f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\PlayerManager">
+      <UniqueIdentifier>{4c1c044f-e96a-4127-96c3-d308a41eddbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Pattern">
+      <UniqueIdentifier>{29a566c3-b0af-428b-8913-a71c1202a0fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Pattern\Factory">
+      <UniqueIdentifier>{b3ddc6f9-0e3e-4316-9092-707d8e899cec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Pattern\ObjectPool">
+      <UniqueIdentifier>{6887f2c8-49dd-4f77-8ee0-02f14d3663ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Pattern\Prototype">
       <UniqueIdentifier>{a5d12983-fb95-49b7-a950-ef13e7bb8c66}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -157,15 +166,18 @@
       <Filter>소스 파일\Scene\Main</Filter>
     </ClInclude>
     <ClInclude Include="Prototype.h">
-      <Filter>소스 파일\Manager\Prototype</Filter>
+      <Filter>소스 파일\Pattern\Prototype</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectFactory.h">
+      <Filter>소스 파일\Pattern\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectPoolManager.h">
+      <Filter>소스 파일\Pattern\ObjectPool</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WIN32APIFramework.cpp">
       <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="MainUpdate.cpp">
-      <Filter>소스 파일\MainUpdate</Filter>
     </ClCompile>
     <ClCompile Include="Transform.cpp">
       <Filter>소스 파일\Transform</Filter>
@@ -216,7 +228,16 @@
       <Filter>소스 파일\Scene\Main</Filter>
     </ClCompile>
     <ClCompile Include="Prototype.cpp">
-      <Filter>소스 파일\Manager\Prototype</Filter>
+      <Filter>소스 파일\Pattern\Prototype</Filter>
+    </ClCompile>
+    <ClCompile Include="MainUpdate.cpp">
+      <Filter>소스 파일\MainUpdate</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectFactory.cpp">
+      <Filter>소스 파일\Pattern\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectPoolManager.cpp">
+      <Filter>소스 파일\Pattern\ObjectPool</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

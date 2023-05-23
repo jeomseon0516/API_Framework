@@ -33,7 +33,6 @@ private:
     }
 
 public:
-
 	void FireBullet();
 
     Character* Clone()const override { return new Character(*this); }

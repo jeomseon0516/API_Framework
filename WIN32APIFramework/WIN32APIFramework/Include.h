@@ -9,7 +9,6 @@
 #include <Windows.h>
 
 #include "Define.h"
-#include "Mathf.h"
 
 using namespace std;
 

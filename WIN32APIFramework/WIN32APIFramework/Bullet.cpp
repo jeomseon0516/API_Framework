@@ -1,6 +1,5 @@
 #include "Bullet.h"
 
-
 Bullet::Bullet(const Transform& _transform) : Object(_transform) {}
 Bullet::Bullet() {}
 Bullet::~Bullet() {}

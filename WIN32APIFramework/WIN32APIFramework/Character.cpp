@@ -28,5 +28,5 @@ void Character::FireBullet()
         return;
 
 	bullet->ObjStart()->transform.position = transform.position;
-	bullet->SetDirection(_lookAt);
+	bullet->SetDirection(_direction);
 }

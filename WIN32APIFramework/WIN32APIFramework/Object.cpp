@@ -32,6 +32,4 @@ Object* Object::ObjStart()
 
 void Object::OnCollision(Object* object) {}
 void Object::Destroy() {}
-void Object::ObjDestroy() { Destroy(); }
-
 

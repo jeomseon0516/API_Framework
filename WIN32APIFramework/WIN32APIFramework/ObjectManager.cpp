@@ -49,10 +49,17 @@ inline bool ObjectManager::ObjectUpdate(list<Object*>* objectList, list<Object*>
 
 inline bool ObjectManager::ObjectRender(list<Object*>* objectList, list<Object*>::iterator& iter)
 {
-    Object* obj = (*iter);
+    Object* obj = *iter;
 
     obj->Render();
-    return RELEASE_ELEMENT(Object, obj->GetIsDie(), objectList, iter);
+
+    if (obj->GetIsDie())
+    {
+        ELEMENT_ERASE(Object, (*objectList), iter); 
+        return false; 
+    }
+
+    return true;
 }
 
 inline void ObjectManager::UpdateFromCustomFunction(bool(ObjectManager::* const function)(list<Object*>*, list<Object*>::iterator&))
@@ -60,7 +67,6 @@ inline void ObjectManager::UpdateFromCustomFunction(bool(ObjectManager::* const 
     for (const pair<const string, list<Object*>*>& item : _objectMap)
     {
         list<Object*>* objectList = item.second;
-
         list<Object*>::iterator iter = objectList->begin();
 
         while (iter != objectList->end())

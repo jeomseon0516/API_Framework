@@ -2,6 +2,8 @@
 #ifndef __DEFINE_H__
 #define __DEFINE_H__
 
+#include "Mathf.h"
+
 #undef PURE
 #define PURE = 0
 

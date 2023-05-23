@@ -154,7 +154,9 @@
     <ClInclude Include="Mathf.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="ObjectFactory.h" />
     <ClInclude Include="ObjectManager.h" />
+    <ClInclude Include="ObjectPoolManager.h" />
     <ClInclude Include="PlayerManager.h" />
     <ClInclude Include="Prototype.h" />
     <ClInclude Include="Scene.h" />
@@ -178,7 +180,9 @@
     <ClCompile Include="MainUpdate.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ObjectFactory.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="ObjectPoolManager.cpp" />
     <ClCompile Include="PlayerManager.cpp" />
     <ClCompile Include="Prototype.cpp" />
     <ClCompile Include="Scene.cpp" />

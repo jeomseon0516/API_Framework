@@ -3,6 +3,8 @@
 #define __ENEMY_H__
 
 #include "Object.h"
+#include "PlayerManager.h"
+#include "ObjectPoolManager.h"
 
 enum STATE
 {
@@ -47,6 +49,7 @@ private:
 public:
 
     void OnCollision(Object* obj) override;
+    void Destroy() override;
 
 	void Render() override { transform.DrawEllipse(DRAW_MANAGER->GetHdc()); }
 	void SetTarget(Object* obj) { _target = obj; }

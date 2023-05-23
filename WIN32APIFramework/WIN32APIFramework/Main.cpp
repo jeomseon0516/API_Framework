@@ -10,7 +10,7 @@ Main::Main()
     Object* enemy = GET_SINGLETON(Prototype)->GetGameObject("Enemy")->Clone();
 
     if (enemy)
-        ((Enemy*)(enemy->ObjStart()))->SetTarget(PLAYER_MANAGER->GetCharacter());
+        enemy->ObjStart();
 }
 
 Main::~Main() {}
