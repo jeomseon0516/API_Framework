@@ -17,10 +17,10 @@ Object* ObjectPoolManager::GetGameObject(const string& key)
     if (objectList->size() == 0)
         return GET_SINGLETON(Prototype)->GetGameObject(key)->Clone()->ObjStart();
 
-    Object* obj = objectList->front();
+    Object* obj = objectList->front()->ObjStart();
     objectList->pop_front();
 
-    return obj->ObjStart();
+    return obj;
 }
 
 void ObjectPoolManager::ReturnObject(const string& key, Object* obj)

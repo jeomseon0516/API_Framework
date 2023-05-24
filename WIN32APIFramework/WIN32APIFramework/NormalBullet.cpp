@@ -12,4 +12,5 @@ void NormalBullet::Start()
 
 void NormalBullet::Destroy()
 {
+    gameObject->Destroy();
 }

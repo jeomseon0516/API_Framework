@@ -33,6 +33,9 @@ private:
     }
 
 	void Start() override;
+
+public:
+
     void Update() override
     {
         switch (_state)
@@ -45,8 +48,6 @@ private:
             break;
         }
     }
-
-public:
 
     void OnCollision(Object* obj) override;
     void Destroy() override;

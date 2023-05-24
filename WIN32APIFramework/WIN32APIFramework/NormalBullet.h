@@ -3,7 +3,7 @@
 #include "ObjectPoolManager.h"
 #include "Object.h"
 
-#define LIFETIME 10.0f
+#define LIFE_TIME 10.0f
 
 class NormalBullet : public BulletBridge
 {
@@ -18,7 +18,7 @@ private:
         _lifeTime += 0.1f;
         Move();
 
-        if (_lifeTime >= LIFETIME)
+        if (_lifeTime >= LIFE_TIME)
             Destroy();
     }
 
@@ -27,10 +27,10 @@ private:
 public:
 
     void Destroy() override;
+
     void Render() override { gameObject->transform.DrawEllipse(DRAW_MANAGER->GetHdc()); }
-    void SetDirection(const Vector2& direction) { gameObject->SetDirection(direction); }
 
     NormalBullet();
-    ~NormalBullet() override;
+    ~NormalBullet();
 };
 

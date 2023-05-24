@@ -18,7 +18,10 @@ private:
 	float _coolTime;
 	int _keyCode;
 
-	void Start()  override;
+	void Start() override;
+
+public:
+
     void Update() override
     {
         _coolTime += 0.1f;
@@ -32,7 +35,6 @@ private:
         transform.position += _direction * SPEED;
     }
 
-public:
 	void FireBullet();
 
     Character* Clone()const override { return new Character(*this); }

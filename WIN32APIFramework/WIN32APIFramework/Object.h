@@ -8,15 +8,14 @@
 #include "Include.h"
 #include "Bridge.h"
 
-// Update..Start..Render..
-
 enum IS_DESTROY : unsigned char
 {
     DESTROY = 0x00000000,
-    POOL,
-    DONT
+    POOL    = 0x00000001,
+    DONT    = 0x00000002
 };
 
+// Update..Start..Render..
 class Object
 {
 protected:
@@ -24,7 +23,6 @@ protected:
 
     IS_DESTROY _isDie;
 
-    string _name;
     string _layerName;
 
     Vector2 _direction;
@@ -48,7 +46,7 @@ public:
 
     Object* SetName(const string& name) 
     { 
-        _name = name; 
+        _layerName = name; 
         return this;
     }
 
@@ -62,7 +60,13 @@ public:
     void SetIsDie(const IS_DESTROY isDestroy) { _isDie = isDestroy; }
 
     Transform& GetTransform() { return transform; }
-    void SetBridge(Bridge* bridge) { _bridge = bridge; }
+    void SetBridge(Bridge* bridge) 
+    { 
+        if (_bridge)
+            delete _bridge;
+
+        _bridge = bridge; 
+    }
 
     virtual Object* Clone()const { return new Object(*this); }
 

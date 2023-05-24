@@ -13,7 +13,6 @@
 #define CONVERT_FROM_RADIAN_TO_ANGLE(RADIAN) (RADIAN * RAD2DEG)
 #define CONVERT_FROM_ANGLE_TO_RADIAN(ANGLE) (RADIAN * DEG2RAD)
 
-//
 // 결과 값을 계산한 리턴 값이 필요하기 때문에 람다식을 매크로로 만든다.
 #define GET_DISTANCE(P1, P2)\
 [](const Vector2& p1, const Vector2& p2)\
@@ -29,5 +28,4 @@
 	float radian = GET_FROM_POSITION_TO_RADIAN(p1, p2);\
 	return Vector2(cosf(radian), sinf(radian));\
 }(P1, P2)
-
 #endif

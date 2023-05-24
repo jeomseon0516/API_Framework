@@ -6,27 +6,24 @@ Character::~Character() {}
 
 void Character::Start()
 {
-	_keyCode = 0;
-	_coolTime = COOL_TIME;
+    _keyCode = 0;
+    _coolTime = COOL_TIME;
 
-	_direction = Vector2::Zero();
-	_lookAt    = Vector2::Zero();
-
-	transform.position = Vector2(100, 100);
-	transform.SetSize(Vector2(100, 100));
+    transform.position = Vector2(100, 100);
+    transform.SetSize(Vector2(100, 100));
 }
 
 void Character::FireBullet()
 {
-	if (_coolTime < COOL_TIME) return;
+    if (_coolTime < COOL_TIME) return;
 
-	_coolTime = 0;
+    _coolTime = 0;
 
-	Object* bullet = GET_SINGLETON(ObjectPoolManager)->GetGameObject("CharacterBullet");
+    Bullet* bullet = (Bullet*)GET_SINGLETON(ObjectPoolManager)->GetGameObject("NormalBullet");
 
     if (!bullet)
         return;
 
-	bullet->transform.position = transform.position;
-	bullet->SetDirection(_direction);
+    bullet->transform.position = transform.position;
+    bullet->SetDirection(_direction);
 }

@@ -3,27 +3,28 @@
 #define __BULLET_H__
 
 #include "Object.h"
+#include "ObjectPoolManager.h"
 #include "NormalBullet.h"
 
 class Bullet : public Object
 {
 private:
-	void Start() override;
+    void Start() override;
+public:
+
     void Update() override
     {
         _bridge->Update();
     }
 
-public:
-
     void Destroy() override;
-    void Render() override { _bridge->Render(); }
+    void Render() override { transform.DrawEllipse(DRAW_MANAGER->GetHdc()); }
 
-    Bullet* Clone()const override { return new Bullet(*this); }
-     
-     Bullet(const Transform& _transform);
-     Bullet();
-    ~Bullet() override;
+    Bullet* Clone()const { return new Bullet(*this); }
+
+    Bullet(const Transform& _transform);
+    Bullet();
+    ~Bullet();
 };
 #endif
 

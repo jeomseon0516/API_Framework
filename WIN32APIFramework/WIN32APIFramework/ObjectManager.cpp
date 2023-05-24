@@ -3,7 +3,7 @@
 
 ObjectManager::ObjectManager()
 {
-    MakeCollisionData("Enemy", "CharacterBullet");
+    MakeCollisionData("Enemy", "NormalBullet");
 }
 ObjectManager::~ObjectManager() {}
 
@@ -67,7 +67,7 @@ inline bool ObjectManager::ObjectRender(list<Object*>* objectList, list<Object*>
     return true;
 }
 
-inline void ObjectManager::UpdateFromCustomFunction(bool(ObjectManager::* const function)(list<Object*>*, list<Object*>::iterator&))
+inline void ObjectManager::UpdateFromCustomFunction(bool(ObjectManager::*const function)(list<Object*>*, list<Object*>::iterator&))
 {
     for (const pair<const string, list<Object*>*>& item : _objectMap)
     {
