@@ -22,6 +22,6 @@ void Enemy::OnCollision(Object* obj)
 
 void Enemy::Destroy()
 {
-    _isDie = true;
-    GET_SINGLETON(ObjectPoolManager)->ReturnObject(this);
+    _isDie = POOL;
+    GET_SINGLETON(ObjectPoolManager)->ReturnObject(_layerName, this);
 }

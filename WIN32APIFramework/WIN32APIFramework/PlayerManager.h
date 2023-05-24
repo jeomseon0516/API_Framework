@@ -25,7 +25,7 @@ private:
 	}
 
 public:
-    Character* GetCharacter() { return _character; }
+    Character* GetCharacter()const { return _character; }
 	void SetCharacter(Character* character) { _character = character; }
 
     ~PlayerManager() override;

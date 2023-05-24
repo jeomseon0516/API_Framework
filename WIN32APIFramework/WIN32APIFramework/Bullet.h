@@ -3,32 +3,21 @@
 #define __BULLET_H__
 
 #include "Object.h"
-
-#define LIFETIME 10.0f
+#include "NormalBullet.h"
 
 class Bullet : public Object
 {
 private:
-
-	float _lifeTime;
-	float _speed;
-
 	void Start() override;
     void Update() override
     {
-        _lifeTime += 0.1f;
-        Move();
-
-        if (_lifeTime >= LIFETIME)
-            _isDie = true;
+        _bridge->Update();
     }
-
-    void Move() { transform.position += _direction * _speed; }
 
 public:
 
-    void Render() override { transform.DrawEllipse(DRAW_MANAGER->GetHdc()); }
-	void SetDirection(const Vector2& direction) { _direction = direction; }
+    void Destroy() override;
+    void Render() override { _bridge->Render(); }
 
     Bullet* Clone()const override { return new Bullet(*this); }
      

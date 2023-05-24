@@ -9,9 +9,8 @@ class ObjectPoolManager
     SINGLETON(ObjectPoolManager);
 private:
     map<string, list<Object*>> poolList;
-
 public:
-    list<Object*>* GetObjectList(const string& key) { return &poolList[key]; }
+    Object* GetGameObject(const string& key);
     void ReturnObject(const string& key, Object* obj);
 public:
     ~ObjectPoolManager();

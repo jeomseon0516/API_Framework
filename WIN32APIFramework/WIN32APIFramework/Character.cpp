@@ -22,11 +22,11 @@ void Character::FireBullet()
 
 	_coolTime = 0;
 
-	Object* bullet = GET_SINGLETON(Prototype)->GetGameObject("Bullet")->Clone();
+	Object* bullet = GET_SINGLETON(ObjectPoolManager)->GetGameObject("CharacterBullet");
 
     if (!bullet)
         return;
 
-	bullet->ObjStart()->transform.position = transform.position;
+	bullet->transform.position = transform.position;
 	bullet->SetDirection(_direction);
 }

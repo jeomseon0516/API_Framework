@@ -15,10 +15,12 @@ public:
 
     Object* GetGameObject(const string& key)
     {
-        if (_prototypeObject.find(key) == _prototypeObject.end())
+        map<string, Object*>::iterator iter = _prototypeObject.find(key);
+
+        if (iter == _prototypeObject.end())
             return nullptr;
 
-        return _prototypeObject[key];
+        return iter->second;
     }
 
 public:

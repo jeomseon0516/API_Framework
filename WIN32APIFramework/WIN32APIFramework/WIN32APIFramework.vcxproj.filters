@@ -88,6 +88,15 @@
     <Filter Include="소스 파일\Pattern\Prototype">
       <UniqueIdentifier>{a5d12983-fb95-49b7-a950-ef13e7bb8c66}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Bridge">
+      <UniqueIdentifier>{b44fc40e-d232-427e-a5b7-adc12a37a725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Bridge\BulletBridge">
+      <UniqueIdentifier>{ee5e01f8-bfac-4fdf-aecd-8d383d3275c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Bridge\BulletBridge\NormalBullet">
+      <UniqueIdentifier>{a389e8e8-692b-44ce-a1c7-c47dd5a200a8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WIN32APIFramework.h">
@@ -122,9 +131,6 @@
     </ClInclude>
     <ClInclude Include="Singleton.h">
       <Filter>소스 파일\Manager\Singleton</Filter>
-    </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>소스 파일\Object\Character</Filter>
     </ClInclude>
     <ClInclude Include="Bullet.h">
       <Filter>소스 파일\Object\Bullet</Filter>
@@ -173,6 +179,18 @@
     </ClInclude>
     <ClInclude Include="ObjectPoolManager.h">
       <Filter>소스 파일\Pattern\ObjectPool</Filter>
+    </ClInclude>
+    <ClInclude Include="Bridge.h">
+      <Filter>소스 파일\Bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletBridge.h">
+      <Filter>소스 파일\Bridge\BulletBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>소스 파일\Object\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalBullet.h">
+      <Filter>소스 파일\Bridge\BulletBridge\NormalBullet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +253,15 @@
     </ClCompile>
     <ClCompile Include="ObjectPoolManager.cpp">
       <Filter>소스 파일\Pattern\ObjectPool</Filter>
+    </ClCompile>
+    <ClCompile Include="Bridge.cpp">
+      <Filter>소스 파일\Bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletBridge.cpp">
+      <Filter>소스 파일\Bridge\BulletBridge</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalBullet.cpp">
+      <Filter>소스 파일\Bridge\BulletBridge\NormalBullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

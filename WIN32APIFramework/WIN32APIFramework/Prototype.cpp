@@ -12,7 +12,7 @@ void Prototype::Start()
 
     string key = "Character";
 
-    _prototypeObject.insert(make_pair(key,            (new Character(transform))->SetName(key)));
-    _prototypeObject.insert(make_pair(key = "Bullet", (new Bullet(transform))->SetName(key)));
-    _prototypeObject.insert(make_pair(key = "Enemy",  (new Enemy(transform))->SetName(key)));
+    _prototypeObject.insert(make_pair(key,                     (new Character(transform))->SetName(key)));
+    _prototypeObject.insert(make_pair(key = "CharacterBullet", (new Bullet(transform))->SetName(key)));
+    _prototypeObject.insert(make_pair(key = "Enemy",           (new Enemy(transform))->SetName(key)));
 }

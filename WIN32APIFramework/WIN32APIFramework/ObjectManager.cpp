@@ -16,7 +16,7 @@ inline void ObjectManager::Update()
     {
         if (!collisionData->isActive) continue;
 
-        list<Object*>* firstList  = collisionData->firstList;
+        list<Object*>* firstList = collisionData->firstList;
         list<Object*>* secondList = collisionData->secondList;
 
         for (Object* first : *firstList)
@@ -53,10 +53,15 @@ inline bool ObjectManager::ObjectRender(list<Object*>* objectList, list<Object*>
 
     obj->Render();
 
-    if (obj->GetIsDie())
+    switch (obj->GetIsDie())
     {
-        ELEMENT_ERASE(Object, (*objectList), iter); 
-        return false; 
+    case POOL:
+        ELEMENT_ERASE(Object, (*objectList), iter);
+        return false;
+        break;
+    case DESTROY:
+        return RELEASE_ELEMENT(Object, true, objectList, iter);
+        break;
     }
 
     return true;
@@ -104,7 +109,7 @@ void ObjectManager::MakeCollisionData(const string& firstKey, const string& seco
 
 void ObjectManager::AllClear()
 {
-    for (pair<const string, list<Object*>*> item : _objectMap)
+    for (const pair<const string, list<Object*>*>& item : _objectMap)
     {
         list<Object*>* objList = item.second;
         CLEAR_LIST(Object, (*objList));

@@ -1,8 +1,27 @@
 #include "ObjectPoolManager.h"
+#include "Prototype.h"
 #include "Object.h"
 
 ObjectPoolManager::ObjectPoolManager()  {}
 ObjectPoolManager::~ObjectPoolManager() {}
+
+Object* ObjectPoolManager::GetGameObject(const string& key)
+{
+    map<string, list<Object*>>::iterator iter = poolList.find(key);
+
+    if (iter == poolList.end())
+        return GET_SINGLETON(Prototype)->GetGameObject(key)->Clone()->ObjStart();
+
+    list<Object*>* objectList = &iter->second;
+
+    if (objectList->size() == 0)
+        return GET_SINGLETON(Prototype)->GetGameObject(key)->Clone()->ObjStart();
+
+    Object* obj = objectList->front();
+    objectList->pop_front();
+
+    return obj->ObjStart();
+}
 
 void ObjectPoolManager::ReturnObject(const string& key, Object* obj)
 {

@@ -1,15 +1,18 @@
 #include "Bullet.h"
 
-Bullet::Bullet(const Transform& _transform) : Object(_transform) {}
+Bullet::Bullet(const Transform& _transform) : Object(_transform, new NormalBullet()) {}
 Bullet::Bullet() {}
 Bullet::~Bullet() {}
 
 void Bullet::Start()
 {
-    transform.SetSize(Vector2(20, 20));
-    _lifeTime = 0;
-    _speed = 20.0f;
-    _name = "Bullet";
+    _bridge->SetObject(this);
+    _bridge->Start();
     _layerName = "CharacterBullet";
 }
 
+void Bullet::Destroy()
+{
+    _isDie = POOL;
+    GET_SINGLETON(ObjectPoolManager)->ReturnObject(_layerName, this);
+}

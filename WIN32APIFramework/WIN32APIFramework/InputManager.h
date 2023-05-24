@@ -55,7 +55,7 @@ private:
             _axisVertical = Converge(_axisVertical, 80);
     }
 
-    float UpdateAxis(float axisValue, float plusValue, float maxValue, float correctionValue = 1.0f)
+    float UpdateAxis(float axisValue, const float& plusValue, const float &maxValue, const float& correctionValue = 1.0f)
     {
         axisValue += plusValue;
 
@@ -65,15 +65,15 @@ private:
         return axisValue;
     }
 
-	float Converge(float value, int percent) { return percent * 0.01f * value; }
+	float Converge(const float& value, int percent) { return percent * 0.01f * value; }
     void CheckKey();
 
 public:
 
     DWORD GetKey() { return _inputKey; }
 
-	float GetAxisHorizontal()	{ return _axisHorizontal; }
-	float GetAxisVertical()     { return _axisVertical; }
+	float GetAxisHorizontal()const	{ return _axisHorizontal; }
+	float GetAxisVertical()const     { return _axisVertical; }
 
     ~InputManager() override;
 };

@@ -2,15 +2,12 @@
 
 Main::Main()
 {
-    Object* character = GET_SINGLETON(Prototype)->GetGameObject("Character")->Clone();
+    Object* character = GET_SINGLETON(ObjectPoolManager)->GetGameObject("Character");
 
     if (character)
-        PLAYER_MANAGER->SetCharacter((Character*)character->ObjStart());
+        PLAYER_MANAGER->SetCharacter((Character*)character);
 
-    Object* enemy = GET_SINGLETON(Prototype)->GetGameObject("Enemy")->Clone();
-
-    if (enemy)
-        enemy->ObjStart();
+    GET_SINGLETON(ObjectPoolManager)->GetGameObject("Enemy");
 }
 
 Main::~Main() {}
