@@ -8,7 +8,7 @@ class NormalBullet : public BulletBridge
 public:
     void Start() override;
 private:
-    void Move() { gameObject->transform.position += gameObject->GetDirection() * _speed; }
+    void Move() override {}
 public:
      NormalBullet();
     ~NormalBullet();

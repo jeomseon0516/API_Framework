@@ -34,15 +34,6 @@
     <Filter Include="소스 파일\Manager\Singleton">
       <UniqueIdentifier>{a8329606-e539-4c1d-90a7-dfe7b21b0d57}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Object\Character">
-      <UniqueIdentifier>{30cc2e16-ffb8-4128-abc3-27eaf05c0621}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Object\Bullet">
-      <UniqueIdentifier>{0a103e20-f095-4225-b92a-da5d955ea63e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Object\Enemy">
-      <UniqueIdentifier>{0afead2c-0ac9-4826-bb4e-5ee9561a086f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Transform">
       <UniqueIdentifier>{2ac3185b-540b-4467-8530-8cb3e901cc1f}</UniqueIdentifier>
     </Filter>
@@ -91,14 +82,35 @@
     <Filter Include="소스 파일\Bridge">
       <UniqueIdentifier>{b44fc40e-d232-427e-a5b7-adc12a37a725}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Bridge\BulletBridge">
+    <Filter Include="소스 파일\Object\LivingObject">
+      <UniqueIdentifier>{7b55a9d3-3d65-4cc0-9b2a-18f0fa982c19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\LivingObject\Bullet">
+      <UniqueIdentifier>{0a103e20-f095-4225-b92a-da5d955ea63e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\LivingObject\Enemy">
+      <UniqueIdentifier>{0afead2c-0ac9-4826-bb4e-5ee9561a086f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\LivingObject\Character">
+      <UniqueIdentifier>{30cc2e16-ffb8-4128-abc3-27eaf05c0621}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Bridge\LivingObjectBridge">
+      <UniqueIdentifier>{0b1a6544-2016-469d-8822-24f0b54473ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Bridge\LivingObjectBridge\CharacterBridge">
+      <UniqueIdentifier>{7e25d91d-7852-4d26-96d0-83a0de855c8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Bridge\LivingObjectBridge\BulletBridge">
       <UniqueIdentifier>{ee5e01f8-bfac-4fdf-aecd-8d383d3275c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Bridge\BulletBridge\NormalBullet">
+    <Filter Include="소스 파일\Bridge\LivingObjectBridge\BulletBridge\GuideBullet">
+      <UniqueIdentifier>{3ccc4997-71c9-440d-b14b-4e95728e0072}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Bridge\LivingObjectBridge\BulletBridge\NormalBullet">
       <UniqueIdentifier>{a389e8e8-692b-44ce-a1c7-c47dd5a200a8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Bridge\BulletBridge\GuideBullet">
-      <UniqueIdentifier>{3ccc4997-71c9-440d-b14b-4e95728e0072}</UniqueIdentifier>
+    <Filter Include="소스 파일\Bridge\LivingObjectBridge\EnemyBridge">
+      <UniqueIdentifier>{6bb96783-0e87-4b54-8fec-2f9b8d09eccb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -136,13 +148,13 @@
       <Filter>소스 파일\Manager\Singleton</Filter>
     </ClInclude>
     <ClInclude Include="Bullet.h">
-      <Filter>소스 파일\Object\Bullet</Filter>
+      <Filter>소스 파일\Object\LivingObject\Bullet</Filter>
     </ClInclude>
     <ClInclude Include="Mathf.h">
       <Filter>헤더 파일\Include</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
-      <Filter>소스 파일\Object\Enemy</Filter>
+      <Filter>소스 파일\Object\LivingObject\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="DrawManager.h">
       <Filter>소스 파일\Manager\02. DrawManager</Filter>
@@ -187,16 +199,28 @@
       <Filter>소스 파일\Bridge</Filter>
     </ClInclude>
     <ClInclude Include="BulletBridge.h">
-      <Filter>소스 파일\Bridge\BulletBridge</Filter>
+      <Filter>소스 파일\Bridge\LivingObjectBridge\BulletBridge</Filter>
     </ClInclude>
     <ClInclude Include="Character.h">
-      <Filter>소스 파일\Object\Character</Filter>
+      <Filter>소스 파일\Object\LivingObject\Character</Filter>
     </ClInclude>
     <ClInclude Include="NormalBullet.h">
-      <Filter>소스 파일\Bridge\BulletBridge\NormalBullet</Filter>
+      <Filter>소스 파일\Bridge\LivingObjectBridge\BulletBridge\NormalBullet</Filter>
     </ClInclude>
     <ClInclude Include="GuideBullet.h">
-      <Filter>소스 파일\Bridge\BulletBridge\GuideBullet</Filter>
+      <Filter>소스 파일\Bridge\LivingObjectBridge\BulletBridge\GuideBullet</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterBridge.h">
+      <Filter>소스 파일\Bridge\LivingObjectBridge\CharacterBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="LivingObject.h">
+      <Filter>소스 파일\Object\LivingObject</Filter>
+    </ClInclude>
+    <ClInclude Include="LivingObjectBridge.h">
+      <Filter>소스 파일\Bridge\LivingObjectBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBridge.h">
+      <Filter>소스 파일\Bridge\LivingObjectBridge\EnemyBridge</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -210,13 +234,13 @@
       <Filter>소스 파일\Object</Filter>
     </ClCompile>
     <ClCompile Include="Character.cpp">
-      <Filter>소스 파일\Object\Character</Filter>
+      <Filter>소스 파일\Object\LivingObject\Character</Filter>
     </ClCompile>
     <ClCompile Include="Bullet.cpp">
-      <Filter>소스 파일\Object\Bullet</Filter>
+      <Filter>소스 파일\Object\LivingObject\Bullet</Filter>
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
-      <Filter>소스 파일\Object\Enemy</Filter>
+      <Filter>소스 파일\Object\LivingObject\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="DrawManager.cpp">
       <Filter>소스 파일\Manager\02. DrawManager</Filter>
@@ -264,13 +288,25 @@
       <Filter>소스 파일\Bridge</Filter>
     </ClCompile>
     <ClCompile Include="BulletBridge.cpp">
-      <Filter>소스 파일\Bridge\BulletBridge</Filter>
+      <Filter>소스 파일\Bridge\LivingObjectBridge\BulletBridge</Filter>
     </ClCompile>
     <ClCompile Include="NormalBullet.cpp">
-      <Filter>소스 파일\Bridge\BulletBridge\NormalBullet</Filter>
+      <Filter>소스 파일\Bridge\LivingObjectBridge\BulletBridge\NormalBullet</Filter>
     </ClCompile>
     <ClCompile Include="GuideBullet.cpp">
-      <Filter>소스 파일\Bridge\BulletBridge\GuideBullet</Filter>
+      <Filter>소스 파일\Bridge\LivingObjectBridge\BulletBridge\GuideBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterBridge.cpp">
+      <Filter>소스 파일\Bridge\LivingObjectBridge\CharacterBridge</Filter>
+    </ClCompile>
+    <ClCompile Include="LivingObject.cpp">
+      <Filter>소스 파일\Object\LivingObject</Filter>
+    </ClCompile>
+    <ClCompile Include="LivingObjectBridge.cpp">
+      <Filter>소스 파일\Bridge\LivingObjectBridge</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBridge.cpp">
+      <Filter>소스 파일\Bridge\LivingObjectBridge\EnemyBridge</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

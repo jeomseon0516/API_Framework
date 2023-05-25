@@ -1,7 +1,6 @@
 #include "Bullet.h"
 
-Bullet::Bullet(const Transform& _transform) : Object(_transform) {}
-
+Bullet::Bullet(const Transform& _transform) : LivingObject(_transform) {}
 Bullet::Bullet() {}
 Bullet::~Bullet() {}
 
@@ -13,6 +12,6 @@ void Bullet::Start()
 
 void Bullet::Destroy()
 {
-    _isDie = POOL;
+    _destroyState = DESTROY_STATE::POOL;
     GET_SINGLETON(ObjectPoolManager)->ReturnObject(_layerName, this);
 }

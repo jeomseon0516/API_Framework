@@ -20,21 +20,10 @@ public:
 #ifdef DEBUG
         list<Object*>* bulletList = GET_SINGLETON(ObjectPoolManager)->GetGameObjectList("NormalBullet");
 
-        if (bulletList && !bulletList->empty())
+        if (bulletList)
         {
-            char* bulletBuffer = new char[128];
-
-            _itoa((int)bulletList->size(), bulletBuffer, 10);
-
-            string str(bulletBuffer);
-
-            delete[] bulletBuffer;
-            bulletBuffer = nullptr;
-
-            wchar_t* t = new wchar_t[(int)str.size()];
-            mbstowcs(t, str.c_str(), (int)str.size());
-
-            TextOut(DRAW_MANAGER->GetHdc(), 50, 50, (LPCWSTR)t, (int)str.size());
+            wstring str = to_wstring(bulletList->size());
+            TextOut(DRAW_MANAGER->GetHdc(), 50, 50, str.c_str(), static_cast<int>(str.length()));
         }
 #endif
     }

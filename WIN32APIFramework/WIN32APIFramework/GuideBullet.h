@@ -12,7 +12,7 @@ private:
     void Move() override
     {
         float radian = GET_FROM_POSITION_TO_RADIAN(_target->transform.position, gameObject->transform.position);
-        gameObject->transform.position += Vector2(cosf(radian), sinf(radian)) * _speed;
+        gameObject->SetDirection(Vector2(cosf(radian), sinf(radian)));
     }
 public:
      GuideBullet();

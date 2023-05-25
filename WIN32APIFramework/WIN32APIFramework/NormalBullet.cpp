@@ -5,5 +5,5 @@ NormalBullet::~NormalBullet() {}
 
 void NormalBullet::Start()
 {
-    _speed = 20.0f;
+    gameObject->SetSpeed(20.0f);
 }

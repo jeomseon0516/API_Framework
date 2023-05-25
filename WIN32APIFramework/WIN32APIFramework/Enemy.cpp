@@ -1,17 +1,12 @@
 #include "Enemy.h"
 
-Enemy::Enemy(const Transform& _transform) : Object(_transform) {}
-Enemy::Enemy()  {}
+Enemy::Enemy(const Transform& _transform) : LivingObject(_transform) {}
+Enemy::Enemy() {}
 Enemy::~Enemy() {}
 
 void Enemy::Start()
 {
-    transform = Transform(Vector2(500, 200), Vector2(30, 30));
-    _target = PLAYER_MANAGER->GetCharacter();
-    _coolTime = 0;
-    _speed = 3.0f;
-    _state = MOVE;
-    _movePoint = Vector2(300, 400);
+    SetBridge(new EnemyBridge());
     _layerName = "Enemy";
 }
 
@@ -22,6 +17,6 @@ void Enemy::OnCollision(Object* obj)
 
 void Enemy::Destroy()
 {
-    _isDie = POOL;
+    _destroyState = DESTROY_STATE::POOL;
     GET_SINGLETON(ObjectPoolManager)->ReturnObject(_layerName, this);
 }

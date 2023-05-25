@@ -43,7 +43,7 @@ inline void ObjectManager::Update()
 
 inline bool ObjectManager::ObjectUpdate(list<Object*>* objectList, list<Object*>::iterator& iter)
 {
-    (*iter)->Update();
+    (*iter)->ObjUpdate();
     return true;
 }
 
@@ -53,13 +53,13 @@ inline bool ObjectManager::ObjectRender(list<Object*>* objectList, list<Object*>
 
     obj->Render();
 
-    switch (obj->GetIsDie())
+    switch (obj->GetDestroyState())
     {
-    case POOL:
+    case DESTROY_STATE::POOL:
         ELEMENT_ERASE(Object, (*objectList), iter);
         return false;
         break;
-    case DESTROY:
+    case DESTROY_STATE::DESTROY:
         return RELEASE_ELEMENT(Object, true, objectList, iter);
         break;
     }

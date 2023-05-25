@@ -18,6 +18,7 @@ private:
 	void Update() override
 	{
 		if (_character == nullptr) return;
+
 		_character->SetDirection(Vector2(INPUT_MANAGER->GetAxisHorizontal(), INPUT_MANAGER->GetAxisVertical()));
 
         if      (INPUT_MANAGER->GetKey() & SPACE)

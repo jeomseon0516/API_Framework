@@ -4,7 +4,7 @@
 #include "ObjectPoolManager.h"
 #include "NormalBullet.h"
 
-class Bullet : public Object
+class Bullet : public LivingObject
 {
 private:
     void Start() override;
@@ -19,14 +19,7 @@ public:
     void Destroy() override;
     void Render() override { transform.DrawEllipse(DRAW_MANAGER->GetHdc()); }
 
-    void SetBridge(BulletBridge* bridge)
-    {
-        if (_bridge) delete _bridge;
-
-        _bridge = bridge;
-        _bridge->SetObject(this);
-        _bridge->Start();
-    }
+    void SetBridge(BulletBridge* bridge) { Object::SetBridge(bridge); } // 형식을 제한 시키기 위한 코드
 
     Bullet* Clone()const { return new Bullet(*this); }
 

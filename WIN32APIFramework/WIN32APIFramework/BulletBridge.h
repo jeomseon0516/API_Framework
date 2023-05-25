@@ -1,18 +1,15 @@
 #pragma once
-#include "Bridge.h"
+#include "LivingObjectBridge.h"
 #include "ObjectPoolManager.h"
-#include "Object.h"
 
 #define LIFE_TIME 10.0F
 
-class BulletBridge : public Bridge
+class BulletBridge : public LivingObjectBridge
 {
 protected:
-    float _speed;
     float _lifeTime;
 public:
     void Start() override;
-    void Destroy() override;
 
     void Update() override
     {
@@ -20,7 +17,7 @@ public:
         CalcLifeTime();
     }
 
-    void Render() override { gameObject->transform.DrawEllipse(DRAW_MANAGER->GetHdc()); }
+    void Render() override {}
 
 protected:
     virtual void Move() = 0;

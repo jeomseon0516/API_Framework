@@ -24,9 +24,7 @@ void Object::Init()
 
 Object* Object::ObjStart()
 {
-	_direction = Vector2::Zero();
-	_lookAt    = Vector2::Zero();
-    _isDie = DONT;
+    _destroyState = DESTROY_STATE::DONT;
 
 	Start();
     OBJECT_MANAGER->PushBackObject(_layerName, this);
@@ -36,8 +34,7 @@ Object* Object::ObjStart()
 
 void Object::Destroy() 
 {
-    _isDie = DESTROY;
+    _destroyState = DESTROY_STATE::DESTROY;
 }
 
 void Object::OnCollision(Object* object) {}
-
