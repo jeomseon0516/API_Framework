@@ -1,16 +1,12 @@
 #include "Bullet.h"
 
 Bullet::Bullet(const Transform& _transform) : Object(_transform) {}
+
 Bullet::Bullet() {}
 Bullet::~Bullet() {}
 
 void Bullet::Start()
 {
-    _bridge = new NormalBullet();
-
-    _bridge->SetObject(this);
-    _bridge->Start();
-
     transform.SetSize(Vector2(20, 20));
     _layerName = "NormalBullet";
 }

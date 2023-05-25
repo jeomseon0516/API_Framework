@@ -35,4 +35,6 @@ void InputManager::CheckKey()
         _inputKey |= S;
     if (GetAsyncKeyState('D'))
         _inputKey |= D;
+    if (GetAsyncKeyState('Z'))
+        _inputKey |= Z;
 }

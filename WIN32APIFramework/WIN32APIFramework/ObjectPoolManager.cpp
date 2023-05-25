@@ -5,16 +5,17 @@
 ObjectPoolManager::ObjectPoolManager()  {}
 ObjectPoolManager::~ObjectPoolManager() {}
 
-Object* ObjectPoolManager::GetGameObject(const string& key)
+list<Object*>* ObjectPoolManager::GetGameObjectList(const string& key)
 {
     map<string, list<Object*>>::iterator iter = poolList.find(key);
+    return iter == poolList.end() ? nullptr : &iter->second;
+}
 
-    if (iter == poolList.end())
-        return GET_SINGLETON(Prototype)->GetGameObject(key)->Clone()->ObjStart();
+Object* ObjectPoolManager::GetGameObject(const string& key)
+{
+    list<Object*>* objectList = GetGameObjectList(key);
 
-    list<Object*>* objectList = &iter->second;
-
-    if (objectList->size() == 0)
+    if (!objectList || objectList->size() == 0)
         return GET_SINGLETON(Prototype)->GetGameObject(key)->Clone()->ObjStart();
 
     Object* obj = objectList->front()->ObjStart();

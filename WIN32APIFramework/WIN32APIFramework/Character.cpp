@@ -13,7 +13,7 @@ void Character::Start()
     transform.SetSize(Vector2(100, 100));
 }
 
-void Character::FireBullet()
+void Character::FireBullet(BulletBridge* bulletBridge)
 {
     if (_coolTime < COOL_TIME) return;
 
@@ -26,4 +26,5 @@ void Character::FireBullet()
 
     bullet->transform.position = transform.position;
     bullet->SetDirection(_direction);
+    bullet->SetBridge(bulletBridge);
 }

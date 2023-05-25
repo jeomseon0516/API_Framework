@@ -1,7 +1,7 @@
 #pragma once
 #include "Include.h"
 #include "Singleton.h"
-//
+
 #define GAME_MANAGER (*GameManager::GetInstance())
 
 class GameManager

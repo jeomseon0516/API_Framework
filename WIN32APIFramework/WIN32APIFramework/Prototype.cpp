@@ -11,11 +11,11 @@ void Prototype::Start()
     Transform transform = Transform(Vector2(0.0f, 0.0f), Vector2(0.0f, 0.0f));
 
     string key = "Character";
-    _prototypeObject.insert(make_pair(key, (new Character(transform))->SetName(key)));
+    _prototypeObject.insert(make_pair(key, (new Character(transform))));
 
     key = "NormalBullet";
-    _prototypeObject.insert(make_pair(key, (new Bullet(transform))->SetName(key)));
+    _prototypeObject.insert(make_pair(key, (new Bullet(transform))));
 
     key = "Enemy";
-    _prototypeObject.insert(make_pair(key, (new Enemy(transform))->SetName(key)));
+    _prototypeObject.insert(make_pair(key, (new Enemy(transform))));
 }

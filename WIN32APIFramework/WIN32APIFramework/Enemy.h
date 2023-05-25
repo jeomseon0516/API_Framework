@@ -1,6 +1,4 @@
 #pragma once
-#ifndef __ENEMY_H__
-#define __ENEMY_H__
 
 #include "Object.h"
 #include "PlayerManager.h"
@@ -25,14 +23,14 @@ private:
 	Object* _target = nullptr;
 	STATE _state;
 
+	void Start() override;
     void Idle() {}
+
     void Move()
     {
         if (_target == nullptr) return;
         transform.position += GET_FROM_POSITION_TO_DIRECTION(_target->transform.position, transform.position) * _speed;
     }
-
-	void Start() override;
 
 public:
 
@@ -61,4 +59,3 @@ public:
      Enemy();
     ~Enemy() override;
 };
-#endif

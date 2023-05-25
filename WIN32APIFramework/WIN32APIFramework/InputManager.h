@@ -1,6 +1,4 @@
 #pragma once
-#ifndef __INPUT_MANAGER_H__
-#define __INPUT_MANAGER_H__
 
 #include "Include.h"
 #include "Singleton.h"
@@ -22,7 +20,8 @@ enum KEY_CODE : unsigned short
     W           = 0x00000080,
     A           = 0x00000100,
     S           = 0x00000200,
-    D           = 0x00000400
+    D           = 0x00000400,
+    Z           = 0x00000800
 };
 
 class InputManager : public Singleton
@@ -77,4 +76,3 @@ public:
 
     ~InputManager() override;
 };
-#endif

@@ -3,7 +3,6 @@
 MainUpdate::MainUpdate() {}
 MainUpdate::~MainUpdate() {}
 
-//
 void MainUpdate::Start()
 {
 	// ..초기화

@@ -1,6 +1,4 @@
 #pragma once
-#ifndef __SINGLETON_H__
-#define __SINGLETON_H__
 
 // .. 클래스의 생성자를 정의하지 않아 외부에서 생성하지 못하게 합니다.
 #define DO_NOT_MAKE(T)\
@@ -51,4 +49,3 @@ protected:
 
     Singleton();
 } typedef UpdatingSingleton;
-#endif

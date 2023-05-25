@@ -1,6 +1,4 @@
 #pragma once
-#ifndef __OBJECT_H__
-#define __OBJECT_H__
 
 #include "Transform.h"
 #include "DrawManager.h"
@@ -60,19 +58,17 @@ public:
     void SetIsDie(const IS_DESTROY isDestroy) { _isDie = isDestroy; }
 
     Transform& GetTransform() { return transform; }
-    void SetBridge(Bridge* bridge) 
+
+    virtual void SetBridge(Bridge* bridge) 
     { 
-        if (_bridge)
-            delete _bridge;
+        if (_bridge) delete _bridge;
 
         _bridge = bridge; 
     }
 
     virtual Object* Clone()const { return new Object(*this); }
 
-    Object(const Transform& _transform, Bridge* bridge);
     Object(const Transform& _transform);
     Object();
     virtual ~Object();
 };
-#endif

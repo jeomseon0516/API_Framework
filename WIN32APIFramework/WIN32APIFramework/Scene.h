@@ -10,4 +10,3 @@ public:
     Scene();
     virtual ~Scene();
 };
-

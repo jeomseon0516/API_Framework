@@ -97,6 +97,9 @@
     <Filter Include="소스 파일\Bridge\BulletBridge\NormalBullet">
       <UniqueIdentifier>{a389e8e8-692b-44ce-a1c7-c47dd5a200a8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Bridge\BulletBridge\GuideBullet">
+      <UniqueIdentifier>{3ccc4997-71c9-440d-b14b-4e95728e0072}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WIN32APIFramework.h">
@@ -192,6 +195,9 @@
     <ClInclude Include="NormalBullet.h">
       <Filter>소스 파일\Bridge\BulletBridge\NormalBullet</Filter>
     </ClInclude>
+    <ClInclude Include="GuideBullet.h">
+      <Filter>소스 파일\Bridge\BulletBridge\GuideBullet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WIN32APIFramework.cpp">
@@ -262,6 +268,9 @@
     </ClCompile>
     <ClCompile Include="NormalBullet.cpp">
       <Filter>소스 파일\Bridge\BulletBridge\NormalBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="GuideBullet.cpp">
+      <Filter>소스 파일\Bridge\BulletBridge\GuideBullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

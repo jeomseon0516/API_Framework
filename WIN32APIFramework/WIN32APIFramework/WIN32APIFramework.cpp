@@ -1,6 +1,4 @@
 // WIN32APIFramework.cpp : 애플리케이션에 대한 진입점을 정의합니다.
-//
-//
 #include "framework.h"
 #include "WIN32APIFramework.h"
 
@@ -70,11 +68,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     return (int)msg.wParam;
 }
 
-//
 //  함수: MyRegisterClass()
-//
 //  용도: 창 클래스를 등록합니다.
-//
 ATOM MyRegisterClass(HINSTANCE hInstance)
 {
     WNDCLASSEXW wcex;
@@ -96,7 +91,6 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     return RegisterClassExW(&wcex);
 }
 
-//
 //   함수: InitInstance(HINSTANCE, int)
 //
 //   용도: 인스턴스 핸들을 저장하고 주 창을 만듭니다.
@@ -105,7 +99,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 //
 //        이 함수를 통해 인스턴스 핸들을 전역 변수에 저장하고
 //        주 프로그램 창을 만든 다음 표시합니다.
-//
+
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
     hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.

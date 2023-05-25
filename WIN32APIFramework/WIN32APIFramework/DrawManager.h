@@ -1,7 +1,4 @@
 #pragma once
-#ifndef __DRAW_MANAGER_H__
-#define __DRAW_MANAGER_H__
-
 #include "Singleton.h"
 #include "Include.h"
 
@@ -22,4 +19,3 @@ public:
 
     ~DrawManager();
 };
-#endif

@@ -1,8 +1,9 @@
 #pragma once
-#ifndef __DEFINE_H__
-#define __DEFINE_H__
+#define _CRT_SECURE_NO_WARNINGS 0
 
 #include "Mathf.h"
+
+#define DEBUG
 
 #undef PURE
 #define PURE = 0
@@ -43,6 +44,3 @@ LIST.clear()
 }(CONDITION, LIST, ITER)
 
 extern HWND g_hWnd;
-
-#endif
-

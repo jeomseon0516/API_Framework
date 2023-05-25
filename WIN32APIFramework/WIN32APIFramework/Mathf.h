@@ -1,6 +1,4 @@
 #pragma once
-#ifndef __MATHF_H__
-#define __MATHF_H__
 
 #include "Vector2.h"
 #include <math.h>
@@ -28,4 +26,3 @@
 	float radian = GET_FROM_POSITION_TO_RADIAN(p1, p2);\
 	return Vector2(cosf(radian), sinf(radian));\
 }(P1, P2)
-#endif

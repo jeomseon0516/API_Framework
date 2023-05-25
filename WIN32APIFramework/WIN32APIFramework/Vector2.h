@@ -1,6 +1,4 @@
 #pragma once
-#ifndef __VECTOR2_H__
-#define __VECTOR2_H__
 
 struct tagVector2
 {
@@ -32,4 +30,3 @@ struct tagVector2
 
     tagVector2(const float& _x = 0, const float& _y = 0) : x(_x), y(_y) {}
 }typedef Vector2;
-#endif

@@ -1,10 +1,10 @@
 #pragma once
-#ifndef __PLAYER_MANAGER_H__
-#define __PLAYER_MANAGER_H__
 
+#include "NormalBullet.h"
+#include "GuideBullet.h"
 #include "Singleton.h"
-#include "Include.h"
 #include "Character.h"
+#include "Include.h"
 
 #define PLAYER_MANAGER (*PlayerManager::GetInstance())
 
@@ -20,8 +20,10 @@ private:
 		if (_character == nullptr) return;
 		_character->SetDirection(Vector2(INPUT_MANAGER->GetAxisHorizontal(), INPUT_MANAGER->GetAxisVertical()));
 
-        if (INPUT_MANAGER->GetKey() & SPACE)
-            _character->FireBullet();
+        if      (INPUT_MANAGER->GetKey() & SPACE)
+            _character->FireBullet(new NormalBullet());
+        else if (INPUT_MANAGER->GetKey() & Z)
+            _character->FireBullet(new GuideBullet());
 	}
 
 public:
@@ -30,4 +32,3 @@ public:
 
     ~PlayerManager() override;
 };
-#endif

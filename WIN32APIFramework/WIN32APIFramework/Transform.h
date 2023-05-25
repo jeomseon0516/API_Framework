@@ -1,6 +1,4 @@
 #pragma once
-#ifndef __TRANSFORM_H__
-#define __TRANSFORM_H__
 
 #include "Include.h"
 #include "Vector2.h"
@@ -27,6 +25,7 @@ public:
             int(position.x + rightOffset),
             int(position.y + bottomOffset));
     }
+
     void DrawEllipse(const HDC& hdc)
     {
         Ellipse(hdc,
@@ -36,7 +35,7 @@ public:
             int(position.y + size.y * 0.5f));
     }
 
-	void AnchorCorrection(float value);
+	void AnchorCorrection(float& value);
 
 	Vector2 GetPosition() { return position; }
 	void SetPosition(const Vector2& position) { this->position = position; }
@@ -46,9 +45,7 @@ public:
 	void SetAnchor(const Vector2& anchor) { this->anchor = anchor; }
 	void SetSize(const Vector2& size) { this->size = size; }
 
-	 Transform(const Vector2& position, const Vector2& size, const Vector2& anchor = Vector2::Center());
+	 Transform(const Vector2& position, const Vector2& size, Vector2 anchor = Vector2::Center());
      Transform();
     ~Transform();
 };
-#endif
-

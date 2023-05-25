@@ -1,13 +1,11 @@
 #pragma once
-#ifndef __CHARACTER_H__
-#define __CHARACTER_H__
 
 #include "Bullet.h"
 #include "InputManager.h"
 #include "Prototype.h"
 
 #define SPEED 10.0F
-#define COOL_TIME 0.01F
+#define COOL_TIME 0.4F
 
 class Character : public Object
 {
@@ -35,7 +33,7 @@ public:
         transform.position += _direction * SPEED;
     }
 
-	void FireBullet();
+	void FireBullet(BulletBridge* bulletBridge);
 
     Character* Clone()const override { return new Character(*this); }
 
@@ -43,5 +41,3 @@ public:
     Character();
     ~Character() override;
 };
-#endif
-
