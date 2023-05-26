@@ -13,6 +13,8 @@ private:
 public:
     void Start();
 
+    void MakePrototype(Object* obj);
+
     Object* GetGameObject(const string& key)
     {
         map<string, Object*>::iterator iter = _prototypeObject.find(key);

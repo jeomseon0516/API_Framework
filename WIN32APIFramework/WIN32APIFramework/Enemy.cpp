@@ -1,13 +1,20 @@
 #include "Enemy.h"
 
-Enemy::Enemy(const Transform& _transform) : LivingObject(_transform) {}
-Enemy::Enemy() {}
+Enemy::Enemy(const Transform& _transform) : LivingObject(_transform) 
+{
+    _layerName = "Enemy";
+}
+
+Enemy::Enemy() 
+{
+    _layerName = "Enemy";
+}
+
 Enemy::~Enemy() {}
 
 void Enemy::Start()
 {
     SetBridge(new EnemyBridge());
-    _layerName = "Enemy";
 }
 
 void Enemy::OnCollision(Object* obj) 

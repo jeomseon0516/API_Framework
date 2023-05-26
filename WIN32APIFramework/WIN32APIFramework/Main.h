@@ -8,7 +8,7 @@ class Main : public Scene
 public:
     void Update() override {}
 
-     Main();
+      Main();
      ~Main();
 };
 

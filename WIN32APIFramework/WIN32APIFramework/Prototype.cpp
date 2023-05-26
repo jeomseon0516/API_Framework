@@ -10,12 +10,18 @@ void Prototype::Start()
 {
     Transform transform = Transform(Vector2(0.0f, 0.0f), Vector2(0.0f, 0.0f));
 
-    string key = "Character";
-    _prototypeObject.insert(make_pair(key, (new Character(transform))));
+    MakePrototype(new Character(transform));
+    MakePrototype(new Enemy(transform));
+    MakePrototype(new Bullet(transform));
+}
 
-    key = "NormalBullet";
-    _prototypeObject.insert(make_pair(key, (new Bullet(transform))));
+void Prototype::MakePrototype(Object* obj)
+{
+    if (_prototypeObject.find(obj->GetLayerName()) != _prototypeObject.end())
+    {
+        delete obj;
+        return;
+    }
 
-    key = "Enemy";
-    _prototypeObject.insert(make_pair(key, (new Enemy(transform))));
+    _prototypeObject.insert(make_pair(obj->GetLayerName(), obj));
 }

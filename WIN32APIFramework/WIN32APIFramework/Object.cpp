@@ -1,7 +1,7 @@
 #pragma once
 #include "Object.h"
 
-Object::Object(const Transform& _transform) : transform(_transform), _bridge(nullptr)
+Object::Object(const Transform& _transform) : transform(_transform), _bridge(nullptr), m_imageList(IMAGE_MANAGER->GetImageList())
 {
     Init();
 }

@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bitmap.h" />
     <ClInclude Include="Bridge.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletBridge.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GuideBullet.h" />
+    <ClInclude Include="ImageManager.h" />
     <ClInclude Include="Include.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="LivingObject.h" />
@@ -177,6 +179,7 @@
     <ClInclude Include="WIN32APIFramework.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="Bridge.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletBridge.cpp" />
@@ -187,6 +190,7 @@
     <ClCompile Include="EnemyBridge.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GuideBullet.cpp" />
+    <ClCompile Include="ImageManager.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="LivingObject.cpp" />
     <ClCompile Include="LivingObjectBridge.cpp" />

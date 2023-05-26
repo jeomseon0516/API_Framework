@@ -19,9 +19,6 @@
     <Filter Include="소스 파일\MainUpdate">
       <UniqueIdentifier>{dba6e335-f941-471e-93f2-6067a4a61564}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Vector2">
-      <UniqueIdentifier>{a8b98616-8c24-4046-b60a-ba3838ce4415}</UniqueIdentifier>
-    </Filter>
     <Filter Include="헤더 파일\Include">
       <UniqueIdentifier>{329539b2-2698-4df5-822c-a57768f44338}</UniqueIdentifier>
     </Filter>
@@ -112,6 +109,15 @@
     <Filter Include="소스 파일\Bridge\LivingObjectBridge\EnemyBridge">
       <UniqueIdentifier>{6bb96783-0e87-4b54-8fec-2f9b8d09eccb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Manager\Bitmap">
+      <UniqueIdentifier>{a5054b2d-e3a7-47a5-9875-daaae9b8bbb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Vector2">
+      <UniqueIdentifier>{a8b98616-8c24-4046-b60a-ba3838ce4415}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\Bitmap\ImageManager">
+      <UniqueIdentifier>{f72d36b6-dc2a-431d-bfde-f86e26e087a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WIN32APIFramework.h">
@@ -136,7 +142,7 @@
       <Filter>헤더 파일\Include</Filter>
     </ClInclude>
     <ClInclude Include="Vector2.h">
-      <Filter>소스 파일\Vector2</Filter>
+      <Filter>헤더 파일\Vector2</Filter>
     </ClInclude>
     <ClInclude Include="Transform.h">
       <Filter>소스 파일\Transform</Filter>
@@ -221,6 +227,12 @@
     </ClInclude>
     <ClInclude Include="EnemyBridge.h">
       <Filter>소스 파일\Bridge\LivingObjectBridge\EnemyBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="Bitmap.h">
+      <Filter>소스 파일\Manager\Bitmap</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>소스 파일\Manager\Bitmap\ImageManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -307,6 +319,12 @@
     </ClCompile>
     <ClCompile Include="EnemyBridge.cpp">
       <Filter>소스 파일\Bridge\LivingObjectBridge\EnemyBridge</Filter>
+    </ClCompile>
+    <ClCompile Include="Bitmap.cpp">
+      <Filter>소스 파일\Manager\Bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>소스 파일\Manager\Bitmap\ImageManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

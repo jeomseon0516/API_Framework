@@ -1,7 +1,15 @@
 #include "Character.h"
 
-Character::Character(const Transform& _transform) : LivingObject(_transform) {}
-Character::Character() {}
+Character::Character(const Transform& _transform) : LivingObject(_transform) 
+{
+    _layerName = "Character";
+}
+
+Character::Character() 
+{
+    _layerName = "Character";
+}
+
 Character::~Character() {}
 
 void Character::Start()
