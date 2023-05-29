@@ -19,7 +19,7 @@ public:
     void OnCollision(Object* obj) override;
     void Destroy() override;
 
-	void Render() override { transform.DrawEllipse((*m_imageList)["Buffer"]->GetMemDC()); }
+	void Render() override { transform.DrawEllipse(DRAW_MANAGER->GetMemDC()); }
 	void SetTarget(Object* target) { ((EnemyBridge*)_bridge)->SetTarget(target); }
      
     Enemy* Clone()const override { return new Enemy(*this); }

@@ -6,6 +6,6 @@ ImageManager::ImageManager()
     m_mapImageList.insert(
         make_pair("BackGround", (new Bitmap)->LoadBmp(L"../Resource/Stage/BackGround.bmp")));
     m_mapImageList.insert(
-        make_pair("Buffer", (new Bitmap)->LoadBmp(L"../Resource/State/Buffer.bmp")));
+        make_pair("Buffer", (new Bitmap)->LoadBmp(L"../Resource/Stage/Buffer.bmp")));
 }
 ImageManager::~ImageManager() {}

@@ -17,7 +17,7 @@ public:
     }
 
     void Destroy() override;
-    void Render() override { transform.DrawEllipse((*m_imageList)["Buffer"]->GetMemDC()); }
+    void Render() override { transform.DrawEllipse(DRAW_MANAGER->GetMemDC()); }
 
     void SetBridge(BulletBridge* bridge) { Object::SetBridge(bridge); } // 형식을 제한 시키기 위한 코드
 

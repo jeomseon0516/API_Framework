@@ -36,7 +36,7 @@ public:
 
     Transform transform;
 
-    virtual void Render() { transform.DrawRect((*m_imageList)["Buffer"]->GetMemDC()); }
+    virtual void Render() { transform.DrawRect(DRAW_MANAGER->GetMemDC()); }
     virtual void OnCollision(Object* object);
     virtual void Destroy();
 
