@@ -1,5 +1,8 @@
 #include "CharacterBridge.h"
 
+CharacterBridge::CharacterBridge()  {}
+CharacterBridge::~CharacterBridge() {}
+
 void CharacterBridge::Start()
 {
     gameObject->SetSpeed(10.0f);
@@ -21,7 +24,7 @@ void CharacterBridge::FireBullet(BulletBridge* bulletBridge)
         return;
 
     bullet->transform.position = gameObject->transform.position;
-    bullet->SetDirection(gameObject->GetDirection());
+    bullet->SetDirection(gameObject->GetLookAt());
     bullet->SetBridge(bulletBridge);
     /*
         Object 클래스의 SetBridge는 모든 Bridge객체를 받아 올 수 있으므로 상속받은 Bullet에서는
@@ -29,6 +32,3 @@ void CharacterBridge::FireBullet(BulletBridge* bulletBridge)
     */
 }
 
-CharacterBridge::CharacterBridge() {}
-
-CharacterBridge::~CharacterBridge() {}

@@ -26,13 +26,13 @@ protected:
 
     string _layerName; // .. PrimaryKey
 
+    map<string, Bitmap*>* m_imageList;
+    map<string, Locomotion> motionList;
+
     void Init();
 
     virtual void Start() {}
     virtual void Update() {}
-
-    map<string, Bitmap*>* m_imageList;
-    map<string, Locomotion> motionList;
 
 public:
 

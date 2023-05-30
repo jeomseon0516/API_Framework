@@ -1,14 +1,14 @@
 #pragma once
 #include "State.h"
+#include "Idle.h"
 
 class Character;
-class Idle;
 
-class Attack : public State
+class Attack : public State<Character>
 {
 public:
-    Attack* Start(Object* chr) override;
-    void Action(Object* chr) override;
+    Attack* Start(Character* chr) override;
+    void Action(Character* chr) override;
 
 public:
     Attack() {}

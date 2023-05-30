@@ -2,28 +2,26 @@
 #include "Attack.h"
 #include "Character.h"
 
-Idle* Idle::Start(Object* chr)
+Idle* Idle::Start(Character* chr)
 {
-    Character* character = (Character*)chr;
-    delete character->_state;
-    character->_frame.locomotion = character->motionList["Idle"];
-    character->_frame.countX = 0;
+    delete chr->_state;
+    chr->_frame.locomotion = chr->motionList["Idle"];
+    chr->_frame.countX = 0;
 
     return this;
 }
 
-void Idle::Action(Object* chr)
+void Idle::Action(Character* chr)
 {
-    Character* character = (Character*)chr;
-    if (abs(character->_direction.x) > 0.01f || abs(character->_direction.y) > 0.01f)
-        character->_frame.locomotion = character->motionList["Run"];
+    if (abs(chr->_direction.x) > 0.01f || abs(chr->_direction.y) > 0.01f)
+        chr->_frame.locomotion = chr->motionList["Run"];
     else
-        character->_frame.locomotion = character->motionList["Idle"];
+        chr->_frame.locomotion = chr->motionList["Idle"];
 
     if (INPUT_MANAGER->GetKey() & LEFT_CTRL)
-        character->_state = (new Attack())->Start(character);
+        chr->_state = (new Attack())->Start(chr);
     if (INPUT_MANAGER->GetKey() & LEFT_SHIFT)
-        character->_state = (new Acrobatics())->Start(character);
+        chr->_state = (new Acrobatics())->Start(chr);
     if (INPUT_MANAGER->GetKey() & SPACE)
-        character->_state = (new Jump())->Start(character);
+        chr->_state = (new Jump())->Start(chr);
 }

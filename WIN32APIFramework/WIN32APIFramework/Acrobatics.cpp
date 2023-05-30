@@ -1,24 +1,21 @@
 #include "Acrobatics.h"
 #include "Character.h"
 
-Acrobatics* Acrobatics::Start(Object* chr)
+Acrobatics::Acrobatics()  {}
+Acrobatics::~Acrobatics() {}
+
+Acrobatics* Acrobatics::Start(Character* chr)
 {
-    Character* character = (Character*)chr;
-    delete character->_state;
-    character->_frame.locomotion = character->motionList["Acrobatics"];
-    character->_frame.countX = 0;
+    delete chr->_state;
+
+    chr->_frame.locomotion = chr->motionList["Acrobatics"];
+    chr->_frame.countX = 0;
 
     return this;
 }
 
-void Acrobatics::Action(Object* chr)
+void Acrobatics::Action(Character* chr)
 {
-    Character* character = (Character*)chr;
-
-    if (character->_frame.countX > character->_frame.locomotion.endFrameX)
-        character->_state = (new Idle())->Start(character);
+    if (chr->_frame.countX > chr->_frame.locomotion.endFrameX)
+        chr->_state = (new Idle())->Start(chr);
 }
-
-Acrobatics::Acrobatics() {}
-
-Acrobatics::~Acrobatics() {}

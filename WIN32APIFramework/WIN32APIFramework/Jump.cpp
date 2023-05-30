@@ -1,33 +1,37 @@
 #include "Jump.h"
 #include "Character.h"
 
-Jump* Jump::Start(Object* chr)
-{
-    Character* character = (Character*)chr;
-    delete character->_state;
-    character->_frame.locomotion = character->motionList["Jump"];
-    character->_frame.countX = 0;
+Jump::Jump() {}
+Jump::~Jump() {}
 
-    _startPosition = character->transform.position;
-    _power = -10.0f;
+Jump* Jump::Start(Character* chr)
+{
+    delete chr->_state;
+
+    chr->_frame.countX = 0;
+    chr->_frame.locomotion = chr->motionList["Jump"];
+
+    _keepY = chr->transform.position.y;
+    _power = -15.0f;
+    _isFall = false;
 
     return this;
 }
 
-void Jump::Action(Object* chr)
+void Jump::Action(Character* chr)
 {
-    Character* character = (Character*)chr;
-
-    character->transform.position.y += _power;
+    chr->transform.position.y += _power;
     _power += GRAVITY;
 
-    if (_startPosition.y <= character->transform.GetMinY())
+    if (!_isFall && _power > FLT_EPSILON)
     {
-        character->transform.position = _startPosition;
-        character->_state = (new Idle())->Start(character);
+        chr->_frame.countX = 0;
+        chr->_frame.locomotion = chr->motionList["Fall"];
+    }
+
+    if (_keepY <= chr->transform.GetMinY())
+    {
+        chr->transform.position.y = _keepY;
+        chr->_state = (new Idle())->Start(chr);
     }
 }
-
-Jump::Jump() {}
-
-Jump::~Jump() {}

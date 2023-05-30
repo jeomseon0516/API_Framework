@@ -42,18 +42,18 @@ public:
 
         Rectangle(hdc,
             int(position.x - leftOffset),
-            int(position.y - topOffset),
+            int(position.y + topOffset),
             int(position.x + rightOffset),
-            int(position.y + bottomOffset));
+            int(position.y - bottomOffset));
     }
 
     void DrawEllipse(const HDC& hdc)
     {
         Ellipse(hdc,
             int(position.x - size.x * 0.5f),
-            int(position.y - size.y * 0.5f),
+            int(position.y + size.y * 0.5f),
             int(position.x + size.x * 0.5f),
-            int(position.y + size.y * 0.5f));
+            int(position.y - size.y * 0.5f));
     }
 
     void AnchorCorrection(float& value);
@@ -88,5 +88,5 @@ typedef struct tagFrame
     float frameTime;
     int countX;
 
-    tagFrame() : frameTime(200), countX(0) {}
+    tagFrame() : frameTime(50), countX(0) {}
 }Frame;

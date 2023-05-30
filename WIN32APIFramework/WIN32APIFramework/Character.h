@@ -12,38 +12,39 @@
 class Character : public LivingObject
 {
 private:
-    friend class Idle;
-    friend class Jump;
-    friend class Attack;
     friend class Acrobatics;
+    friend class Attack;
+    friend class Jump;
+    friend class Idle;
 
-    State* _state;
+    State<Character>* _state;
+    bool _isFlipX;
+
     void Start() override;
 public:
 
     void Update() override
     {
-        if (_time + _frame.frameTime < GetTickCount64())
-        {
-            _time = GetTickCount64();
-            ++_frame.countX;
-        }
-
-        _bridge->Update();
         _state->Action(this);
+        _bridge->Update();
     }
 
     void Render() override
     {
+        if      (_direction.x > 0) 
+            _isFlipX = false;
+        else if (_direction.x < 0) 
+            _isFlipX = true;
+
         transform.ImageRender(DRAW_MANAGER->GetMemDC(),
             (*m_imageList)[_layerName]->GetMemDC(),
             _frame.countX % _frame.locomotion.endFrameX,
-            _frame.locomotion.countY);
+            _frame.locomotion.countY + (_isFlipX ? 9 : 0));
     }
 
     void FireBullet(BulletBridge* bulletBridge);
-
     Character* Clone()const override { return new Character(*this); }
+
 public:
     Character(const Transform& _transform);
     Character();

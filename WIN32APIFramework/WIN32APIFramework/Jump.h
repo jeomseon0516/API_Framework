@@ -4,18 +4,19 @@
 
 #define GRAVITY 0.5f;
 
-class Jump : public State
+class Character;
+
+class Jump : public State<Character>
 {
 private:
     float _power;
-    Vector2 _startPosition;
+    float _keepY;
+    bool _isFall;
 
 public:
-    Jump* Start(Object* chr) override;
-    void Action(Object* chr) override;
-
+    Jump* Start(Character* chr) override;
+    void Action(Character* chr) override;
 public:
-    Jump();
+     Jump();
     ~Jump();
 };
-

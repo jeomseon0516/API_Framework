@@ -16,12 +16,14 @@ void Character::Start()
 {
     SetBridge(new CharacterBridge());
     
-    motionList.insert(make_pair("Idle",       Locomotion(0, 7)));
-    motionList.insert(make_pair("Run",        Locomotion(1, 3)));
-    motionList.insert(make_pair("Attack",     Locomotion(5, 4)));
-    motionList.insert(make_pair("Acrobatics", Locomotion(4, 5)));
-    motionList.insert(make_pair("Jump",       Locomotion(3, 3)));
+    motionList.insert(make_pair("Idle",       Locomotion(0, 6)));
+    motionList.insert(make_pair("Run",        Locomotion(1, 6)));
+    motionList.insert(make_pair("Attack",     Locomotion(5, 3)));
+    motionList.insert(make_pair("Acrobatics", Locomotion(4, 4)));
+    motionList.insert(make_pair("Jump",       Locomotion(2, 2)));
+    motionList.insert(make_pair("Fall",       Locomotion(3, 2)));
 
+    _isFlipX = false;
     _state = new Idle();
 
     transform.position = Vector2(WIN_SIZE_X, WIN_SIZE_Y) * 0.5f;

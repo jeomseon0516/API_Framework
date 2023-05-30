@@ -13,6 +13,12 @@ private:
 public:
     void ObjUpdate() override final
     {
+        if (_time + _frame.frameTime < GetTickCount64())
+        {
+            _time = GetTickCount64();
+            ++_frame.countX;
+        }
+
         Object::ObjUpdate();
         Move();
     }

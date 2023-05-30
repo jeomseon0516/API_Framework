@@ -19,6 +19,7 @@ private:
     {
         if (_character == nullptr) return;
 
+        _character->SetLookAt(Vector2(INPUT_MANAGER->GetAxisHorizontal(), INPUT_MANAGER->GetAxisVertical()));
         _character->SetDirection(Vector2(INPUT_MANAGER->GetAxisHorizontal(), 0.0f));
 
         if (INPUT_MANAGER->GetKey() & LEFT_CTRL)

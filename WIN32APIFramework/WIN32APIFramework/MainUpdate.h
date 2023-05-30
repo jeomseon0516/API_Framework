@@ -18,7 +18,7 @@ public:
     void Update()
     {
         BitBlt(DRAW_MANAGER->GetMemDC(), 0, 0, WIN_SIZE_X, WIN_SIZE_Y,
-               (*m_imageList)["Buffer"]->GetMemDC(), 0, 0, SRCCOPY);
+               (*m_imageList)["BackGround"]->GetMemDC(), 0, 0, SRCCOPY);
 
         GAME_MANAGER->Update();
         DRAW_MANAGER->Update();
