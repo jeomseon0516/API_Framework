@@ -64,18 +64,6 @@
     <Filter Include="소스 파일\Manager\PlayerManager">
       <UniqueIdentifier>{4c1c044f-e96a-4127-96c3-d308a41eddbb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Pattern">
-      <UniqueIdentifier>{29a566c3-b0af-428b-8913-a71c1202a0fc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Pattern\Factory">
-      <UniqueIdentifier>{b3ddc6f9-0e3e-4316-9092-707d8e899cec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Pattern\ObjectPool">
-      <UniqueIdentifier>{6887f2c8-49dd-4f77-8ee0-02f14d3663ec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Pattern\Prototype">
-      <UniqueIdentifier>{a5d12983-fb95-49b7-a950-ef13e7bb8c66}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Bridge">
       <UniqueIdentifier>{b44fc40e-d232-427e-a5b7-adc12a37a725}</UniqueIdentifier>
     </Filter>
@@ -117,6 +105,36 @@
     </Filter>
     <Filter Include="소스 파일\Manager\Bitmap\ImageManager">
       <UniqueIdentifier>{f72d36b6-dc2a-431d-bfde-f86e26e087a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\LivingObject\State">
+      <UniqueIdentifier>{5e0e8f29-8992-464a-a0bb-626c7e60b477}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\LivingObject\State\CharacterState">
+      <UniqueIdentifier>{265af8dc-f7be-49c2-840b-9bae416076b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\LivingObject\State\CharacterState\Idle">
+      <UniqueIdentifier>{c7f1fcf8-54c4-4092-9024-3842a777e604}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\LivingObject\State\CharacterState\Attack">
+      <UniqueIdentifier>{4a3dd313-de9d-494e-b3bb-01ce32c71650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\LivingObject\State\CharacterState\Acrobatics">
+      <UniqueIdentifier>{1601e6cb-4a5b-428e-b93f-d758b238e1b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\LivingObject\Pattern">
+      <UniqueIdentifier>{29a566c3-b0af-428b-8913-a71c1202a0fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\LivingObject\Pattern\Factory">
+      <UniqueIdentifier>{b3ddc6f9-0e3e-4316-9092-707d8e899cec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\LivingObject\Pattern\ObjectPool">
+      <UniqueIdentifier>{6887f2c8-49dd-4f77-8ee0-02f14d3663ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\LivingObject\Pattern\Prototype">
+      <UniqueIdentifier>{a5d12983-fb95-49b7-a950-ef13e7bb8c66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\LivingObject\State\CharacterState\Jump">
+      <UniqueIdentifier>{50a18c7b-0dd6-46fa-b457-32ece36250c3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -193,13 +211,13 @@
       <Filter>소스 파일\Scene\Main</Filter>
     </ClInclude>
     <ClInclude Include="Prototype.h">
-      <Filter>소스 파일\Pattern\Prototype</Filter>
+      <Filter>소스 파일\Object\LivingObject\Pattern\Prototype</Filter>
     </ClInclude>
     <ClInclude Include="ObjectFactory.h">
-      <Filter>소스 파일\Pattern\Factory</Filter>
+      <Filter>소스 파일\Object\LivingObject\Pattern\Factory</Filter>
     </ClInclude>
     <ClInclude Include="ObjectPoolManager.h">
-      <Filter>소스 파일\Pattern\ObjectPool</Filter>
+      <Filter>소스 파일\Object\LivingObject\Pattern\ObjectPool</Filter>
     </ClInclude>
     <ClInclude Include="Bridge.h">
       <Filter>소스 파일\Bridge</Filter>
@@ -233,6 +251,21 @@
     </ClInclude>
     <ClInclude Include="ImageManager.h">
       <Filter>소스 파일\Manager\Bitmap\ImageManager</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>소스 파일\Object\LivingObject\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Idle.h">
+      <Filter>소스 파일\Object\LivingObject\State\CharacterState\Idle</Filter>
+    </ClInclude>
+    <ClInclude Include="Attack.h">
+      <Filter>소스 파일\Object\LivingObject\State\CharacterState\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="Acrobatics.h">
+      <Filter>소스 파일\Object\LivingObject\State\CharacterState\Acrobatics</Filter>
+    </ClInclude>
+    <ClInclude Include="Jump.h">
+      <Filter>소스 파일\Object\LivingObject\State\CharacterState\Jump</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -288,13 +321,13 @@
       <Filter>소스 파일\Scene\Main</Filter>
     </ClCompile>
     <ClCompile Include="Prototype.cpp">
-      <Filter>소스 파일\Pattern\Prototype</Filter>
+      <Filter>소스 파일\Object\LivingObject\Pattern\Prototype</Filter>
     </ClCompile>
     <ClCompile Include="MainUpdate.cpp">
       <Filter>소스 파일\MainUpdate</Filter>
     </ClCompile>
     <ClCompile Include="ObjectPoolManager.cpp">
-      <Filter>소스 파일\Pattern\ObjectPool</Filter>
+      <Filter>소스 파일\Object\LivingObject\Pattern\ObjectPool</Filter>
     </ClCompile>
     <ClCompile Include="Bridge.cpp">
       <Filter>소스 파일\Bridge</Filter>
@@ -325,6 +358,21 @@
     </ClCompile>
     <ClCompile Include="ImageManager.cpp">
       <Filter>소스 파일\Manager\Bitmap\ImageManager</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>소스 파일\Object\LivingObject\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Idle.cpp">
+      <Filter>소스 파일\Object\LivingObject\State\CharacterState\Idle</Filter>
+    </ClCompile>
+    <ClCompile Include="Attack.cpp">
+      <Filter>소스 파일\Object\LivingObject\State\CharacterState\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="Acrobatics.cpp">
+      <Filter>소스 파일\Object\LivingObject\State\CharacterState\Acrobatics</Filter>
+    </ClCompile>
+    <ClCompile Include="Jump.cpp">
+      <Filter>소스 파일\Object\LivingObject\State\CharacterState\Jump</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

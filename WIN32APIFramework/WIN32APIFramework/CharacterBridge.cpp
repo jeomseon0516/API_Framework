@@ -3,7 +3,7 @@
 void CharacterBridge::Start()
 {
     gameObject->SetSpeed(10.0f);
-    gameObject->transform.SetSize(Vector2(100, 100));
+    gameObject->transform.SetSize(Vector2(97, 71));
 
     _keyCode = 0;
     _coolTime = COOL_TIME;

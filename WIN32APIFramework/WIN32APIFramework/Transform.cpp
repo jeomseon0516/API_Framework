@@ -1,9 +1,9 @@
 #include "Transform.h"
 
-Transform::Transform() {}
-Transform::~Transform() {}
+tagTransform::tagTransform() {}
+tagTransform::~tagTransform() {}
 
-void Transform::AnchorCorrection(float& value)
+void tagTransform::AnchorCorrection(float& value)
 {
 	if (value < 0)
 		value = 0;
@@ -11,7 +11,7 @@ void Transform::AnchorCorrection(float& value)
 		value = 1;
 }
 
-Transform::Transform(const Vector2& position, const Vector2& size, Vector2 anchor)
+tagTransform::tagTransform(const Vector2& position, const Vector2& size, Vector2 anchor)
 {
 	this->position = position;
 	this->size = size;

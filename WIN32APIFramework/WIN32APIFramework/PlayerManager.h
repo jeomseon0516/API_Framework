@@ -13,23 +13,23 @@ class PlayerManager : public Singleton
 {
     SINGLETON(PlayerManager);
 private:
-	Character* _character = nullptr;
+    Character* _character = nullptr;
 
-	void Update() override
-	{
-		if (_character == nullptr) return;
+    void Update() override
+    {
+        if (_character == nullptr) return;
 
-		_character->SetDirection(Vector2(INPUT_MANAGER->GetAxisHorizontal(), INPUT_MANAGER->GetAxisVertical()));
+        _character->SetDirection(Vector2(INPUT_MANAGER->GetAxisHorizontal(), 0.0f));
 
-        if      (INPUT_MANAGER->GetKey() & SPACE)
+        if (INPUT_MANAGER->GetKey() & LEFT_CTRL)
             _character->FireBullet(new NormalBullet());
         else if (INPUT_MANAGER->GetKey() & Z)
             _character->FireBullet(new GuideBullet());
-	}
+    }
 
 public:
     Character* GetCharacter()const { return _character; }
-	void SetCharacter(Character* character) { _character = character; }
+    void SetCharacter(Character* character) { _character = character; }
 
     ~PlayerManager() override;
 };

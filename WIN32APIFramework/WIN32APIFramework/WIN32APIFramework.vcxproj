@@ -139,6 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Acrobatics.h" />
+    <ClInclude Include="Attack.h" />
     <ClInclude Include="Bitmap.h" />
     <ClInclude Include="Bridge.h" />
     <ClInclude Include="Bullet.h" />
@@ -152,9 +154,11 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GuideBullet.h" />
+    <ClInclude Include="Idle.h" />
     <ClInclude Include="ImageManager.h" />
     <ClInclude Include="Include.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="Jump.h" />
     <ClInclude Include="LivingObject.h" />
     <ClInclude Include="LivingObjectBridge.h" />
     <ClInclude Include="Logo.h" />
@@ -171,6 +175,7 @@
     <ClInclude Include="Prototype.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="State.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Singleton.h" />
@@ -179,6 +184,8 @@
     <ClInclude Include="WIN32APIFramework.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Acrobatics.cpp" />
+    <ClCompile Include="Attack.cpp" />
     <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="Bridge.cpp" />
     <ClCompile Include="Bullet.cpp" />
@@ -190,8 +197,10 @@
     <ClCompile Include="EnemyBridge.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GuideBullet.cpp" />
+    <ClCompile Include="Idle.cpp" />
     <ClCompile Include="ImageManager.cpp" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="Jump.cpp" />
     <ClCompile Include="LivingObject.cpp" />
     <ClCompile Include="LivingObjectBridge.cpp" />
     <ClCompile Include="Logo.cpp" />
@@ -207,6 +216,7 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Singleton.cpp" />
+    <ClCompile Include="State.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="WIN32APIFramework.cpp" />
   </ItemGroup>

@@ -21,7 +21,9 @@ enum KEY_CODE : unsigned short
     A           = 0x00000100,
     S           = 0x00000200,
     D           = 0x00000400,
-    Z           = 0x00000800
+    Z           = 0x00000800,
+    LEFT_SHIFT  = 0x00001000,
+    LEFT_CTRL   = 0x00002000
 };
 
 class InputManager : public Singleton

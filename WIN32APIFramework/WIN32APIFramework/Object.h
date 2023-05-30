@@ -10,8 +10,8 @@
 enum class DESTROY_STATE : unsigned char
 {
     DESTROY = 0x00000000,
-    POOL = 0x00000001,
-    DONT = 0x00000002
+    POOL    = 0x00000001,
+    DONT    = 0x00000002
 };
 
 // .. Update..Start..Render..
@@ -19,6 +19,8 @@ class Object
 {
 protected:
     Bridge* _bridge;
+    Frame _frame;
+    ULONGLONG _time;
 
     DESTROY_STATE _destroyState;
 
@@ -30,10 +32,11 @@ protected:
     virtual void Update() {}
 
     map<string, Bitmap*>* m_imageList;
+    map<string, Locomotion> motionList;
+
 public:
 
     Object* ObjStart();
-
     Transform transform;
 
     virtual void Render() { transform.DrawRect(DRAW_MANAGER->GetMemDC()); }

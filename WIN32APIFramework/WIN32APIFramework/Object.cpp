@@ -11,7 +11,7 @@ Object::Object() : transform(Transform(Vector2(), Vector2())), _bridge(nullptr)
     Init();
 }
 
-Object::~Object() 
+Object::~Object()
 {
     if (!_bridge) return;
     delete _bridge;
@@ -26,13 +26,13 @@ Object* Object::ObjStart()
 {
     _destroyState = DESTROY_STATE::DONT;
 
-	Start();
+    Start();
     OBJECT_MANAGER->PushBackObject(_layerName, this);
 
     return this;
 }
 
-void Object::Destroy() 
+void Object::Destroy()
 {
     _destroyState = DESTROY_STATE::DESTROY;
 }

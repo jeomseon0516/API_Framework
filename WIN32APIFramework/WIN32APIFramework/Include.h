@@ -6,6 +6,8 @@
 #include <string>
 #include <Windows.h>
 
+using namespace std;
+
 #include "Define.h"
 
-using namespace std;
+#pragma comment(lib, "msimg32.lib")

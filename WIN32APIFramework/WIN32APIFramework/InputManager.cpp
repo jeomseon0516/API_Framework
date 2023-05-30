@@ -27,6 +27,10 @@ void InputManager::CheckKey()
         _inputKey |= SPACE;
     if (GetAsyncKeyState(VK_ESCAPE))
         _inputKey |= ESCAPE;
+    if (GetAsyncKeyState(VK_LSHIFT))
+        _inputKey |= LEFT_SHIFT;
+    if (GetAsyncKeyState(VK_LCONTROL))
+        _inputKey |= LEFT_CTRL;
     if (GetAsyncKeyState('W'))
         _inputKey |= W;
     if (GetAsyncKeyState('A'))

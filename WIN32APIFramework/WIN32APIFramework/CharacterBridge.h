@@ -18,11 +18,7 @@ public:
     void Update() override
     {
         _coolTime += 0.1f;
-
         _beforePosition = gameObject->transform.position;
-
-        if (abs(gameObject->GetDirection().x) > 0 && abs(gameObject->GetDirection().y) > 0)
-            gameObject->SetLookAt(gameObject->GetDirection());
     }
     void Render() override {}
     void FireBullet(BulletBridge* bulletBridge);
