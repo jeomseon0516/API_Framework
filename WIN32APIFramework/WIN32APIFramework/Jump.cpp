@@ -29,7 +29,7 @@ void Jump::Action(Character* chr)
         chr->_frame.locomotion = chr->motionList["Fall"];
     }
 
-    if (_keepY <= chr->transform.GetMinY())
+    if (_keepY <= chr->transform.position.y)
     {
         chr->transform.position.y = _keepY;
         chr->_state = (new Idle())->Start(chr);
