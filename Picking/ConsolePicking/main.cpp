@@ -97,8 +97,8 @@ int main(void)
 	{
 		Tile tile;
 
-		int x = (i % CNT_X);
-		int y = (i / CNT_X);
+		int x = i % CNT_X;
+		int y = i / CNT_X;
 
 		for (int j = 0; j < 3; ++j)
 			tile.position[j] = Vector3(position.x - scale.x * 0.5f + scale.x * x + scale.x,
