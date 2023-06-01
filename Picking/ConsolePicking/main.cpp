@@ -5,6 +5,8 @@
 
 using namespace std;
 
+// .. CONSTANTS ..
+
 #define CNT_X 5
 #define CNT_Y 5
 
