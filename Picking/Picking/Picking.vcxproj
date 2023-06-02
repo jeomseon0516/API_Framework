@@ -139,13 +139,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bitmap.h" />
+    <ClInclude Include="Define.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="ImageManager.h" />
+    <ClInclude Include="Include.h" />
+    <ClInclude Include="Main.h" />
+    <ClInclude Include="MainUpdate.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="Picking.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Stage.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="Transform.h" />
+    <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bitmap.cpp" />
+    <ClCompile Include="ImageManager.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainUpdate.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="Picking.cpp" />
+    <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Picking.rc" />

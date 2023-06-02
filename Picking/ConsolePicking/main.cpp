@@ -10,27 +10,24 @@ using namespace std;
 #define CNT_X 5
 #define CNT_Y 5
 
-enum COLOR : unsigned char
-{
-	BLACK		  = 0,
-	DARK_BLUE	  = 1,
-	DARK_GREEN	  = 2,
-	DARK_SKY_BLUE = 3,
-	DARK_RED	  = 4,
-	DARK_PURPLE	  = 5,
-	DARK_YELLOW   = 6,
-	GRAY		  = 7,
-	DARK_GRAY	  = 8,
-	BLUE		  = 9,
-	GREEN		  = 10,
-	SKY_BLUE	  = 11,
-	RED			  = 12,
-	PURPLE		  = 13,
-	YELLOW		  = 14,
-	WHITE		  = 15
-};
+#define BLACK		  0
+#define DARK_BLUE	  1
+#define DARK_GREEN	  2
+#define DARK_SKY_BLUE 3
+#define DARK_RED	  4
+#define DARK_PURPLE	  5
+#define DARK_YELLOW   6
+#define GRAY		  7
+#define DARK_GRAY	  8
+#define BLUE		  9
+#define GREEN		  10
+#define SKY_BLUE	  11
+#define RED			  12
+#define PURPLE		  13
+#define YELLOW		  14
+#define WHITE		  15
 
-void SetCursorPosition(const float& _x, const float& _y);
+		void SetCursorPosition(const float& _x, const float& _y);
 void SetColor(int color);
 void Text(const float& _x, const float& _y, const string& _str, const int _color = WHITE);
 
@@ -94,8 +91,6 @@ int main(void)
 	scale.y = 3;
 
 	for (int i = 0; i < maxIndex; ++i)
-
-	for (int i = 0; i < maxIndex; ++i)
 	{
 		Tile tile;
 
@@ -152,14 +147,12 @@ int main(void)
 
 			if (cursor.position.x < 0)
 				cursor.position.x = 0;
-
-			if (cursor.position.y < 0)
+			else if (cursor.position.y < 0)
 				cursor.position.y = 0;
 
 			if (cursor.position.x >= CNT_X)
 				cursor.position.x = CNT_X - 1;
-
-			if (cursor.position.y >= CNT_Y)
+			else if (cursor.position.y >= CNT_Y)
 				cursor.position.y = CNT_Y - 1;
 
 			int myIndex = int(cursor.position.y * CNT_X + cursor.position.x);

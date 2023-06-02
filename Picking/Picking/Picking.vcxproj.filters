@@ -13,24 +13,117 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="헤더 파일\Include">
+      <UniqueIdentifier>{d7d7eee3-6574-4902-adaf-d4e9452092ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Headers">
+      <UniqueIdentifier>{1650add3-0506-46b0-a70a-0a4cc1da46bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Include\Vector2">
+      <UniqueIdentifier>{fca148dd-060a-4c01-9044-db1d577a0ca3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\MainUpdate">
+      <UniqueIdentifier>{d9368e2e-dfa0-4adc-8558-9c6ea0919df1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object">
+      <UniqueIdentifier>{851b5ce9-df7b-4edb-b84c-a61e8b10d148}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object\Tile">
+      <UniqueIdentifier>{4773938b-c421-4997-9692-3210ec19c481}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Include\Define">
+      <UniqueIdentifier>{03d5ae10-306b-4ebf-b884-4196c6b6b1e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Stage">
+      <UniqueIdentifier>{0b1c6a37-b512-4946-89c1-0f194046fb73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Stage\Main">
+      <UniqueIdentifier>{339d6f83-a73b-4038-9cd5-cb45ede9a01a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Include\Transform">
+      <UniqueIdentifier>{a3053f3e-20c6-41e4-b097-c73da8c810eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager">
+      <UniqueIdentifier>{74adb0cd-14c4-4bad-81c1-78ab3efce44c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Bitmap">
+      <UniqueIdentifier>{2414e1ca-be3b-460f-97fa-9f64841c2e43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\ImageManager">
+      <UniqueIdentifier>{77b8f667-8984-45ac-a5b1-fbe9daa48541}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="targetver.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Picking.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>헤더 파일\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include.h">
+      <Filter>헤더 파일\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="MainUpdate.h">
+      <Filter>소스 파일\MainUpdate</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>소스 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>소스 파일\Object\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>헤더 파일\Include\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>소스 파일\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>소스 파일\Stage\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>헤더 파일\Include\Vector2</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>헤더 파일\Include\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Bitmap.h">
+      <Filter>소스 파일\Bitmap</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>소스 파일\Manager\ImageManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Picking.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MainUpdate.cpp">
+      <Filter>소스 파일\MainUpdate</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>소스 파일\Object\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>소스 파일\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>소스 파일\Stage\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Bitmap.cpp">
+      <Filter>소스 파일\Bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>소스 파일\Manager\ImageManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
