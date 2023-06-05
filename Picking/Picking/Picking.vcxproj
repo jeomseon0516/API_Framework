@@ -146,9 +146,17 @@
     <ClInclude Include="Include.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="MainUpdate.h" />
+    <ClInclude Include="Mathf.h" />
+    <ClInclude Include="MouseManager.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="ObjectManager.h" />
+    <ClInclude Include="ObjectPoolManager.h" />
     <ClInclude Include="Picking.h" />
+    <ClInclude Include="Prototype.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Singleton.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Tile.h" />
@@ -160,8 +168,15 @@
     <ClCompile Include="ImageManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainUpdate.cpp" />
+    <ClCompile Include="MouseManager.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="ObjectPoolManager.cpp" />
     <ClCompile Include="Picking.cpp" />
+    <ClCompile Include="Prototype.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="Tile.cpp" />
   </ItemGroup>

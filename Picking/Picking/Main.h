@@ -2,6 +2,8 @@
 #include "Stage.h"
 #include "Tile.h"
 
+#define BOOM_COUNT 100
+
 class Main : public Stage
 {
 private:
