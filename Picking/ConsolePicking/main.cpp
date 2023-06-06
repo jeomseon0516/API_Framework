@@ -27,7 +27,7 @@ using namespace std;
 #define YELLOW		  14
 #define WHITE		  15
 
-		void SetCursorPosition(const float& _x, const float& _y);
+void SetCursorPosition(const float& _x, const float& _y);
 void SetColor(int color);
 void Text(const float& _x, const float& _y, const string& _str, const int _color = WHITE);
 
