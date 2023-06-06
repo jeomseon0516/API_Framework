@@ -52,6 +52,24 @@
     <Filter Include="소스 파일\Manager\ImageManager">
       <UniqueIdentifier>{77b8f667-8984-45ac-a5b1-fbe9daa48541}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Manager\SceneManager">
+      <UniqueIdentifier>{b0565350-43ed-46cb-8c87-d0a64312b53f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene">
+      <UniqueIdentifier>{bec0dbcf-1869-4514-8a9a-9e5ccd9b53e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\ObjectManager">
+      <UniqueIdentifier>{7ce6b99a-3421-4117-8b79-6f6dda439548}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\ObjectPoolManager">
+      <UniqueIdentifier>{e597e9b3-d407-476e-9087-c9ec7e74e526}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\Prototype">
+      <UniqueIdentifier>{d433d700-afb0-4937-8dfa-ef83cc058734}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\MouseManager">
+      <UniqueIdentifier>{28c90110-0568-404e-8851-ce1dcc8eee3f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -99,6 +117,30 @@
     <ClInclude Include="ImageManager.h">
       <Filter>소스 파일\Manager\ImageManager</Filter>
     </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>소스 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>소스 파일\Manager\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>소스 파일\Manager\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectPoolManager.h">
+      <Filter>소스 파일\Manager\ObjectPoolManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype.h">
+      <Filter>소스 파일\Manager\Prototype</Filter>
+    </ClInclude>
+    <ClInclude Include="Mathf.h">
+      <Filter>헤더 파일\Include\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseManager.h">
+      <Filter>소스 파일\Manager\MouseManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Picking.cpp">
@@ -124,6 +166,27 @@
     </ClCompile>
     <ClCompile Include="ImageManager.cpp">
       <Filter>소스 파일\Manager\ImageManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>소스 파일\Manager\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>소스 파일\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>소스 파일\Manager\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectPoolManager.cpp">
+      <Filter>소스 파일\Manager\ObjectPoolManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype.cpp">
+      <Filter>소스 파일\Manager\Prototype</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseManager.cpp">
+      <Filter>소스 파일\Manager\MouseManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

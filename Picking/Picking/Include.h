@@ -7,6 +7,7 @@
 #include <math.h>
 #include <list>
 #include <map>
+#include <time.h>
 
 using namespace std;
 

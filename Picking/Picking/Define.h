@@ -5,5 +5,10 @@
 
 #define TILE_SIZE 32
 
+#define COUNT_X 50
+#define COUNT_Y 25
+
+#include "Mathf.h"
+
 extern HWND g_hWnd;
 extern HDC g_hdc;
