@@ -5,8 +5,8 @@
 
 #define TILE_SIZE 32
 
-#define COUNT_X 50
-#define COUNT_Y 25
+#define COUNT_X 30
+#define COUNT_Y 16
 
 #include "Mathf.h"
 

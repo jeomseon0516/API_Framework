@@ -70,6 +70,9 @@
     <Filter Include="소스 파일\Manager\MouseManager">
       <UniqueIdentifier>{28c90110-0568-404e-8851-ce1dcc8eee3f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Object\MineGame">
+      <UniqueIdentifier>{3eca2e65-6a63-45ce-b2f3-da8bc35d3922}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -141,6 +144,9 @@
     <ClInclude Include="MouseManager.h">
       <Filter>소스 파일\Manager\MouseManager</Filter>
     </ClInclude>
+    <ClInclude Include="MineGame.h">
+      <Filter>소스 파일\Object\MineGame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Picking.cpp">
@@ -187,6 +193,9 @@
     </ClCompile>
     <ClCompile Include="MouseManager.cpp">
       <Filter>소스 파일\Manager\MouseManager</Filter>
+    </ClCompile>
+    <ClCompile Include="MineGame.cpp">
+      <Filter>소스 파일\Object\MineGame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

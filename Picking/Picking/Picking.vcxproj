@@ -147,6 +147,7 @@
     <ClInclude Include="Main.h" />
     <ClInclude Include="MainUpdate.h" />
     <ClInclude Include="Mathf.h" />
+    <ClInclude Include="MineGame.h" />
     <ClInclude Include="MouseManager.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectManager.h" />
@@ -168,6 +169,7 @@
     <ClCompile Include="ImageManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainUpdate.cpp" />
+    <ClCompile Include="MineGame.cpp" />
     <ClCompile Include="MouseManager.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
