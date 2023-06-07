@@ -20,7 +20,7 @@ Tile* Tile::Start(MineGame* _mineGame, int _countX, int _countY, bool _isBoom)
 	numberMap[7] = SEVEN;
 	numberMap[8] = EIGHT;
 
-	aroundBoomCount = 0;
+	aroundBoomCount = 0; // key
 
 	image = IMAGE_MANAGER->GetFromKeyToImage("Tile");
 	imageFrame = DEFAULT;
