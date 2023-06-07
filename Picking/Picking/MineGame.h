@@ -17,6 +17,7 @@ public:
 	virtual void Destroy();
 	void GameOver();
 	void OpenNodes(Tile* tile);
+    void OpenAroundNodes(int pivotIndex);
 
 	bool CheckEdge(const int pivotIndex, const int index);
 	int ConvertFrom2DToIndex(const int x, const int y);

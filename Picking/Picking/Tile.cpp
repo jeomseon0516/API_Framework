@@ -3,7 +3,6 @@
 Tile::Tile() : mineGame(nullptr) {}
 Tile::~Tile() {}
 
-// 게임 시작전에 주변 노드를 탐색해서 나의 노드 주변에 지뢰가 몇개있는지 탐색시키는게 낫지 않을까? 
 Tile* Tile::Start(MineGame* _mineGame, int _countX, int _countY, bool _isBoom)
 {
 	_layerName = "Tile";
@@ -11,15 +10,15 @@ Tile* Tile::Start(MineGame* _mineGame, int _countX, int _countY, bool _isBoom)
 	mineGame = _mineGame;
 	transform = Transform(Vector2(_countX, _countY), Vector2(TILE_SIZE, TILE_SIZE));
 
-	numberMap.insert(make_pair(0, ZERO));
-	numberMap.insert(make_pair(1, ONE));
-	numberMap.insert(make_pair(2, TWO));
-	numberMap.insert(make_pair(3, THREE));
-	numberMap.insert(make_pair(4, FOUR));
-	numberMap.insert(make_pair(5, FIVE));
-	numberMap.insert(make_pair(6, SIX));
-	numberMap.insert(make_pair(7, SEVEN));
-	numberMap.insert(make_pair(8, EIGHT));
+	numberMap[0] = ZERO;
+	numberMap[1] = ONE;
+	numberMap[2] = TWO;
+	numberMap[3] = THREE;
+	numberMap[4] = FOUR;
+	numberMap[5] = FIVE;
+	numberMap[6] = SIX;
+	numberMap[7] = SEVEN;
+	numberMap[8] = EIGHT;
 
 	aroundBoomCount = 0;
 

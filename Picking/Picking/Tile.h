@@ -29,7 +29,7 @@
 class Tile : public Object
 {
 private:
-	map<int, const Frame> numberMap;
+	Frame numberMap[9];
 	bool isCurrent, isBoom , isCheck;
 	char aroundBoomCount;
 	MineGame* mineGame;
