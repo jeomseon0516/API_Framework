@@ -1,6 +1,6 @@
 #include "Tile.h"
 
-Tile::Tile() : mineGame(nullptr) {}
+Tile::Tile() : mineGame(nullptr), image(nullptr), aroundBoomCount(0), isBoom(false), isCheck(false), isCurrent(false) {}
 Tile::~Tile() {}
 
 Tile* Tile::Start(MineGame* _mineGame, int _countX, int _countY, bool _isBoom)
