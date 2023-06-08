@@ -8,10 +8,12 @@ MineGame* MineGame::Start()
 {
 	srand(time(NULL));
 
-	transform = Transform(Vector2(COUNT_X, COUNT_Y) * TILE_SIZE * 0.5f, Vector2(COUNT_X, COUNT_Y) * TILE_SIZE);
+	transform = Transform(Vector2(COUNT_X, COUNT_Y) * TILE_SIZE * 0.5f, 
+                          Vector2(COUNT_X, COUNT_Y) * TILE_SIZE);
 
 	const int maxIndex = COUNT_X * COUNT_Y;
 	int boomCount = BOOM_COUNT;
+
 	tileList.resize(maxIndex);
 
 	for (int i = 0; i < maxIndex; ++i)
@@ -40,7 +42,7 @@ MineGame* MineGame::Start()
 		for (int j = 0; j < 9; ++j)
 		{
 			if (CheckEdge(i, j)) continue; 
-
+    
 			int index = ConvertFrom2DToIndex((i % COUNT_X - 1) + j % 3, ((i / COUNT_X) + j / 3) - 1);
 
 			if (i != index && tileList[index]->GetIsBoom()) 
