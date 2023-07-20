@@ -1,4 +1,4 @@
-﻿#include "framework.h"
+#include "framework.h"
 #include "Picking.h"
 #include "MainUpdate.h"
 
@@ -84,8 +84,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; 
 
-   RECT rt = { 0, 0, COUNT_X * TILE_SIZE + TILE_SIZE * 0.5f, 
-                     COUNT_Y * TILE_SIZE + GetSystemMetrics(SM_CYCAPTION) + TILE_SIZE};
+   RECT rt = { 0, 0, COUNT_X * TILE_SIZE + TILE_SIZE * 0.5f + TILE_SIZE, 
+                     COUNT_Y * TILE_SIZE + GetSystemMetrics(SM_CYCAPTION) + TILE_SIZE + TILE_SIZE };
 
    HWND hWnd = g_hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
                              CW_USEDEFAULT, CW_USEDEFAULT, rt.right, rt.bottom, nullptr, nullptr, hInstance, nullptr);
